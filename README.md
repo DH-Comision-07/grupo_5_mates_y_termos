@@ -34,3 +34,4 @@ Aquí te dejamos algunos enlaces de sitios similares que pueden servir como refe
 - María Inés Gnecco
 - Matías Petroff Yañuk
 - María Florencia Pillas García
+- Franco Aguilar
