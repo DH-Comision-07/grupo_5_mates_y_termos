@@ -3,6 +3,26 @@
     margin: 0;
     padding: 0;
 }
+/* Desarrollo Header index.html */
+.header--main {
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    background-color: #FFFFFF;
+    padding: 15px 15px 10px 15px;
+}
+.header__div--logo{
+    display: flex;
+    justify-content: center;
+}
+.header--logo{
+    width: 90px;
+    transition: all 700ms;
+}
+.header--logo:hover{
+    width: 100px; 
+}
+
+
 .main--form {
     font-family: "Poppins", sans-serif;
     background-color: #f1f3f0;
@@ -100,4 +120,110 @@
     padding: 5px 10px;
     margin-bottom: 15px;
     border-radius: 10px;
+}
+
+
+/* Desarrollo Footer index.html */
+.footer {
+    font-family: "Poppins", sans-serif;
+    margin: 0 15px 0 15px;
+    padding: 30px 0 0 30px;
+    background-color: #344C2A;
+}
+.footer__article h4{
+    font-size: 27px;
+    font-weight: 400;
+    color: white;
+    text-align: left;
+    margin-top: 16px;
+    margin-bottom: 3px;   
+}
+.footer__section--pNets{
+    font-size:18px;
+    font-weight: normal;
+    color: white;
+    text-align: left;
+    margin-top: 15px;
+}
+.footer__section--div{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    align-self: center;
+    margin-top: 21px;
+    margin-bottom: 21px;
+}
+.footer__section--nets {
+    justify-content: center;
+    text-align: center;
+    text-decoration:none;
+    color:#FFFFFF;
+    font-size: 36px;
+    border-radius: 9%;
+    width:40px;
+    height:40px;
+    margin-left:40px;
+    transition: all 900ms;
+}
+.footer__section--nets:hover{
+    transform: rotate(360deg);
+    width:43px;
+    height:43px;
+    color:#344C2A;
+    background:#FFFFFF;
+}
+.footer__section--location {
+    display: flex;
+    text-decoration:none;
+    justify-content: left;
+}
+.footer__section--location:hover {
+    .footer__section--pLocation{
+        font-size: 18px;
+    }
+    .footer__section--iconLocation{
+        transform: rotate(360deg);
+        font-size: 37px;
+        width:43px;
+        height:43px;
+        background:#FFFFFF;;
+        color: #344C2A;
+    }
+}
+.footer__section--iconLocation {
+    display:flex;
+    color:#FFFFFF;
+    border-radius: 9%;
+    justify-content: center;
+    align-items: center;
+    width:40px;
+    height:40px;
+    font-size: 36px;
+    margin-top: 21px;
+    transition: all 900ms;
+}
+.footer__section--pLocation{
+    display:flex;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    color: white;
+    padding-left: 6px;
+    margin-top: 21px;
+    justify-content: left;
+    align-items: center;
+    transition: all 900ms;
+}
+.footer--author{
+    font-size: 10px;
+    font-weight: 300;
+    color: white;
+    background-color:transparent;
+    text-align: left;
+    margin: 30px 0 0 10px;
+    padding-bottom: 10px;
+}
+.footer--login--register{
+    font-family: "Poppins", sans-serif;
+    margin: -24px 0 10px 10px;
 }
