@@ -101,3 +101,35 @@
     margin-bottom: 15px;
     border-radius: 10px;
 }
+
+.foto-de-producto {
+    position: absolute;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.version-en-colores {
+    position: absolute;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.main__continuar--button {
+    width: 100%;
+    background: #344C2A;
+    border: none;
+    border-radius: 10px; 
+    font-family: 'poppins';
+    padding: 12px;
+    color: white;
+  }
+  .main__continuar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: "Poppins";
+    font-size: 20px;
+  }
