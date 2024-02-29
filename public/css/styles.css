@@ -211,6 +211,15 @@ body {
   font-family: "Poppins";
   font-size: 14px;
   color:#1B1B1D;
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+}
+
+.main__item--name,
+.main__item--description,
+.main__item--cantidad {
+  flex: 1; /* Distribute available space among child elements */
 }
 
 .main__item--image{
