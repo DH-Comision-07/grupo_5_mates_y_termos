@@ -2,7 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: poppins, "Roboto", sans-serif;
 }
+
 /* Desarrollo Header index.html */
 .header--main {
     width: 100%;
@@ -294,6 +296,7 @@
         color: #344C2A;
     }
 }
+
 .footer__section--iconLocation {
     display:flex;
     color:#FFFFFF;
@@ -318,6 +321,19 @@
     align-items: center;
     transition: all 900ms;
 }
+
+.main__buttons--login {
+    width: 100%;
+    height: 7vh;
+    background-color: #ffffff;
+    border: none;
+    font-size: 18px;
+    color: black;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
 .footer--author{
     font-size: 9px;
     font-weight: 300;
@@ -327,6 +343,7 @@
     margin: 30px 0 0 10px;
     padding-bottom: 10px;
 }
+
 .footer--login--register{
     font-family: "Poppins", sans-serif;
     margin: -24px 0 10px 10px;
@@ -341,6 +358,7 @@
         inset 0 6px 9px 0px rgb(100, 100, 100, 0.6 );
     background: transparent;
 }
+
 .main--banner{
     display: flex;
     align-items: center;
@@ -378,10 +396,187 @@
     padding-top: 15px;
     margin: 40px 15px 15px 15px; 
 }
-.main__section--div2 {
-    display:flex;
+
+.main__continuar--button {
+    width: 100%;
+    background: #344C2A;
+    border: none;
+    border-radius: 10px;
+    font-family: 'poppins';
+    padding: 12px;
+    color: white;
+}
+
+.main__continuar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: "Poppins";
+    font-size: 20px;
+}
+
+.images__products {
+    display: flex;
+}
+
+.image__product {
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+}
+
+.titles {
+    font-weight: bold;
+    margin: 15px;
+}
+
+.details {
+    margin: 15px;
+}
+
+.price {
+    margin: 15px;
+}
+
+.label {
+    padding-left: 15px;
+}
+
+.product__details {
+    padding-left: 30px;
+}
+
+.product__details li {
+    padding: 10px;
+}
+
+.image__product--grande {
+    display: inline-block;
+    width: 100%;
+}
+
+/* Desarrollo Footer index.html */
+.footer {
+    font-family: "Poppins", sans-serif;
+    margin: 0 15px 0 15px;
+    padding: 30px 0 0 30px;
+    background-color: #344C2A;
+}
+
+.footer__article h4 {
+    font-size: 27px;
+    font-weight: 400;
+    color: white;
+    text-align: left;
+    margin-top: 16px;
+    margin-bottom: 3px;
+}
+
+.footer__section--pNets {
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.footer__section--div {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    align-self: center;
+    margin-top: 21px;
+    margin-bottom: 21px;
+}
+
+.footer__section--nets {
     justify-content: center;
-    align-items: stretch;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 36px;
+    border-radius: 9%;
+    width: 40px;
+    height: 40px;
+    margin-left: 40px;
+    transition: all 900ms;
+}
+
+.footer__section--nets:hover {
+    transform: rotate(360deg);
+    width: 43px;
+    height: 43px;
+    color: #344C2A;
+    background: #FFFFFF;
+}
+
+.footer__section--location {
+    display: flex;
+    text-decoration: none;
+    justify-content: left;
+}
+
+.footer__section--location:hover {
+    .footer__section--pLocation {
+        font-size: 18px;
+    }
+
+    .footer__section--iconLocation {
+        transform: rotate(360deg);
+        font-size: 37px;
+        width: 43px;
+        height: 43px;
+        background: #FFFFFF;
+        ;
+        color: #344C2A;
+    }
+}
+
+.footer__section--iconLocation {
+    display: flex;
+    color: #FFFFFF;
+    border-radius: 9%;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 36px;
+    margin-top: 21px;
+    transition: all 900ms;
+}
+
+.footer__section--pLocation {
+    display: flex;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: left;
+    color: white;
+    padding-left: 6px;
+    margin-top: 21px;
+    justify-content: left;
+    align-items: center;
+    transition: all 900ms;
+}
+
+.footer--author {
+    font-size: 10px;
+    font-weight: 300;
+    color: white;
+    background-color: transparent;
+    text-align: left;
+    margin: 30px 0 0 10px;
+    padding-bottom: 10px;
+}
+
+.footer--login--register {
+    font-family: "Poppins", sans-serif;
+    margin: -24px 0 10px 10px;
+  .main__section--div2 {
+      display:flex;
+      justify-content: center;
+      align-items: stretch;
+  }
 }
 .main__secction--article{
     align-self: stretch;

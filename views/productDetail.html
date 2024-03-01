@@ -1,23 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle Producto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="\css\normalize.css">
+    <link rel="stylesheet" href="\css\styles.css">
 </head>
-<body>
-    <header> 
 
+<body>
+    <header class="header--main">
+        <div class="header__main--bar">
+
+            <div class="header__div--burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="header__div--logo">
+                <a href="/"><img class="header--logo" src="/images/logo.svg" alt="Mates"></a>
+            </div>
+
+            <div class="header__div--cart">
+                <a href="/productCart"><i class="fa-solid fa-shopping-cart"></i></a>
+            </div>
+
+        </div>
+        <nav class="header__nav--menu">
+            <ul class="header__nav--option">
+                <li type="none"> <a href="#"> Productos</a> </li>
+                <li type="none"> <a href="#"> Promociones</a> </li>
+                <li type="none"> <a href="#"> Vender</a> </li>
+                <li type="none"> <a href="#"> Contacto</a> </li>
+            </ul>
+
+            <ul class="header__nav--login">
+                <li type="none"> <a href="/register"> Creá tu cuenta&ensp;<i class="fa-solid fa-address-card"></i></a>
+                </li>
+                <li type="none"> <a href="/login"> Ingresá&ensp; <i class="fa-solid fa-right-to-bracket"></i> </a> </li>
+            </ul>
+        </nav>
     </header>
-    <main> 
+    <main>
+        <div><img class="image__product--grande" src="/images/el-mateador-imagenes-01.jpg"
+                alt="el-mateador-imagenes-01" /></div>
+        <div class="images__products">
+            <img class="image__product" src="/images/el-mateador-imagenes-02.jpg" alt="el-mateador-imagenes-02">
+            <img class="image__product" src="/images/el-mateador-imagenes-03.jpg" alt="el-mateador-imagenes-03">
+            <img class="image__product" src="/images/el-mateador-imagenes-04.jpg" alt="el-mateador-imagenes-04">
+        </div>
+        <p class="titles">Mate camionero Patricio Rey</p>
+        <p class="price">$3.500</p>
+        <label class="color label" for="color">Color:</label>
+        <select name="color" id="color">
+            <option value="negro">Negro</option>
+            <option value="rosa">Rosa</option>
+            <option value="verde">Verde</option>
+            <option value="blanco">Blanco</option>
+        </select>
+        <label class="cantidad label" for="color">Cantidad:</label>
+        <select name="color" id="color">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5</option>
+        </select>
+
+        <div class="main__continuar">
+            <a href="#"><button class="main__continuar--button">Comprar ahora</button></a>
+        </div>
+        <div class="main__continuar">
+            <a href=""><button class="main__continuar--button">Agregar al carrito</button></a>
+        </div>
+        <div>
+            <h4 class="titles details">Mas detalles</h4>
+            <ul class="product__details">
+                <li>Calabaza ergonómica y duradera para un agarre cómodo y auténtico disfrute.</li>
+                <li>Detalles resistentes en acero inoxidable que aportan un toque moderno y aseguran durabilidad.</li>
+                <li>Diseño único que combina tradición y sofisticación, realzando la belleza natural de la calabaza.
+                </li>
+            </ul>
+        </div>
 
     </main>
-    <footer> 
-        
+    <footer class="footer">
+        <section class="footer__article">
+            <h4>Nuestras redes</h4>
+            <p class="footer__section--pNets">Seguinos en nuetras redes sociales:</p>
+            <div class="footer__section--div">
+                <a href="#" class="footer__section--nets">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="footer__section--nets">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="#" class="footer__section--nets">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="footer__article">
+            <h4>¿Dónde estamos?</h4>
+            <a href="#" class="footer__section--location">
+                <i class="fa-solid fa-location-dot footer__section--iconLocation"></i>
+                <p class="footer__section--pLocation ">EL MATEADOR </p>
+            </a>
+        </section>
+
+        <section>
+            <p class="footer--author">Copyright El Mateador - Grupo 5 - 2024 / Proyecto Digital House -</p>
+        </section>
     </footer>
 </body>
+
 </html>
