@@ -150,8 +150,7 @@
 .image__product {
     display: flex;
     flex-direction: row;
-    width: 25%;
-    height: 25%;
+    width: 33%;
 }
 
 .titles {
@@ -177,6 +176,11 @@
 
 .product__details li {
     padding: 10px;
+}
+
+.image__product--grande {
+    display: inline-block;
+    width: 100%;
 }
 
 /* Desarrollo Footer index.html */
