@@ -60,14 +60,14 @@
     align-items: center;
 }
 .header--logo{
-    width: 60px;
+    width: 66px;
     height: auto;
     margin: 10px 10px 10px 10px;
     transition: all 700ms;
 }
 
 .header--logo:hover{
-    width: 70px; 
+    width: 76px; 
 }
 
 .header__nav--menu{
