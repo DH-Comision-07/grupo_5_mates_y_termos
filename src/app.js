@@ -10,10 +10,10 @@ app.use(express.static("public"));
 
 /* Configuro EJS como el template engine */
 app.set('view engine', 'ejs');
-app.set("views", path.join(__dirname, "/views"))
+app.set("views", path.join(__dirname, "/views"));
 
 /* inicializa servidor 3043*/
-const port = 3043
+const port = 3043;
 app.listen(port, () => console.log(`http://localhost:${port}`));
 
 /* ruta "Home" localhost:3043 */
