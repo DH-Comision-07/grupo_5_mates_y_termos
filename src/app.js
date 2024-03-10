@@ -18,3 +18,6 @@ app.listen(port, () => console.log(`http://localhost:${port}`));
 
 /* ruta "Home" localhost:3043 */
 app.use('/', indexRouter);
+
+app.post("/addProduct", (req,res)=>{res.render("index.ejs");
+});

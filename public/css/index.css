@@ -131,6 +131,7 @@
     .main__secction--article:hover {
         box-shadow: 0 0 10px rgb(52, 76, 42, 0.6 );
     }
+   
 }
 @media(min-width:769px) {
     .main__section--div4 {
@@ -142,11 +143,6 @@
 }
 
 @media (min-width:1200px) {
-    /* .main--home{
-        max-width: 1200px;
-        display: flex;
-        margin: 0 auto;
-    } */
     .main--banner {
         max-width: 1200px;
         display: flex;
