@@ -4,13 +4,15 @@
   "description": "¡Bienvenido al repositorio de nuestro proyecto de e-commerce especializado en la venta de mates, termos, bombillas y artículos relacionados! Este proyecto tiene como objetivo proporcionar una plataforma de compras en línea que satisfaga las necesidades de los amantes del mate, ofreciendo una amplia variedad de productos de alta calidad.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --watch app.js"
+    "test": "node --watch src/app.js",
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.3"
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0"
   }
 }

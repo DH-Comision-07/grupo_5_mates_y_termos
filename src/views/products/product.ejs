@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="\css\normalize.css">
+    <link rel="stylesheet" href="\css\styles.css">
+    <link rel="stylesheet" href="\css\product.css">
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    
+    <main class="main--form">
+        <form action="/product/:id" method="POST" enctype="multipart/form-data" class="form--products">
+            <p class="main__products--titulares">Detalle de Producto</p>
+            <label class="main__input--desc" for="name">Nombre</label></br>
+            <input class="main__form--inputs" value="<%= product.name %>" required></br>
+            <label class="main__input--desc" for="description">Descripción</label></br>
+            <textarea class="main__form--inputs" cols="35" rows="6"><%= product.description %></textarea></br>
+            
+            <div class="images__products">
+                <label class="main__input--desc" for="images">Imágenes</label></br>
+                <% for(let image of product.images) { %>
+                    <img class="image__product" src="/images/<%= image %>" alt="<%= product.name %>">
+                <% } %>
+            </div>
+
+            <label class="main__input--desc"" for="price">Precio</label>
+            <input class="main__form--inputs" value="$<%= product.price %>"></br>
+            <label class="main__input--desc"" for="color">Color</label></br>
+            <select class="main__form--inputs" name ="color" id="color">
+                <option value="<%= product.colors[0] %>"><%= product.colors[0] %></option>
+                <option value="<%= product.colors[1] %>"><%= product.colors[1] %></option>
+                <option value="<%= product.colors[2] %>"><%= product.colors[2] %></option>
+            </select> </br>
+            
+            <label class="main__input--desc"" for="color">Stock</label>
+            <input class="main__form--inputs" value="<%= product.stock %>" ></br>
+            <label class="main__input--desc"" for="category">Categoría</label>
+            <input class="main__form--inputs" value="<%= product.category %>" >
+
+            <button class="main__buttons--products" type="submit" >Guardar</button>
+        </form>
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

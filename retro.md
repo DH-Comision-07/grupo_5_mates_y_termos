@@ -1,12 +1,14 @@
-# Retrospectiva Sprint 1
+# Retrospectiva Sprint 2
 
 ## Dinamica Estrella de Mar
 
 **1. Comenzar a hacer.**
 
-    -	Generar en Github cada uno su rama de trabajo.
+
     -	Generar reuniones semanales (mínimo 2) para ver avances.
     -	Pair programming.
+    -   Coordinar las tareas para que el desarrollo del trabajo en la rama no genere conflicto.
+
 
 **2. Hacer más.**
 
@@ -14,11 +16,14 @@
     -	Aprovechar los conocimientos individuales de cada uno en base a su formación.
     -	Organizarse y establecer prioridades.
     -	Iterar y mutar mediante el desarrollo colectivo la resolución de problemas.
+    -   Commits por cada uno de los integrantes del grupo.
+    -   Crear una hoja de estilo común para toda la página y hojas de estilos particulares para cada views.
 
 **3. Continuar haciendo.**
 
     -	Seguir manteniendo la comunicación diaria vía Whatsapp.
     -	Seguir desarrollando y completando los tableros de trabajo en Trello.
+    -   Seguir apoyandonos mutuamente para una mejor resolución de conflictos.
 
 **4. Hacer menos.**
 
@@ -26,9 +31,12 @@
     -	No informar los avances diarios en Github.
     -	No emitir opinión cuando se consultan opciones sobre alguna entrega.
     -	No estar activamente al tanto del proyecto general sino en solo terminar tareas individuales.
+    
 
 **5. Dejar de hacer.**
 
     -	Reducir las ausencias a las reuniones. 
     -	Validar al final del Sprint y no en el mientras tanto.
+    -   Mostrar los cambios al límite de la fecha de entrega.
+    -   Hacer la mayoria de las reunines cerca de la fecha de entrega.
 
