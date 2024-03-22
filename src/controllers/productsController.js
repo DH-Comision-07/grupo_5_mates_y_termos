@@ -1,7 +1,10 @@
 const path = require('path');
+const productService = require ('../model/productService')
 
 const productsController = { 
-    getOne: (req,res)=> {res.render("products/productDetail.ejs")},
+    //getOne: (req,res)=> {res.render("products/productDetail.ejs")},
+    detail: (req, res) => {res.render("products/productDetail.ejs" , {products: productService.getOneBy(req.params.id)});
+},
     getCart: (req,res)=> {res.render("products/productCart.ejs")},
     update: (req,res)=> {
         const product = searchProductById(req.params.id)

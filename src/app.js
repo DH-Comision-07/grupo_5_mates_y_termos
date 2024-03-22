@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const methodOverride =  require('method-override');
 
 const indexRouter = require('./routes/index.routes');
 
@@ -7,6 +8,9 @@ var path = require("path");
 
 /* acceso a carpetas de recursos estaticos Public */
 app.use(express.static("public"));
+app.use(methodOverride('_method'));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 /* Configuro EJS como el template engine */
 app.set('view engine', 'ejs');
