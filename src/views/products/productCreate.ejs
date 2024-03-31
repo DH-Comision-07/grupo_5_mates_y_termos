@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Crear Producto</title>
+    <link rel="stylesheet" href="\css\product.css">
+    <link rel="stylesheet" href="\css\productCreate.css">
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    
+    <main class="main--form">
+        <form action="/products/" method="POST" enctype="multipart/form-data" class="form--products">
+            <p class="main__products--titulares">Crear Producto</p>
+            <label class="main__input--desc" for="name">Nombre</label></br>
+            <input class="main__form--inputs" id="name" name="name" required></br>
+
+            <label class="main__input--desc" for="description">Descripción</label></br>
+            <textarea class="main__form--inputs" id="description" name="description" cols="35" rows="6"></textarea></br>
+            
+            <label class="main__input--desc" for="images">Imágenes</label>
+            <input class="main__form--inputs" type="file" id="images" name="images" accept=".jpg, .png .svg" multiple>
+
+
+            <label class="main__input--desc" for="price">Precio</label>
+            <input type="number" class="main__form--inputs" id="price" name="price" ></br>          
+            
+            <label class="main__input--desc">Colores:</label>
+            <fieldset  class="main__form--inputs" id="colorAdd">
+        
+                <div>
+                    <button type="button" onclick="addColor()" class="form__buttons--colors">Agregar Color</button>
+                </div>
+            </fieldset>
+            <script>
+                function addColor() {
+                    const colorVariations = document.getElementById('colorAdd');
+                    const newColorDiv = document.createElement('div');
+                    newColorDiv.innerHTML = `
+                        <div style="margin-top: 10px;">
+                        <label for="colors">Color:</label>
+                        <input type="text" id="colors" name="colors[]" required>
+                        <a  onclick="removeColor(this)" class="form__a--colors"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    `;
+                    colorVariations.appendChild(newColorDiv);
+                }
+                function removeColor(button) {
+                    button.parentNode.remove();
+                }
+            </script>
+
+            <label class="main__input--desc" for="stock">Stock</label>
+            <input type="number" class="main__form--inputs" id="stock" name="stock" ></br>
+
+            <label class="main__input--desc" for="category">Categoría</label>
+            <input class="main__form--inputs" id="category" name="category" >
+
+            <button class="main__buttons--products" type="submit" >Crear</button>
+        </form>
+
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

@@ -22,3 +22,8 @@ app.listen(port, () => console.log(`http://localhost:${port}`));
 
 /* ruta "Home" localhost:3043 */
 app.use('/', indexRouter);
+
+app.use((req, res, next) => {
+    res.status(404).render('error404.ejs');
+    next();
+})

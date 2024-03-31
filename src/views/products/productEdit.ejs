@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title><%=product.name%></title>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/productEdit.css">
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    
+    <main class="main--form">
+        <form action="/products/update/<%=product.id%>?_method=PUT" method="POST" class="product--form">
+            <label class="main__register--titulares">Editar producto 
+
+            </label>
+            
+            <div class="control--form">
+                <label class="control__form--label" for="id" >ID del Producto:</label>
+                <input class="main__input--control"  type="text" id="id" name="id" value="<%=product.id%>" placeholder="ID producto" disabled>
+            </div>
+
+            <div class="control--form">
+                <label class="control__form--label" for="name" >Nombre del producto:</label>
+                <input class="main__input--control"  type="text" id="name" name="name" value="<%=product.name%>" placeholder="Nombre del producto">
+            </div>
+
+            <div class="control--form">
+                <label class="control__form--label" for="description" >Descripcion Producto:</label>
+                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6"><%=product.description%></textarea>
+            </div>
+            
+            <div class="control__form--photo">
+                <label for="images" class="control__form--label">Imagen del Producto:</label>
+                <% for(let images of product.images) { %>
+                    <img class="image__product" id="images" name="images" src="/images/<%= images %>" alt="<%=product.name %>">
+                <% } %>
+            </div>
+            <div class="control--form">
+                <label class="control__form--label" for="price" >Precio del producto:</label>
+                <input class="main__input--control"  type="number" id="price" name="price" value="<%=product.price%>" placeholder="Precio">
+            </div>
+            
+            <div class="control--form">
+                <label class="control__form--label" for="colors" >Colores del producto:</label>
+                <input class="main__input--control"  type="text" id="colors" name="colors" value="<%=product.colors%>" placeholder="Stock">
+            </div>
+
+            <div class="control--form">
+                <label class="control__form--label" for="stockProduct" >Stock disponible del producto:</label>
+                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=product.stock%>" placeholder="Stock">
+            </div>
+
+            <div class="control--form">
+                <label class="control__form--label" for="category" >Categoria:</label>
+                <input class="main__input--control"  type="text" id="category" name="category" value="<%=product.category%>" placeholder="Categoria del producto">
+            </div>
+
+           
+            <br>
+         
+            <button type="submit" class="button--form">Modificar</button>
+        </form>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
