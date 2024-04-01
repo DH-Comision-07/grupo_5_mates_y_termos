@@ -75,8 +75,9 @@ const productsController = {
     store:(req, res) => {
         const id = idMayor.maxId() + 1;
         const {name, description, price, category, colors, stock} = req.body;
-        const images = req.file.filename;
-        const productAdd = {id, name, description, price, category, colors, stock, images};
+        const fileName = (req.files).map(file => file.filename);
+        const images = fileName;
+        const productAdd = {id, name, description, price, images, category, colors, stock, };
         productService.save(productAdd);
         res.render("products/productsAdmin.ejs");
     },

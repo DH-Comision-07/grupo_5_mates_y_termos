@@ -3,7 +3,7 @@ const routes = express.Router();
 const path = require ("path");
 
 const productsController = require('../controllers/productsController');
-const uploadFile = require ("../middlewares/multerMiddlewares")
+const uploadFile = require ("../middlewares/multerMiddlewares");
 
 // INICIO (start) productos
 routes.get('/', productsController.start); 
@@ -19,7 +19,7 @@ routes.get("/productCart", productsController.getCart);
 
 /* CREAR (create) producto */
 routes.get("/create", productsController.create);
-routes.post('/', uploadFile.single("images"), productsController.store); 
+routes.post('/', uploadFile, productsController.store); 
 
 // /* EDITAR (update) producto */ 
 routes.get("/update/:id/", productsController.edit);
