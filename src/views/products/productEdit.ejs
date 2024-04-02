@@ -22,12 +22,12 @@
 
             <div class="control--form">
                 <label class="control__form--label" for="name" >Nombre del producto:</label>
-                <input class="main__input--control"  type="text" id="name" name="name" value="<%=product.name%>" placeholder="Nombre del producto">
+                <input class="main__input--control"  type="text" id="name" name="name" value="<%=product.name%>" placeholder="Nombre del producto" required>
             </div>
 
             <div class="control--form">
                 <label class="control__form--label" for="description" >Descripcion Producto:</label>
-                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6"><%=product.description%></textarea>
+                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6" required><%=product.description%></textarea>
             </div>
             
             <div class="control__form--photo">
@@ -38,22 +38,22 @@
             </div>
             <div class="control--form">
                 <label class="control__form--label" for="price" >Precio del producto:</label>
-                <input class="main__input--control"  type="number" id="price" name="price" value="<%=product.price%>" placeholder="Precio">
+                <input class="main__input--control"  type="number" id="price" name="price" value="<%=product.price%>" placeholder="Precio" required>
             </div>
             
             <div class="control--form">
                 <label class="control__form--label" for="colors" >Colores del producto:</label>
-                <input class="main__input--control"  type="text" id="colors" name="colors" value="<%=product.colors%>" placeholder="Stock">
+                <input class="main__input--control"  type="text" id="colors" name="colors" value="<%=product.colors%>" placeholder="Stock" required>
             </div>
 
             <div class="control--form">
                 <label class="control__form--label" for="stockProduct" >Stock disponible del producto:</label>
-                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=product.stock%>" placeholder="Stock">
+                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=product.stock%>" placeholder="Stock" required>
             </div>
 
             <div class="control--form">
                 <label class="control__form--label" for="category" >Categoria:</label>
-                <input class="main__input--control"  type="text" id="category" name="category" value="<%=product.category%>" placeholder="Categoria del producto">
+                <input class="main__input--control"  type="text" id="category" name="category" value="<%=product.category%>" placeholder="Categoria del producto" required>
             </div>
 
            

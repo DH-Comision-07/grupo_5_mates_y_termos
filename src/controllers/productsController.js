@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 const productService = require ('../model/productService')
-let idMayor = require("../moduls/mayorId");
 
 const parseProducts = require ("../model/products.json");
 const productsFilePath = path.join(__dirname, '../model/products.json');
@@ -35,36 +34,7 @@ const productsController = {
     },
     // Edit product button
     update: (req, res) => {
-        const id = productService.locationProduct(req.params.id);
-        const {name, description, price, category, colors, stock, images} = req.body;
-
-        // Actualizar los datos del producto
-       if (name) {
-            parseProducts[id].name = name;
-        }
-        if (price) {
-            parseProducts[id].price = price;
-        }
-        if (category) {
-            parseProducts[id].category = category;
-        }
-        if (colors) {
-            parseProducts[id].colors = colors;
-        }
-        if (category) {
-            parseProducts[id].category = category;
-        }
-        if (description) {
-            parseProducts[id].description = description;
-        }
-        if (stock) {
-            parseProducts[id].stock = stock;
-        }
-        if (images) {
-            parseProducts[id].images = images;
-        }
-        fs.writeFileSync(productsFilePath, JSON.stringify(parseProducts));
-        res.render("products/productsAdmin.ejs");
+        res.render("products/productsAdmin.ejs",{product: productService.updateProduct(req.params.id, req.body)});
     },
 
     //Create products form
@@ -73,13 +43,7 @@ const productsController = {
     },
     // Create products button
     store:(req, res) => {
-        const id = idMayor.maxId() + 1;
-        const {name, description, price, category, colors, stock} = req.body;
-        const fileName = (req.files).map(file => file.filename);
-        const images = fileName;
-        const productAdd = {id, name, description, price, images, category, colors, stock, };
-        productService.save(productAdd);
-        res.render("products/productsAdmin.ejs");
+        res.render("products/productsAdmin.ejs",{product: productService.createProduct(req.params.id, req.body, req.files)});
     },
     
     // Delete products form
@@ -93,11 +57,7 @@ const productsController = {
     },
     // Delete product button
     destroy : (req, res) => {
-        const idRemove = req.params.id;
-        newJson = parseProducts.filter (idrem => (idrem.id).toString() !== idRemove);
-        const newDataJson = JSON.stringify(newJson);
-        fs.writeFileSync(productsFilePath, newDataJson)
-        res.render("products/productsAdmin.ejs");
+        res.render("products/productsAdmin.ejs", {product: productService.deleteProduct(req.params.id)});
     }
 }
 module.exports = productsController;

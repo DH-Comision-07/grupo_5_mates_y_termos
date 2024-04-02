@@ -6,7 +6,7 @@ const diskStorage = multer.diskStorage({
         cb(null, productImage);
     },
     filename: function(req,file,cb){        
-        let imageName = "image-" + Date.now() + path.extname(file.originalname);
+        let imageName = "el-mateador-imagenes-" + Date.now() + path.extname(file.originalname);
         cb(null, imageName);
     }
 });
