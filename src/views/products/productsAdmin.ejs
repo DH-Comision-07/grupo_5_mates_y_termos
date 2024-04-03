@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Administrador</title>
+    <link rel="stylesheet" href="\css\product.css">
+    <link rel="stylesheet" href="\css\productCreate.css">
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+<main class="main--form">
+    <div class="form--products">
+		<p class="main__products--titulares">Administracion Productos</p>
+        
+        <!-- ALL PRODUCTS -->
+                    
+        <li class="main__form--inputs" type="none" > <a class="main__input--desc" href="/products/index"> Todos los Productos</a> </li>
+        
+        <!-- NEW PRODUCTS -->
+        <li  class="main__form--inputs" type="none"  > <a class="main__input--desc" href="/products/create"> Crear Producto</a> </li>
+
+        <!-- EDIT PRODUCTS -->
+        <div class="main__form--inputs">
+            <label class="body__form--label" for="idInputEdit">Editar Producto</label>
+            <input class="main__input--control" type="number" id="idInputEdit" placeholder="ID del Producto">
+            <a class="button--form" style="margin-top: 6px;" id="idEdit" href="" >Buscar</a>
+        </div>
+        <script>
+            // Obtener el input y el enlace
+            let inputEdit = document.getElementById('idInputEdit');
+            let linkEdit = document.getElementById('idEdit');
+            // Accion de cambio en el input
+            inputEdit.addEventListener('input', () => {
+                // Obtener el valor del input
+                let linkValue = ("/products/update/" + inputEdit.value);
+                // Establecer el valor del atributo href del enlace
+                linkEdit.href = linkValue;
+            });
+        </script>
+        
+        <!-- DELETE PRODUCTS -->
+        <div class="main__form--inputs">
+            <label class="body__form--label" for="idInputDelete">Eliminar Producto</label>
+            <input class="main__input--control" type="number" id="idInputDelete" placeholder="ID del Producto">
+            <a class="button--form" style="margin-top: 6px;" id="idDelete" href="" >Buscar</a>
+        </div>
+        <script>
+            // Obtener el input y el enlace
+            let inPutDelete = document.getElementById('idInputDelete');
+            let linkDelete = document.getElementById('idDelete');
+            // Accion de cambio en el input
+            inPutDelete.addEventListener('input', () => {
+                // Obtener el valor del input
+                let linkValue = ("/products/delete/" + inPutDelete.value);
+                // Establecer el valor del atributo href del enlace
+                linkDelete.href = linkValue;
+            });
+        </script>
+        
+    </div>    
+</main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
