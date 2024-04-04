@@ -1,32 +1,31 @@
-# Weekly standup
+# Weekly Sprint 4
 
 ## Tareas completadas:
 
-1- Implementar el módulo de EJS.
+1- CRUD de productos
 
-2- Separar vistas en carpetas.
+2- Separar en crear, editar y borrar.
 
-3- Separar los componentes repetidos en archivos parciales.
+3- Separar en una vista que muestra todos los productos.
 
-4- Creación de página y edición de producto.
+4- Carga de imágenes para mostrar variedad de productos, y opciones del mismo.
 
 ## Impedimentos encontrados:
 
-1- Falta de práctica.
+1- 
 
-2- No se lograba unanimidad en la forma de desarrollar la estructura.
+2- 
+3- 
 
-3- No se encontraron impedimentos en el desarrollo de los archivos parciales.
 
-4- Lograr una vista adecuada en el front.
 
 ## Soluciones propuestas:
 
-1- Estudio, análisis y compresión de clases anteriores.
+1- Verificar entre todos. 
 
-2- Charla, debate y análisis para lograr el consenso de una estructura óptima.
+2- Debatir sobre las resoluciones de consignas.
 
-3- El grupo contaba con el conocimiento necesario para realizar dicha tarea.
+3- Apoyarnos en los que más tenian conocimiento del grupo.
 
-4- Se debatió para lograr, desde el lado del front, las mejores características, disposiciones y campos de los formularios.
+
 
