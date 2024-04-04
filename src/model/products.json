@@ -5,7 +5,7 @@
         "description": "Calabaza ergonómica y duradera para un agarre cómodo y auténtico disfrute. Detalles resistentes en acero inoxidable que aportan un toque moderno y aseguran durabilidad. Diseño único que combina tradición y sofisticación, realzando la belleza natural de la calabaza.",
         "price": 3500,
         "images": ["el-mateador-imagenes-01.jpg", "el-mateador-imagenes-02.jpg", "el-mateador-imagenes-03.jpg"],
-        "category": "mate",
+        "category": "Mates",
         "colors": ["rojo", "azul", "verde"],
         "stock": 10
     },
@@ -15,7 +15,7 @@
         "description": "Bombilla de acero inoxidable resistente y duradera. Ideal para acompañar tu mate favorito.",
         "price": 500,
         "images": ["el-mateador-imagenes-04.jpg", "el-mateador-imagenes-05.jpg", "el-mateador-imagenes-06.jpg"],
-        "category": "bombilla",
+        "category": "Bombillas",
         "colors": ["plateado"],
         "stock": 20
     },
@@ -25,7 +25,7 @@
         "description": "Mate tradicional fabricado en madera de primera calidad. Un compañero perfecto para tus momentos de mate.",
         "price": 2500,
         "images": ["el-mateador-imagenes-07.jpg", "el-mateador-imagenes-08.jpg", "el-mateador-imagenes-09.jpg"],
-        "category": "mate",
+        "category": "Mates",
         "colors": ["marrón"],
         "stock": 15
     },
@@ -35,7 +35,7 @@
         "description": "Bombilla de aluminio ligera y resistente. Disfruta de tu mate de forma cómoda con esta práctica bombilla.",
         "price": 300,
         "images": ["el-mateador-imagenes-10.jpg", "el-mateador-imagenes-11.jpg", "el-mateador-imagenes-12.jpg"],
-        "category": "bombilla",
+        "category": "Bombillas",
         "colors": ["plateado"],
         "stock": 25
     },
@@ -45,7 +45,7 @@
         "description": "Mate de vidrio templado de alta resistencia. Diseño elegante y moderno para disfrutar del mate con estilo.",
         "price": 1500,
         "images": ["el-mateador-imagenes-13.jpg", "el-mateador-imagenes-14.jpg", "el-mateador-imagenes-15.jpg"],
-        "category": "mate",
+        "category": "Bolsos Materos",
         "colors": ["transparente"],
         "stock": 12
     },
@@ -55,7 +55,7 @@
         "description": "Bombilla de silicona suave y flexible. Ideal para llevar contigo a todas partes.",
         "price": 200,
         "images": ["el-mateador-imagenes-16.jpg", "el-mateador-imagenes-17.jpg", "el-mateador-imagenes-18.jpg"],
-        "category": "bombilla",
+        "category": "Termos",
         "colors": ["rojo", "azul", "verde"],
         "stock": 30
     },
@@ -65,7 +65,7 @@
         "description": "Mate de acero inoxidable de alta calidad. Resistente y duradero, perfecto para un uso diario.",
         "price": 2800,
         "images": ["el-mateador-imagenes-19.jpg", "el-mateador-imagenes-20.jpg", "el-mateador-imagenes-21.jpg"],
-        "category": "mate",
+        "category": "Mates",
         "colors": ["plateado"],
         "stock": 18
     },
@@ -75,7 +75,7 @@
         "description": "Bombilla ecológica fabricada en bambú natural. Una opción sostenible para disfrutar de tu mate.",
         "price": 400,
         "images": ["el-mateador-imagenes-22.jpg", "el-mateador-imagenes-23.jpg", "el-mateador-imagenes-24.jpg"],
-        "category": "bombilla",
+        "category": "Bombillas",
         "colors": ["marrón"],
         "stock": 22
     },
@@ -85,7 +85,7 @@
         "description": "Mate de cerámica de alta calidad. Diseño único y resistente para disfrutar de tu mate favorito.",
         "price": 2000,
         "images": ["el-mateador-imagenes-25.jpg", "el-mateador-imagenes-26.jpg", "el-mateador-imagenes-27.jpg"],
-        "category": "mate",
+        "category": "Mates",
         "colors": ["blanco", "negro"],
         "stock": 14
     },
@@ -95,7 +95,7 @@
         "description": "Bombilla con filtro de acero inoxidable. Filtra las impurezas del mate para una experiencia más limpia.",
         "price": 600,
         "images": ["el-mateador-imagenes-28.jpg", "el-mateador-imagenes-29.jpg", "el-mateador-imagenes-30.jpg"],
-        "category": "bombilla",
+        "category": "Bombillas",
         "colors": ["plateado"],
         "stock": 27
     }

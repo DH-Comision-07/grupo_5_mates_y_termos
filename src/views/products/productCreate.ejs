@@ -23,7 +23,6 @@
             <label class="main__input--desc" for="images">Imágenes</label>
             <input class="main__form--inputs" type="file" id="images" name="images" accept=".jpg, .png .svg" multiple>
 
-
             <label class="main__input--desc" for="price">Precio</label>
             <input type="number" class="main__form--inputs" id="price" name="price" ></br>          
             
@@ -56,7 +55,13 @@
             <input type="number" class="main__form--inputs" id="stock" name="stock" ></br>
 
             <label class="main__input--desc" for="category">Categoría</label>
-            <input class="main__form--inputs" id="category" name="category" >
+            <select name="category" id="category" class="main__form--inputs" required>
+                <option value="">Seleccione Categoría</option>
+                <option value="Mates">Mates</option>
+                <option value="Termos">Termos</option>
+                <option value="Bombillas">Bombillas</option>
+                <option value="Bolso Matero">Bolso Matero</option>
+            </select>
 
             <button class="main__buttons--products" type="submit" >Crear</button>
         </form>
