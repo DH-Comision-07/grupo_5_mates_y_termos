@@ -12,10 +12,10 @@
 
 ## Impedimentos encontrados:
 
-1- 
+1- La dificultad de algunos integrantes para comprender el contenido
 
-2- 
-3- 
+2- No poder coincidir en tiempos de reunión.
+
 
 
 
