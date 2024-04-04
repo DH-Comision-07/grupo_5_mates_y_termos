@@ -16,19 +16,32 @@
     <main class="main--form">
         <form action="#" method="POST" class="form--register">
             <p class="main__register--titulares">Crear cuenta</p>
-            <p class="main__input--desc">Nombre completo*</p>
-            <input class="main__form--inputs" type="text" name="nombreCompleto" id="nombreCompleto" required>
+            
+            <p class="main__input--desc">Nombre*</p>
+            <input class="main__form--inputs" type="text" name="name" id="name" required>
+            
+            <p class="main__input--desc">Apellido*</p>
+            <input class="main__form--inputs" type="text" name="lastName" id="lastName" required>
+            
             <p class="main__input--desc">Correo electrónico*</p>            
-            <input class="main__form--inputs" type="email" name="correo" id="correo" required>
+            <input class="main__form--inputs" type="email" name="userEmail" id="userEmail" required>
+            
+            <p class="main__input--desc">Fecha de Nacimiento:</p>
+            <input type="date" id="userBirthdate" name="userBirthdate" class="main__form--inputs" value="">
+
             <p class="main__input--desc">Contraseña*</p>
-            <input class="main__form--inputs" type="password" name="password" id="password" required>
+            <input class="main__form--inputs" type="password" name="passwordUser" id="passwordUser" required>
+            
             <p class="main__input--desc">Repetir contraseña*</p>
-            <input class="main__form--inputs" type="password" name="password2" id="password2" required>
+            <input class="main__form--inputs" type="passwordUserRepeat" name="passwordUserRepeat" id="password2" required>
+            
             <div>
                 <input type="checkbox" id="cbox1" value="first_checkbox"> Estoy de acuerdo con <a href="#">Terminos y Condiciones</a>
             </div>
             <br>
+
             <button class="main__buttons--register" type="submit" >Crear cuenta</button>
+            
             <div class="main__form--bottom-options">
                 <p><a href="#">¿Ya tengo Cuenta?</a></p>
             </div>

@@ -10,22 +10,25 @@
     <%- include('../partials/header.ejs') %>
     
     <main class="main--form">
-        <div><img class="image__product--grande" src="/images/el-mateador-imagenes-01.jpg"
-                alt="el-mateador-imagenes-01" /></div>
+        
         <div class="images__products">
-            <img class="image__product" src="/images/el-mateador-imagenes-02.jpg" alt="el-mateador-imagenes-02">
-            <img class="image__product" src="/images/el-mateador-imagenes-03.jpg" alt="el-mateador-imagenes-03">
-            <img class="image__product" src="/images/el-mateador-imagenes-04.jpg" alt="el-mateador-imagenes-04">
+            <!-- <div><img class="image__product--grande" src="/images/<= images %>"
+                alt="el-mateador-imagenes-01" /></div> -->
+            <% for(let images of product.images) { %>
+                <img class="image__product" id="images" name="images" src="/images/<%= images %>" alt="<%=product.name %>">
+            <% } %>
         </div>
         <p class="titles"><%=product.name%></p>
         <p class="price">$<%=product.price%></p>
+
+
         <label class="color label" for="color">Color:</label>
-        <select name="color" id="color">
-            <option value="negro">Negro</option>
-            <option value="rosa">Rosa</option>
-            <option value="verde">Verde</option>
-            <option value="blanco">Blanco</option>
-        </select>
+        <select name="colors">
+            <%  product.colors.map(colors => { %> 
+                <option value="<%=colors%>"><%=colors%></option>
+                <% }) %>
+              </select>
+
         <label class="cantidad label" for="color">Cantidad:</label>
         <select name="color" id="color">
             <option value="1">1</option>
@@ -42,13 +45,8 @@
             <a href=""><button class="main__continuar--button">Agregar al carrito</button></a>
         </div>
         <div>
-            <h4 class="titles details">Mas detalles</h4>
-            <ul class="product__details">
-                <li>Calabaza ergonómica y duradera para un agarre cómodo y auténtico disfrute.</li>
-                <li>Detalles resistentes en acero inoxidable que aportan un toque moderno y aseguran durabilidad.</li>
-                <li>Diseño único que combina tradición y sofisticación, realzando la belleza natural de la calabaza.
-                </li>
-            </ul>
+            <h4 class="titles details">Descripción</h4>
+            <li class="product__details"><%=product.description%></li>
         </div>
 
     </main>
