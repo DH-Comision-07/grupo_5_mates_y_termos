@@ -12,10 +12,10 @@
 
 ## Impedimentos encontrados:
 
-1- 
+1- La dificultad de algunos integrantes para comprender el contenido
 
-2- 
-3- 
+2- No poder coincidir en tiempos de reunión.
+
 
 
 
@@ -25,7 +25,7 @@
 
 2- Debatir sobre las resoluciones de consignas.
 
-3- Apoyarnos en los que más tenian conocimiento del grupo.
+3- Apoyarnos en los que más tenan conocimiento del grupo.
 
 
 

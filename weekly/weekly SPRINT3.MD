@@ -29,4 +29,3 @@
 3- El grupo contaba con el conocimiento necesario para realizar dicha tarea.
 
 4- Se debatió para lograr, desde el lado del front, las mejores características, disposiciones y campos de los formularios.
-
