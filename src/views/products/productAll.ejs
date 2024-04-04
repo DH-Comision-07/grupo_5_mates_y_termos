@@ -17,7 +17,9 @@
 		
 		<div class="main--div">
 			<% products.forEach ((product)=>{ %>
+				
 				<section class="product-box">
+				<a class="product--href" href="productDetail/<%=product.id%>">
 					<figure class="product-box_image">
 						<% for(let images of product.images) { %>
                             <img class="image__product" id="images" name="images" src="/images/<%= images %>" alt="<%=product.name %>">
@@ -25,7 +27,9 @@
 					</figure>
 					<h2 class="product-box_data--h2">$<%=product.price %></h2>
 					<p class="product-box_data--p"><%=product.name %></p>
+				</a>
 				</section>
+			
 			<% }) %>
 		</div>
 

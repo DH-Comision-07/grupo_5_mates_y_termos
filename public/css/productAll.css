@@ -43,6 +43,17 @@
 .product-box:hover {
     box-shadow: 0 0 10px rgb(52, 76, 42, 0.6 );
 }
+.product--href {
+    background-color: #ffffff;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
 
 .product-box_data--h2 {
     font-size: 18px;
