@@ -25,7 +25,7 @@
 
 2- Debatir sobre las resoluciones de consignas.
 
-3- Apoyarnos en los que más tenian conocimiento del grupo.
+3- Apoyarnos en los que más tenan conocimiento del grupo.
 
 
 
