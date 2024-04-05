@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/head.ejs') %>
     <title>El Mateador</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
@@ -29,7 +24,7 @@
                 <div class="main__section--div2">
                     <article class="main__secction--article">
                         <div class="section__article--img">
-                            <a href="/products/productDetail">
+                            <a href="/products/productDetail/1">
                                 <img class="main__article--img" src="/images/el-mateador-imagenes-04.jpg" alt="Programacion Full Stack">
                             </a>
                         </div>                        
@@ -41,7 +36,9 @@
 
                     <article class="main__secction--article">
                         <div class="section__article--img">
-                            <img class="main__article--img" src="/images/el-mateador-imagenes-06.jpg" alt="Programacion Full Stack">
+                            <a href="/products/productDetail/2">
+                                <img class="main__article--img" src="/images/el-mateador-imagenes-06.jpg" alt="Programacion Full Stack">
+                            </a>
                         </div>                        
                         <div class="article__div--flex">
                             <p class="section__article--precio"> Bombillas</p>
@@ -53,7 +50,9 @@
                 <div class="main__section--div2">
                     <article class="main__secction--article">
                         <div class="section__article--img">
-                            <img class="main__article--img" src="/images/el-mateador-imagenes-01.jpg" alt="Programacion Full Stack">
+                        <a href="/products/productDetail/3">
+                            <img class="main__article--img" src="/images/el-mateador-imagenes-09.jpg" alt="Programacion Full Stack">
+                        </a>
                         </div>                        
                         <div class="article__div--flex">
                             <p class="section__article--precio"> Mates</p>
@@ -63,7 +62,9 @@
                     
                     <article class="main__secction--article">
                         <div class="section__article--img">
-                            <img class="main__article--img" src="/images/el-mateador-imagenes-05.jpg" alt="Programacion Full Stack">
+                            <a href="/products/productDetail/4">
+                                <img class="main__article--img" src="/images/el-mateador-imagenes-07.jpg" alt="Programacion Full Stack">
+                            </a>
                         </div>                        
                         <div class="article__div--flex">
                             <p class="section__article--precio"> Bombillas</p>

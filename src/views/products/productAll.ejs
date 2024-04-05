@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Productos</title>
+    <link rel="stylesheet" href="\css\productAll.css">
+    
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    
+    <main class="main--form">
+        <!-- Todos los productos -->
+		<h3 class="main__products--titulares">Todos los productos</h3>
+		
+		<div class="main--div">
+			<% products.forEach ((product)=>{ %>
+				
+				<section class="product-box">
+				<a class="product--href" href="productDetail/<%=product.id%>">
+					<figure class="product-box_image">
+						<% for(let images of product.images) { %>
+                            <img class="image__product" id="images" name="images" src="/images/<%= images %>" alt="<%=product.name %>">
+                        <% } %>
+					</figure>
+					<h2 class="product-box_data--h2">$<%=product.price %></h2>
+					<p class="product-box_data--p"><%=product.name %></p>
+				</a>
+				</section>
+			
+			<% }) %>
+		</div>
+
+
+
+</main>
+        
+
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
