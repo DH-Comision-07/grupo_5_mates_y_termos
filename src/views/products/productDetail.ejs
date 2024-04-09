@@ -21,14 +21,10 @@
         <p class="titles"><%=product.name%></p>
         <p class="price">$<%=product.price%></p>
 
-
-        <label class="color label" for="color">Color:</label>
-        <select name="colors">
-            <%  product.colors.map(colors => { %> 
-                <option value="<%=colors%>"><%=colors%></option>
-                <% }) %>
-              </select>
-
+        <span style="box-shadow: 6px 6px 10px #344c2a99; border-radius: 6px;">
+        <label class="color label" for="color">Colores:</label>
+        <label class="price"> <%=product.colors%> </label>
+        </span>
         <label class="cantidad label" for="color">Cantidad:</label>
         <select name="color" id="color">
             <option value="1">1</option>

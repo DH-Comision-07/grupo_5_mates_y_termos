@@ -98,3 +98,30 @@
 .buttonSend--form:hover{
     background-color: #0022AA;
 }
+.main--buttons{
+    display:flex;
+    flex-direction: column;
+}
+.product--butt {
+    width: 100%;
+    background: #344C2A;
+    text-decoration: none;
+    border-radius: 10px; 
+    font-family: "Poppins", sans-serif;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    list-style: none;
+}
+
+.main__buttons--products {
+    width: 100%;
+    background: #344C2A;
+    border: none;
+    border-radius: 10px; 
+    font-family: "Poppins", sans-serif;
+    padding: 12px;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

@@ -326,12 +326,22 @@
 .images__products {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 90%;
 }
 
 .image__product {
     display: flex;
     flex-direction: row;
     width: 18%;
+}
+.image__product--small {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 18%;
+
 }
 
 .image__product--grande {

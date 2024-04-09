@@ -41,7 +41,7 @@
     transition: all 400ms;
 }
 .product-box:hover {
-    box-shadow: 0 0 10px rgb(52, 76, 42, 0.6 );
+    box-shadow: 0 0 10px #344c2a99;
 }
 .product--href {
     background-color: #ffffff;

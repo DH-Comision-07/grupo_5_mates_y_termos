@@ -7,10 +7,7 @@ const parseProducts = require ("../model/products.json");
 const productsFilePath = path.join(__dirname, '../model/products.json');
 
 const productsController = { 
-    
-    // Admin Products
-    start: (req,res) =>{res.render("products/productsAdmin.ejs")},
-    
+
     // All products
     index: (req, res) => {
          res.render("products/productAll.ejs", {products : productService.getAll( )});
@@ -23,43 +20,8 @@ const productsController = {
     // Cart products
     getCart: (req,res)=> {res.render("products/productCart.ejs")},
     
-    // Edit products form
-    edit: (req, res) => {
-        const id = productService.locationProduct(req.params.id);
-        if (id == -1){
-            res.status(404).render("error404.ejs")
-        } else {
-            res.render("products/productEdit.ejs", {product: productService.getOneBy(req.params.id)});
-        }
-    },
-    // Edit product button
-    update: (req, res) => {
-        res.render("products/productsAdmin.ejs",{product: productService.updateProduct(req.params.id, req.body)});
-    },
+};
 
-    //Create products form
-    create: (req,res)=> {
-        res.render("products/productCreate.ejs");
-    },
-    // Create products button
-    store:(req, res) => {
-        res.render("products/productsAdmin.ejs",{product: productService.createProduct(req.params.id, req.body, req.files)});
-    },
-    
-    // Delete products form
-    delete: (req, res) => {
-        const id = productService.locationProduct(req.params.id);
-        if (id == -1){
-            res.status(404).render("error404.ejs")
-        } else {
-            res.render("products/productDelete.ejs", {product: productService.getOneBy(req.params.id)});
-        }
-    },
-    // Delete product button
-    destroy : (req, res) => {
-        res.render("products/productsAdmin.ejs", {product: productService.deleteProduct(req.params.id)});
-    }
-}
 module.exports = productsController;
 
  /* update: (req,res)=> {
