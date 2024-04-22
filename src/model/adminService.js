@@ -22,7 +22,7 @@ let adminService = {
         fs.writeFileSync(productsFilePath, JSON.stringify(this.products));
     },
     createProduct: function (id, body, files){
-        id = idMayor.maxId() + 1;
+        id = idMayor.idMayorProduct() + 1;
         const {name, description, price, category, colors, stock} = body;
         const fileName = (files).map(file => file.filename);
         const images = fileName;

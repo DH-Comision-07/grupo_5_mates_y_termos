@@ -72,4 +72,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
+.register__cancel--butt {
+    width: 100%;
+    background: #344C2A;
+    text-decoration: none;
+    border-radius: 10px; 
+    font-family: "Poppins", sans-serif;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    list-style: none;
+}
+.main--buttons{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
