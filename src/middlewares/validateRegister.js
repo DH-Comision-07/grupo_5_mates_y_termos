@@ -29,6 +29,16 @@ const validateRegister = [
     check('passwordUser')
         .notEmpty().withMessage('Debes completar la contraseña').bail()
         .isLength({ min: 6 }).withMessage('La contraseña debe ser más larga'),
+
+    check ("confirmPassword")
+        .notEmpty().withMessage('Debes repetir la contraseña').bail()
+        .custom((valuePassword, {req}) => {
+            if (valuePassword !== req.body.passwordUser) {
+                throw new Error('Las contraseñas no coinciden');
+            }
+            return true;
+            }
+        )
 ]
 
 module.exports = validateRegister;
