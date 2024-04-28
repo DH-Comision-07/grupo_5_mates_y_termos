@@ -68,10 +68,9 @@
 /* Invisible texto */
 .header--users {
     display:none; 
-    transition: all .10s;
 }
 /* Visible texto */
-figure:hover > .header--users {
+.figure--avatar:hover > .header--users {
     display:block;
     margin-top:-9px;
     font-size: 13px;

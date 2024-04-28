@@ -26,7 +26,7 @@
                 <li type="none"> <a href="/users/login"> Ingresá&ensp; <i class="fa-solid fa-right-to-bracket"></i> </a> </li>
             <% } %> 
             <% if (locals.usuario) { %>
-                <figure>
+                <figure class="figure--avatar">
                     <a href="/"><img  class="header--avatar" src="/images/avatars/<%= usuario.image %>" alt="Mates"></a>
                     <p class="header--users header--avatar"><%= usuario.name %></p>
                 </figure>
