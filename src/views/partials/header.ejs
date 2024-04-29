@@ -21,9 +21,22 @@
         </ul>
         
         <ul class="header__nav--login">
-            <li type="none"> <a href="/users/register"> Creá tu cuenta&ensp;<i class="fa-solid fa-address-card"></i></a></li>
-            <li type="none"> <a href="/users/login"> Ingresá&ensp; <i class="fa-solid fa-right-to-bracket"></i> </a> </li>
-            <li type="none"> <a href="/admin"> Admin</a> </li>
+            <% if (!locals.usuario) { %>
+                <li type="none"> <a href="/users/register"> Creá tu cuenta&ensp;<i class="fa-solid fa-address-card"></i></a></li>
+                <li type="none"> <a href="/users/login"> Ingresá&ensp; <i class="fa-solid fa-right-to-bracket"></i> </a> </li>
+            <% } %> 
+            <% if (locals.usuario) { %>
+                <figure class="figure--avatar">
+                    <a href="/"><img  class="header--avatar" src="/images/avatars/<%= usuario.image %>" alt="Mates"></a>
+                    <p class="header--users header--avatar"><%= usuario.name %></p>
+                </figure>
+                <li type="none"> <a href="/users/logout"> Cerrar sesión&ensp; <i class="fas fa-sign-out-alt"></i> </a> </li>
+            <% } %>
+            <% if (locals.usuario && locals.isAdmin) { %>
+                <li type="none"> <a href="/admin"> Admin&ensp; <i class="fa-solid fa-toolbox"></i> </a> </li>
+            <% } %>
+            <li type="none"> <a href="#"> Mis compras&ensp; <i class="fa-solid fa-basket-shopping"></i></a> </li>
         </ul>
+        
     </nav>                 
 </header>

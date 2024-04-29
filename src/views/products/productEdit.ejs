@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/headerReduce.ejs') %>
     
     <main class="main--form">
         <form action="/admin/update/<%=product.id%>?_method=PUT" method="POST" class="product--form">
@@ -70,6 +70,6 @@
         </form>
     </main>
 
-    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footerReduce.ejs') %>
 </body>
 </html>

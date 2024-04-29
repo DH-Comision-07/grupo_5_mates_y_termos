@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <%- include('./partials/head.ejs') %>
     <title>El Mateador</title>
@@ -9,67 +9,71 @@
     <%- include('./partials/header.ejs') %>
    
     <main class="main--home">
-        <div class="main--banner">
-            <img  class="banner"  src="/images/banner-el-mateador_Mesa de trabajo 1.jpg" alt="banner">
-            <div class="banner--radios">
-                <input type="radio" name="formBanner" value="mainBanner" class="main__banner--radio"> 
-                <input type="radio" name="formBanner" value="mainBanner" class="main__banner--radio"> 
-                <input type="radio" name="formBanner" value="mainBanner" class="main__banner--radio"> 
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                <% for(let i = 1; i <= 3; i++) { %>
+                    <img src="/images/slides/slide<%= i %>.jpg" alt="slide<%= i %>" class="slide">
+                <% } %>
+                </div>
             </div>
+            <button class="prev"><i class="fa-solid fa-chevron-left main__section--arrow, icon--arrow"></i></button>
+            <button class="next"><i class="fa-solid fa-chevron-right main__section--arrow, icon--arrow"></i></button>
         </div>
-    
+        <script src="scripts/bannerScripts.js"></script>
+
         <section class="main--section">
             <h3 class="main--titulares">Categorías</h3>
             <div class="main__section--div4">
                 <div class="main__section--div2">
                     <article class="main__secction--article">
+                        <a style="text-decoration: none;" href="/products/productDetail/1">
                         <div class="section__article--img">
-                            <a href="/products/productDetail/1">
-                                <img class="main__article--img" src="/images/el-mateador-imagenes-04.jpg" alt="Programacion Full Stack">
-                            </a>
+                            <img class="main__article--img" src="/images/el-mateador-imagenes-04.jpg" alt="Programacion Full Stack">
                         </div>                        
                         <div class="article__div--flex">
                             <p class="section__article--precio"> Mates</p>
                             <p class="section__article--descripcion"> Descripcion </p> 
-                        </div>                        
+                        </div> 
+                        </a>                       
                     </article>
 
                     <article class="main__secction--article">
+                        <a style="text-decoration: none;" href="/products/productDetail/2">
                         <div class="section__article--img">
-                            <a href="/products/productDetail/2">
-                                <img class="main__article--img" src="/images/el-mateador-imagenes-06.jpg" alt="Programacion Full Stack">
-                            </a>
+                            <img class="main__article--img" src="/images/el-mateador-imagenes-06.jpg" alt="Programacion Full Stack">
                         </div>                        
                         <div class="article__div--flex">
                             <p class="section__article--precio"> Bombillas</p>
                             <p class="section__article--descripcion"> Descripcion </p> 
-                        </div>                        
+                        </div> 
+                        </a>                       
                     </article>
                 </div>
 
                 <div class="main__section--div2">
                     <article class="main__secction--article">
+                        <a style="text-decoration: none;" href="/products/productDetail/3">
                         <div class="section__article--img">
-                        <a href="/products/productDetail/3">
                             <img class="main__article--img" src="/images/el-mateador-imagenes-09.jpg" alt="Programacion Full Stack">
-                        </a>
                         </div>                        
                         <div class="article__div--flex">
                             <p class="section__article--precio"> Mates</p>
                             <p class="section__article--descripcion"> Descripcion </p> 
-                        </div>                        
+                        </div> 
+                        </a>                       
                     </article>
                     
                     <article class="main__secction--article">
+                        <a style="text-decoration: none;" href="/products/productDetail/4">
                         <div class="section__article--img">
-                            <a href="/products/productDetail/4">
-                                <img class="main__article--img" src="/images/el-mateador-imagenes-07.jpg" alt="Programacion Full Stack">
-                            </a>
+                            <img class="main__article--img" src="/images/el-mateador-imagenes-07.jpg" alt="Programacion Full Stack">
                         </div>                        
                         <div class="article__div--flex">
                             <p class="section__article--precio"> Bombillas</p>
                             <p class="section__article--descripcion"> Descripcion </p> 
-                        </div>                        
+                        </div>  
+                        </a>                      
                     </article>
                 </div>
         </section>
@@ -147,7 +151,7 @@
         </section>
     </main>
     
-    <%- include('./partials/footer.ejs') %>  %>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>
 

@@ -14,7 +14,13 @@ const productsController = {
     },  
 
     // Detail products
-    detail: (req, res) => {res.render("products/productDetail.ejs" , {product: productService.getOneBy(req.params.id)});
+    detail: (req, res) => {
+        const id = productService.locationProduct(req.params.id);
+        if (id == -1){
+            res.status(404).render("error404.ejs")
+        } else {
+            res.render("products/productDetail.ejs", {product :productService.getOneBy(req.params.id)});
+        }
     },
 
     // Cart products

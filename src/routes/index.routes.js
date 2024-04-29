@@ -13,4 +13,12 @@ routes.use('/users', userRoutes);
 
 routes.use('/admin', adminRoutes);
 
+routes.get('/session', function (req,res){
+    if (req.session.numeroVisita == undefined) {
+        req.session.numeroVisita = 0;
+    }
+    req.session.numeroVisita ++;
+    res.send("Session tiene el numero" + req.session.numeroVisita);
+});
+
 module.exports = routes;

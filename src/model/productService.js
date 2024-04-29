@@ -12,6 +12,10 @@ let productService = {
         return this.products;
     },
 
+    locationProduct: function (id) {
+        return this.products.findIndex(product => product.id == id);
+    },
+
     getOneBy: function (id) {
         return this.products.find(product => product.id == id);
     }
