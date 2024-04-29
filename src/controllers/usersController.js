@@ -25,7 +25,7 @@ const usersController = {
 
             // Guardo las cookies si el usuario tildo "recordar usuario"
             if (usuarioLogueado && req.body.rememberUsers) {
-                res.cookie("email", usuarioLogueado.userEmail, {maxAge:60000});
+                res.cookie("email", usuarioLogueado.userEmail, {maxAge:90000});
             }
             res.redirect("/");
             

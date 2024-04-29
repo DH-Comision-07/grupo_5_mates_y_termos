@@ -126,19 +126,16 @@
     },
     {
         "id": 9,
-        "name": "Mate de cerámica",
+        "name": "Termo",
         "description": "Termo Acero Inoxidable Media Manija es el compañero perfecto para disfrutar de tus bebidas favoritas en cualquier momento y lugar. Capacidad de 1 litro. Fabricado con materiales de alta calidad, tanto en su exterior como en su interior.Con su diseño de media manija, este termo ofrece una experiencia de uso cómoda y práctica.",
-        "price": 12000,
+        "price": "12000",
         "images": [
             "termo-mod1-gris.jpg",
             "termo-mod1-marron.jpg"
         ],
         "category": "Termos",
-        "colors": [
-            "gris",
-            "marron"
-        ],
-        "stock": 14
+        "colors": "gris,marron",
+        "stock": "14"
     },
     {
         "id": 10,
