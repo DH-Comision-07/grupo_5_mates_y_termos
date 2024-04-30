@@ -7,10 +7,10 @@
 </head>
 
 <body>
-    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/headerReduce.ejs') %>
     
     <main class="main--form">
-        <form action="/products/update/<%=product.id%>?_method=PUT" method="POST" class="product--form">
+        <form action="/admin/update/<%=product.id%>?_method=PUT" method="POST" class="product--form">
             <label class="main__register--titulares">Editar producto 
 
             </label>
@@ -44,7 +44,7 @@
             
             <div class="control--form">
                 <label class="control__form--label" for="colors" >Colores:</label>
-                <input class="main__input--control"  type="text" id="colors" name="colors" value="<%=product.colors%>" placeholder="Stock" required>
+                <input class="main__input--control"  type="text" id="colors" name="colors" value="<%=product.colors%>" placeholder="Colores" required>
             </div>
 
             <div class="control--form">
@@ -62,11 +62,14 @@
             </select>
            
             <br>
-         
-            <button type="submit" class="button--form">Modificar</button>
+            <div class="main--buttons">
+                <button type="submit" class="main__buttons--products">Modificar</button>
+                <a class="product--butt" href="/admin/">Cancelar</a>
+            </div>
+            
         </form>
     </main>
 
-    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footerReduce.ejs') %>
 </body>
 </html>

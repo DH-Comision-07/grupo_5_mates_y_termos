@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/headerReduce.ejs') %>
 
 <main class="main--form">
     <div class="form--products">
@@ -20,7 +20,7 @@
         <li class="main__form--inputs" type="none" > <a class="main__input--desc" href="/products/index"> Todos los Productos</a> </li>
         
         <!-- NEW PRODUCTS -->
-        <li  class="main__form--inputs" type="none"  > <a class="main__input--desc" href="/products/create"> Crear Producto</a> </li>
+        <li  class="main__form--inputs" type="none"  > <a class="main__input--desc" href="/admin/create"> Crear Producto</a> </li>
 
         <!-- EDIT PRODUCTS -->
         <div class="main__form--inputs">
@@ -35,7 +35,7 @@
             // Accion de cambio en el input
             inputEdit.addEventListener('input', () => {
                 // Obtener el valor del input
-                let linkValue = ("/products/update/" + inputEdit.value);
+                let linkValue = ("/admin/update/" + inputEdit.value);
                 // Establecer el valor del atributo href del enlace
                 linkEdit.href = linkValue;
             });
@@ -54,7 +54,7 @@
             // Accion de cambio en el input
             inPutDelete.addEventListener('input', () => {
                 // Obtener el valor del input
-                let linkValue = ("/products/delete/" + inPutDelete.value);
+                let linkValue = ("/admin/delete/" + inPutDelete.value);
                 // Establecer el valor del atributo href del enlace
                 linkDelete.href = linkValue;
             });
@@ -63,6 +63,6 @@
     </div>    
 </main>
 
-    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footerReduce.ejs') %>
 </body>
 </html>

@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error404</title>
+    <title>Acceso denegado</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
-    <main>
-        <div class="body__div--error404">
-            <img  class="body__img--error404" src="/images/error404.svg" alt="error404">
-            <h3>PAGE NOT FOUND</h3>
-            <a href="/" class="body--href">Ir pagina principal</a>
-        </div>
-    </main>
+    
+    <%- include('../partials/headerReduce.ejs') %>
+    <br>
+    <div class="body__div--error404">
+        <h1 style="text-align: center;">--- Acceso Denegado ---</h1>
+        <h3 style="text-align: center;">Carece de credenciales de autenticación válidas para el recurso de destino.</h3>
+        <br>
+        <a href="/" class="body--href">Ir pagina principal</a>
+    </div>
+    <br>
+    <%- include('../partials/footerReduce.ejs') %>
 </body>
+
 </html>

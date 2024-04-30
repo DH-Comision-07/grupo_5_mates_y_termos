@@ -7,11 +7,11 @@
 </head>
 
 <body>
-    <%- include('../partials/header.ejs') %>
+    <%- include('../partials/headerReduce.ejs') %>
     
     <main class="main--form">
         
-        <form action="/products/delete/<%=product.id%>?_method=delete" method="POST" class="product--form">
+        <form action="/admin/delete/<%=product.id%>?_method=delete" method="POST" class="product--form">
             
             <label class="main__register--titulares">Eliminar producto </label>
             <div class="control--form">
@@ -56,11 +56,13 @@
             </div>
 
             <br>
-                  
-            <button type="submit" class="button--form">Eliminar</button>
+            <div class="main--buttons">
+                <button type="submit" class="main__buttons--products">Eliminar</button>
+                <a class="product--butt" href="/admin/">Cancelar</a>
+            </div>     
         </form>
     </main>
 
-    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footerReduce.ejs') %>
 </body>
 </html>
