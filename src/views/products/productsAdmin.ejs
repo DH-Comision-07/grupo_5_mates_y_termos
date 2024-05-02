@@ -28,18 +28,7 @@
             <input class="main__input--control" type="number" id="idInputEdit" placeholder="ID del Producto">
             <a class="button--form" style="margin-top: 6px;" id="idEdit" href="" >Buscar</a>
         </div>
-        <script>
-            // Obtener el input y el enlace
-            let inputEdit = document.getElementById('idInputEdit');
-            let linkEdit = document.getElementById('idEdit');
-            // Accion de cambio en el input
-            inputEdit.addEventListener('input', () => {
-                // Obtener el valor del input
-                let linkValue = ("/admin/update/" + inputEdit.value);
-                // Establecer el valor del atributo href del enlace
-                linkEdit.href = linkValue;
-            });
-        </script>
+        <script src="/scripts/productAdminEdit.js"></script>
         
         <!-- DELETE PRODUCTS -->
         <div class="main__form--inputs">
@@ -47,18 +36,7 @@
             <input class="main__input--control" type="number" id="idInputDelete" placeholder="ID del Producto">
             <a class="button--form" style="margin-top: 6px;" id="idDelete" href="" >Buscar</a>
         </div>
-        <script>
-            // Obtener el input y el enlace
-            let inPutDelete = document.getElementById('idInputDelete');
-            let linkDelete = document.getElementById('idDelete');
-            // Accion de cambio en el input
-            inPutDelete.addEventListener('input', () => {
-                // Obtener el valor del input
-                let linkValue = ("/admin/delete/" + inPutDelete.value);
-                // Establecer el valor del atributo href del enlace
-                linkDelete.href = linkValue;
-            });
-        </script>
+        <script src="/scripts/productAdminDelete.js"></script>
         
     </div>    
 </main>

@@ -21,44 +21,17 @@
     align-items: center; /* Center child elements vertically */
     padding: 10px; /* Adjust padding as needed */
 }
-    
-.header__div--burger, .header__divv--logo, .header__div--cart {
-    display: inline-block;
-    padding: 10px 10px 10px 10px;
-    vertical-align: middle;
-    box-sizing: border-box;
-}
-.header__div--burger {
-    width: 20%;
-    text-align: left
-}
-.header__div--cart {
-    width: 20%;
-    color: black;
-    text-align: right; 
-}
-.header__div--logo {
-    a {
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    }
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    vertical-align: middle;
-    align-items: center;
+.header__div--logo{
+    margin: 0 auto;
 }
 .header--logo{
-    width: 66px;
+    width: 76px;
     height: auto;
-    margin: 10px 10px 10px 10px;
+    margin-bottom: -10px;
     transition: all 700ms;
 }
-
 .header--logo:hover{
-    width: 76px; 
+    width: 84px; 
 }
 .header--avatar{
     width:49px;
@@ -76,6 +49,7 @@
     font-size: 13px;
 }
 
+
 .header__nav--menu{
     display: none;
 }
@@ -90,6 +64,10 @@
     display: inline-block;
     padding: 6px 0 6px 0;
     font-size: 10px;
+}
+.header__div--burger, .header__div--cart{
+    margin-top: 21px;
+    font-size: 16px;
 }
 /* Fin Header */
    
@@ -201,6 +179,7 @@
     margin: -24px 0 10px 10px;
 }
 /* Fin Footer */
+
 .input--error {
     margin-top: -10px;
     margin-left: 10px;
@@ -428,17 +407,18 @@
     }
     .header__nav--menu ul{
         display: flex;
-        margin-top: 15px;
+        margin-top: 0px;
     }
     .header__nav--menu li{
         margin: 0 6px; 
     }
     .header__nav--menu a{
-        font-size: 10px;
+        font-size: 12px;
     }
-    .header__div--burger{
-        visibility: hidden;
+    .header__div--burger, .header__div--cart{
+        visibility:hidden;
     }
+    
 }
 
 @media(min-width:769px) {
@@ -467,7 +447,7 @@
         margin: 0 10px;
     }
     .header__nav--menu a{
-        font-size: 14px;
+        font-size: 15px;
     }
     .product--form{
         max-width: 1200px;

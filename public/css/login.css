@@ -24,25 +24,17 @@
     color:#1B1B1D;
     margin-left: 9px;
 }
-
 .form--login {
     width: 100%;
-    padding: 20px 30px;
     max-width: 550px;
+    border: none;
+    padding: 20px 30px;
+    color: black;
     margin: 0 auto;
-    color: #344C2A;
-    text-align: left;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 20px 30px;
 }
-
-.form--login h5 {
-    margin: 0;
-    text-align: center;
-    height: 40px;
-    margin-bottom: 30px;
-    font-size: 20px;
-}
-
-
 
 .form--login a {
     color: rgb(0, 0, 0);

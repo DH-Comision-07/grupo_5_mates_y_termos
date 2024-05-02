@@ -9,16 +9,9 @@
     <%- include('./partials/header.ejs') %>
    
     <main class="main--home">
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slides">
-                <% for(let i = 1; i <= 3; i++) { %>
-                    <img src="/images/slides/slide<%= i %>.jpg" alt="slide<%= i %>" class="slide">
-                <% } %>
-                </div>
-            </div>
-            <button class="prev"><i class="fa-solid fa-chevron-left main__section--arrow, icon--arrow"></i></button>
-            <button class="next"><i class="fa-solid fa-chevron-right main__section--arrow, icon--arrow"></i></button>
+        
+        <div class="banner--slides">
+            <img class="banner--slide" id="slider" src="/images/slides/slide1.jpg">
         </div>
         <script src="scripts/bannerScripts.js"></script>
 

@@ -1,17 +1,18 @@
 <header class="header--main">
+        
     <div class="header__main--bar">
         <div class="header__div--burger">
-            <i class="fa-solid fa-bars"></i>
+            <a href="#"><i class="fa-solid fa-bars" style="font-size: 130%;"></i></a>
         </div>
 
         <div class="header__div--logo">
             <a href="/"><img  class="header--logo" src="/images/logo.svg" alt="Mates"></a>
         </div>
-
         <div class="header__div--cart">
-            <a href="/products/productCart"><i class="fa-solid fa-shopping-cart"></i></a>
+            <a href="/products/productCart"><i class="fa-solid fa-shopping-cart" style="font-size: 130%;"></i></a>
         </div>
     </div>
+            
     <nav class="header__nav--menu">
         <ul class="header__nav--option">
             <li type="none"> <a href="/products/index"> Productos</a> </li>
@@ -24,7 +25,7 @@
             <% if (!locals.usuario) { %>
                 <li type="none"> <a href="/users/register"> Creá tu cuenta&ensp;<i class="fa-solid fa-address-card"></i></a></li>
                 <li type="none"> <a href="/users/login"> Ingresá&ensp; <i class="fa-solid fa-right-to-bracket"></i> </a> </li>
-            <% } %> 
+            <% } %>
             <% if (locals.usuario) { %>
                 <figure class="figure--avatar">
                     <a href="/"><img  class="header--avatar" src="/images/avatars/<%= usuario.image %>" alt="Mates"></a>
@@ -35,7 +36,7 @@
             <% if (locals.usuario && locals.isAdmin) { %>
                 <li type="none"> <a href="/admin"> Admin&ensp; <i class="fa-solid fa-toolbox"></i> </a> </li>
             <% } %>
-            <li type="none"> <a href="#"> Mis compras&ensp; <i class="fa-solid fa-basket-shopping"></i></a> </li>
+            <li type="none"> <a href="/products/productCart"> <i style="margin: 0 auto; font-size: 120%;" class="fa-solid fa-shopping-cart"></i> </a> </li> 
         </ul>
         
     </nav>                 

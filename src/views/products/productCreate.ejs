@@ -20,31 +20,10 @@
             <label class="main__input--desc" for="description">Descripción</label></br>
             <textarea class="main__form--inputs" id="description" name="description" cols="35" rows="6"></textarea></br>
             
-            
-
-    <label class="main__input--desc" for="images">Imágenes</label>
-    <input class="main__form--inputs" type="file" name="images" id="imageInput" multiple accept="image/*">
-    <div id="previewContainer"></div>
-
-    <script>
-        document.getElementById('imageInput').addEventListener('change', function(event) {
-            const files = event.target.files;
-            const previewContainer = document.getElementById('previewContainer');
-            previewContainer.innerHTML = ''; // Limpiar previsualizaciones anteriores
-
-            for (const file of files) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.style.maxWidth = '90px';
-                    img.style.maxHeight = '90px';
-                    previewContainer.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+            <label class="main__input--desc" for="images">Imágenes</label>
+            <input class="main__form--inputs" type="file" name="images" id="imageInput" multiple accept="image/*">
+            <div id="previewContainer"></div>
+            <script src="/scripts/productCreateImage.js"></script>
 
             <label class="main__input--desc" for="price">Precio</label>
             <input type="number" class="main__form--inputs" id="price" name="price" ></br>          
@@ -56,24 +35,8 @@
                     <button type="button" onclick="addColor()" class="form__buttons--colors">Agregar Color</button>
                 </div>
             </fieldset>
-            <script>
-                function addColor() {
-                    const colorVariations = document.getElementById('colorAdd');
-                    const newColorDiv = document.createElement('div');
-                    newColorDiv.innerHTML = `
-                        <div style="margin-top: 10px;">
-                        <label for="colors">Color:</label>
-                        <input type="text" id="colors" name="colors[]" required>
-                        <a  onclick="removeColor(this)" class="form__a--colors"><i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    `;
-                    colorVariations.appendChild(newColorDiv);
-                }
-                function removeColor(button) {
-                    button.parentNode.remove();
-                }
-            </script>
-
+            <script src="/scripts/productCreateColors.js"></script>
+            
             <label class="main__input--desc" for="stock">Stock</label>
             <input type="number" class="main__form--inputs" id="stock" name="stock" ></br>
 
