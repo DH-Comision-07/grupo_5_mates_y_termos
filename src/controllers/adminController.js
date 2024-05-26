@@ -34,31 +34,65 @@ const adminController = {
     },
 
     // Edit products form
-    edit: (req, res) => {
-        const id = adminService.locationProduct(req.params.id);
-        if (id == -1){
-            res.status(404).render("error404.ejs")
-        } else {
-            res.render("products/productEdit.ejs", {product: adminService.getOneBy(req.params.id)});
-        }
+    edit: async function(req, res) {
+        try {
+            const productos = await adminService.getOneBy(req.params.id)
+            const categorias = db.Categorias.findAll()
+            const colores = db.Colores.findAll()
+            const imagenes = db.Images.findAll()
+            Promise.all([productos, categorias, colores, imagenes])
+                .then(function([productos, categorias, colores, imagenes]){
+                    res.render("products/productEdit.ejs", {productos:productos, categorias: categorias, colores:colores, imagenes:imagenes});
+                })
+        } catch (error) {
+            res.send("Ha ocurrido un error inesperado").status(500);
+        }     
     },
+
     // Edit product button
-    update: (req, res) => {
-        res.render("products/productsAdmin.ejs",{product: adminService.updateProduct(req.params.id, req.body)});
+    update: async function(req, res) {
+        try {
+            await adminService.updateBy(req.body, req.params.id);
+            res.redirect(`/admin`);
+        } catch (error) {
+            res.send("No se pudo editar!!");
+        }
     },
 
     // Delete products form
-    delete: (req, res) => {
-        const id = adminService.locationProduct(req.params.id);
-        if (id == -1){
-            res.status(404).render("error404.ejs")
-        } else {
-            res.render("products/productDelete.ejs", {product: adminService.getOneBy(req.params.id)});
-        }
+    delete: async function(req, res) {
+        try {
+            const productos = await adminService.getOneBy(req.params.id)
+            const categorias = db.Categorias.findAll()
+            const colores = db.Colores.findAll()
+            const imagenes = db.Images.findAll()
+            Promise.all([productos, categorias, colores, imagenes])
+                .then(function([productos, categorias, colores, imagenes]){
+                    res.render("products/productDelete.ejs", {productos:productos, categorias: categorias, colores:colores, imagenes:imagenes});
+                })
+        } catch (error) {
+            res.send("Ha ocurrido un error inesperado").status(500);
+        }    
     },
+
     // Delete product button
-    destroy : (req, res) => {
-        res.render("products/productsAdmin.ejs", {product: adminService.deleteProduct(req.params.id)});
+    destroy : async function(req, res) {
+        try {
+            await db.Images.destroy ({
+                where: { product_id: req.params.id }
+            });
+            await db.Carritos.destroy ({
+                where: { product_id: req.params.id }
+            });
+            await db.Productos.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.redirect(`/admin`);
+        } catch (error) {
+            res.send("No se pudo borrar!!");
+        }
     }
 };
 

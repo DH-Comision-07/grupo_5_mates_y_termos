@@ -20,7 +20,7 @@ let adminService = {
         try {
             let product = new Producto(newProduct);
 
-            let addProduct = await db.Productos.create(product, {include:[{association: "producto"},{association: "colores"},{association: "categorias"}]})
+            let addProduct = await db.Productos.create(product, {include:[{association: "producto"},{association: "colores"},{association: "categorias"},{association: "usuarios"}]})
             
             const imagePromises = newImage.map(file => {
                 return db.Images.create({ name: file.filename, product_id: addProduct.id });
@@ -32,23 +32,26 @@ let adminService = {
             res.status(500).send('Internal Server Error');
         } 
     },
-    
-    update: async function (body,/* file */ params) { 
-            try {
-                return await db.Productos.update({
-                    name: body.name, 
-                    price: body.price, 
-                    discount: body.discount,
-                    stock: body.stock,            
-                    description: body.description,
-                    /* image: file.filename, */
-                    category: body.category
-                }, {where: {id: params.id} 
-                }) //esta es la promesa
-            } 
-            catch (error) {
-                console.log(error)
-            }
+    getOneBy: async function (id) {
+        try {
+            return await db.Productos.findByPk(id,{include:[{association: "producto"},{association: "colores"},{association: "categorias"},{association: "usuarios"}]}); //esta es la promesa
+        } catch (error) {
+            console.log(error)
+            return {
+                id: 0,
+                name: "Producto No Encontrado",
+            }  
+        }
+    },
+
+    updateBy: async function (body, id){
+        try {
+            let producto = new Producto(body);
+            await db.Productos.update(producto, {where: {id: id}});
+        } catch (error) {
+            console.error('Error en Modificacion Producto:', error);
+            res.status(500).send('Internal Server Error');
+        }
     },
 
     destroy:  async function (params) {
@@ -57,7 +60,8 @@ let adminService = {
                 where: {id: params.id} 
             });
         } catch (error) {
-            console.log(error);
+            console.error('Error en Eliminacion Producto:', error);
+            res.status(500).send('Internal Server Error');
         } 
     }
 };
@@ -77,3 +81,12 @@ function Imagenes({name,productosId}){
 };
 
 module.exports = adminService;
+function Pelicula({title, rating, awards, release_date, length, genero, ranking}){
+    this.title = title;
+    this.rating = rating;
+    this.awards = awards;
+    this.release_date = release_date;
+    this.length = length;
+    this.genre_id = genero;
+    this.genre_id = ranking;
+}

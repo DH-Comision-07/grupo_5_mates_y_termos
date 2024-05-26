@@ -30,8 +30,8 @@ INSERT INTO colors (name) VALUES
 INSERT INTO products (name, description, price, stock, category_id, color_id) VALUES
 ('Mate Rey', 'Con aro y patas metalizado, duradero para un agarre cómodo y auténtico disfrute. Detalles resistentes en acero inoxidable que aportan un toque moderno y aseguran durabilidad. Diseño único que combina tradición y sofisticación.', 699.99, 50, 1, 1),
 ('Bombilla Clasica', 'Bombilla de acero inoxidable resistente y duradera. Ideal para acompañar tu mate favorito.', 1500, 100, 2, 9),
-('Mate clásico de madera', 'Mate tradicional fabricado en madera de primera calidad. Un compañero perfecto para tus momentos de mate.', 779.99, 100, 1, 2),
-('Bombilla de aluminio', 'Bombilla de aluminio ligera y resistente. Disfruta de tu mate de forma cómoda con esta práctica bombilla.', 669.99, 100, 2, 9),
+('Bombilla de aluminio', 'Bombilla de aluminio ligera y resistente. Disfruta de tu mate de forma cómoda con esta práctica bombilla.', 779.99, 100, 1, 2),
+('Mate clásico de madera', 'Mate tradicional fabricado en madera de primera calidad. Un compañero perfecto para tus momentos de mate.', 669.99, 100, 2, 9),
 ('Bolso Matero porta termo - El Mateador', 'Bolso matero negro con base semirrígida y tira regulable, resistente al agua, con amplio compartimento principal sin divisiones y bolsillo externo. Diseño clásico y moderno, perfecto para acompañarte a cualquier destino.', 49.99, 100, 3, 2),
 ('Bombilla de silicona', 'Bombilla de silicona suave y flexible. Ideal para llevar contigo a todas partes.', 4239.99, 100, 2, 9),
 ('Termo Acero Inoxidable 1 Litro', 'El Termo Acero Inoxidable 1 Litro Pico Cebador Alta Duracion, es el compañero perfecto para mantener tus bebidas frías o calientes durante todo el día.Con su sistema de doble pared de aislamiento, podrás disfrutar de tus bebidas favoritas sin preocuparte por la temperatura.', 49.99, 100, 4, 2),

@@ -54,7 +54,6 @@
             <input type="number" class="main__form--inputs" id="stock" name="stock"></br>
 
             <label class="main__input--desc" for="categorias">Categoría</label>
-            <label class="main__input--desc" name="categorias" ><%= categorias[1].name %></label>
             <select name="categorias"  class="main__form--inputs">
                 <% for( let i = 0; i < categorias.length; i++ ) { %>
                     <option value="<%= categorias[i].id %>">

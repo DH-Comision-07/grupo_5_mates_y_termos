@@ -16,7 +16,7 @@ let productsService = {
     },
     getOneBy: async function (id) {
         try {
-            return await db.Productos.findByPk(id,{include:[{association: "producto"},{association: "colores"},{association: "categorias"}]}); //esta es la promesa
+            return await db.Productos.findByPk(id,{include:[{association: "producto"},{association: "colores"},{association: "categorias"},{association: "usuarios"}]}); //esta es la promesa
         } catch (error) {
             console.log(error)
             return {
@@ -31,20 +31,7 @@ let productsService = {
                 release_date: ""
             }  
         }
-    }  
-
-    /* getOneBy: function (id){
-        return new Promise((resolve, reject) => {
-            db.Productos.findByPk(id) //esta es la promesa
-            .then((productos) => { //en productos entra la promesa
-                resolve(productos);
-            })
-            .catch(err => {
-                console.log(err);
-                reject ([])
-            });
-        })
-    }   */
+    }
 }
         
 module.exports = productsService;
