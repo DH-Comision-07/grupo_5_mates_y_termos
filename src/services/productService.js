@@ -8,7 +8,6 @@ let productsService = {
             .then(productos => { //en productos entra la promesa
                 resolve(productos)
             })
-
             .catch (err => {
                 console.log(err);
                 reject ([])

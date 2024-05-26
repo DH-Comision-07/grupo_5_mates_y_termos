@@ -26,29 +26,6 @@ INSERT INTO colors (name) VALUES
 ('Gris'),
 ('Aluminio');
 
-
--- Insertar datos en la tabla images
-INSERT INTO images (name) VALUES
-('el-mateador-imagenes-01.jpg'),
-('el-mateador-imagenes-02.jpg'),
-('el-mateador-imagenes-03.jpg'),
-('el-mateador-imagenes-04.jpg'),
-('el-mateador-imagenes-05.jpg'),
-('el-mateador-imagenes-06.jpg'),
-('el-mateador-imagenes-07.jpg'),
-('el-mateador-imagenes-08.jpg'),
-('el-mateador-imagenes-09.jpg'),
-('bombilla-clasica.jpg'),
-('bombilla-plateado.jpg'),
-('bombilla-plateado-dorado.jpg'),
-('termo-acero.jpg'),
-('termo-mate-gris.jpg'),
-('termo-mate-negro.jpg'),
-('termo-mate-rosa.jpg'),
-('termo-mod1-gris.jpg'),
-('termo-mod1-marron.jpg'),
-('bolso-matero-01.jpg');
-
 -- Insertar datos en la tabla products
 INSERT INTO products (name, description, price, stock, category_id, color_id) VALUES
 ('Mate Rey', 'Con aro y patas metalizado, duradero para un agarre cómodo y auténtico disfrute. Detalles resistentes en acero inoxidable que aportan un toque moderno y aseguran durabilidad. Diseño único que combina tradición y sofisticación.', 699.99, 50, 1, 1),
@@ -62,6 +39,28 @@ INSERT INTO products (name, description, price, stock, category_id, color_id) VA
 ('Termo', 'Termo Acero Inoxidable Media Manija es el compañero perfecto para disfrutar de tus bebidas favoritas en cualquier momento y lugar. Capacidad de 1 litro. Fabricado con materiales de alta calidad, tanto en su exterior como en su interior.Con su diseño de media manija, este termo ofrece una experiencia de uso cómoda y práctica.', 49.99, 100, 4, 2),
 ('Bombilla con filtro de acero', 'Bombilla con filtro de acero inoxidable. Filtra las impurezas del mate para una experiencia más limpia.', 89.99, 30, 2, 9);
 
+-- Insertar datos en la tabla images
+INSERT INTO images (name, product_id) VALUES
+('el-mateador-imagenes-01.jpg',1),
+('el-mateador-imagenes-02.jpg',1),
+('el-mateador-imagenes-03.jpg',1),
+('el-mateador-imagenes-04.jpg',1),
+('el-mateador-imagenes-05.jpg',2),
+('el-mateador-imagenes-06.jpg',3),
+('el-mateador-imagenes-07.jpg',3),
+('el-mateador-imagenes-08.jpg',4),
+('el-mateador-imagenes-09.jpg',4),
+('bombilla-clasica.jpg',10),
+('bombilla-plateado.jpg',6),
+('bombilla-plateado-dorado.jpg',6),
+('termo-acero.jpg',7),
+('termo-mate-gris.jpg',8),
+('termo-mate-negro.jpg',8),
+('termo-mate-rosa.jpg',8),
+('termo-mod1-gris.jpg',9),
+('termo-mod1-marron.jpg',9),
+('bolso-matero-01.jpg',5);
+
 -- Insertar datos en la tabla shopping_cart
 INSERT INTO shopping_cart (user_id, product_id, quantity) VALUES
 (1, 1, 1),
@@ -71,25 +70,3 @@ INSERT INTO shopping_cart (user_id, product_id, quantity) VALUES
 (2, 2, 1),
 (2, 9, 3),
 (3, 6, 6);
-
--- Insertar datos en la tabla product_images
-INSERT INTO product_images (product_id, image_id) VALUES
-(1, 1),
-(1, 2),
-(1, 3),
-(1, 4),
-(2, 10),
-(3, 8),
-(3, 9),
-(4, 11),
-(4, 12),
-(5, 19),
-(6, 5),
-(6, 7),
-(7, 13),
-(8, 14),
-(8, 15),
-(8, 16),
-(9, 17),
-(9, 18),
-(10, 6);

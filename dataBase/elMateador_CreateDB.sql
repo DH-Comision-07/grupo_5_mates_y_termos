@@ -27,10 +27,7 @@ CREATE TABLE colors (
     name VARCHAR(60) UNIQUE NOT NULL
 );
 
-CREATE TABLE images (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(250) UNIQUE NOT NULL
-);
+
 
 -- Tabla products
 CREATE TABLE products (
@@ -45,13 +42,11 @@ CREATE TABLE products (
     FOREIGN KEY (color_id) REFERENCES colors(id)
 );
 
--- Tabla product_images para la relación de muchos a muchos entre productos e imágenes
-CREATE TABLE product_images (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(250) UNIQUE NOT NULL,
     product_id INT,
-    image_id INT,
-    FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (image_id) REFERENCES images(id)
+    FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 -- Tabla carrito de compras

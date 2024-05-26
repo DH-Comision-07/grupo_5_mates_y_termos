@@ -5,23 +5,35 @@ const db = require ("../database/models");
 const Op = db.Sequelize.Op;
 
 let adminService = {
-
-    create: async function (body, file) {
+    getAll: async () => {
         try {
-            return await db.Productos.create({
-                name: body.name, 
-                price: body.price, 
-                discount: body.discount,
-                stock: body.stock,            
-                description: body.description,
-                image: file.filename,
-                category: body.category
-            }) //esta es la promesa
+            const categorias = await db.Categorias.findAll()
+            const colores = await db.Colores.findAll()
+            return {categorias, colores}
         } catch (error) {
-            console.log(error)
+            console.error('Erro en Categorias y/o Colores:', error);
+            res.status(500).send('Internal Server Error');
         }
     },
-    update: async function (body,/* file */ params) {
+    
+    createProduct: async function(newProduct, newImage){
+        try {
+            let product = new Producto(newProduct);
+
+            let addProduct = await db.Productos.create(product, {include:[{association: "producto"},{association: "colores"},{association: "categorias"}]})
+            
+            const imagePromises = newImage.map(file => {
+                return db.Images.create({ name: file.filename, product_id: addProduct.id });
+            });
+            await Promise.all(imagePromises);
+            return addProduct.dataValues
+        } catch (error) {
+            console.error('Error en Creacion Producto:', error);
+            res.status(500).send('Internal Server Error');
+        } 
+    },
+    
+    update: async function (body,/* file */ params) { 
             try {
                 return await db.Productos.update({
                     name: body.name, 
@@ -50,14 +62,18 @@ let adminService = {
     }
 };
 
-function Producto({name, price, discount, stock, description, image, category}){
+function Producto({name, description, price, stock, categorias, colores,}){
     this.name = name;
-    this.price = price;
-    this.discount = discount;
-    this.stock = stock;
     this.description = description;
-    this.image = image;
-    this.category = category;
+    this.price = price;
+    this.stock = stock;
+    this.category_id = categorias;
+    this.color_id = colores;
+    
+};
+function Imagenes({name,productosId}){
+    this.name= name;
+    this.product_id = productosId;
 };
 
 module.exports = adminService;

@@ -10,7 +10,15 @@ module.exports = (Sequelize, DataTypes) => {
         name:{
             type: DataTypes.STRING,
             allowNull: false   
-        }
+        }, 
+        product_id:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'Productos',
+                key: 'id'
+            }  
+        }, 
     };
 
     let config ={
@@ -20,12 +28,8 @@ module.exports = (Sequelize, DataTypes) => {
     const Images = Sequelize.define(alias, cols, config);
 
     Images.associate = (models) => {
-        Images.belongsToMany(models.Productos, {
-            as:"imagenes",
-            through: "product_images",
-            foreignKey: "image_id",
-            otherKey:"product_id",
-            timestamps: false
+        Images.belongsTo(models.Productos, {
+            foreignKey: "product_id",
         })
     }
 

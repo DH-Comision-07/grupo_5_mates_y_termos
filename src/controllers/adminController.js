@@ -1,7 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const adminService = require('../model/adminService');
+const db = require ("../database/models");
+const Op = db.Sequelize.Op;
+
+const adminService = require ('../services/adminService');
 
 const adminController = { 
 
@@ -9,12 +12,25 @@ const adminController = {
     start: (req,res) =>{res.render("products/productsAdmin.ejs")},
 
     //Create products form
-    create: (req,res)=> {
-        res.render("products/productCreate.ejs");
+
+    create: async (req, res) => {
+        try {
+            const {categorias, colores} = await adminService.getAll() //esta es la promesa
+            res.render("products/productCreate.ejs", {categorias, colores});
+        } catch (error) {
+            console.error('Error fetching categories and colors:', error);
+            res.status(500).send('Internal Server Error');
+        }
     },
+    
     // Create products button
-    store:(req, res) => {
-        res.render("products/productsAdmin.ejs",{product: adminService.createProduct(req.params.id, req.body, req.files)});
+    store: async function (req,res) {
+        try {   
+            await adminService.createProduct(req.body, req.files);
+            res.redirect(`/admin`);
+        } catch (error) {
+            res.send(error);
+        } 
     },
 
     // Edit products form
