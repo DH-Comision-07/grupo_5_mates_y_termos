@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <%- include('../partials/head.ejs') %>
-    <title><%=product.name%>           0M.,.</title>
+    <title><%=productos.name%></title>
     <link rel="stylesheet" href="/css/productEdit.css">
 </head>
 
@@ -11,55 +11,53 @@
     
     <main class="main--form">
         
-        <form action="/admin/delete/<%=product.id%>?_method=delete" method="POST" class="product--form">
+        <form action="/admin/delete/<%=productos.id%>?_method=delete" method="POST" class="product--form">
             
             <label class="main__register--titulares">Eliminar producto </label>
+            
             <div class="control--form">
                 <label class="control__form--label" for="id" >ID del Producto:</label>
-                <input class="main__input--control"  type="text" id="id" name="id" value="<%=product.id%>" placeholder="ID producto" disabled>
+                <input class="main__input--control"  type="text" id="id" name="id" value="<%=productos.id%>" disabled>
             </div>
 
             <div class="control--form">
                 <label class="control__form--label" for="name" >Nombre del producto:</label>
-                <input class="main__input--control"  type="text" id="name" name="name" value="<%=product.name%>" placeholder="Nombre del producto" disabled>
+                <input class="main__input--control"  type="text" id="name" name="name" value="<%=productos.name%>" disabled>
             </div>
 
             <div class="control--form">
-                <label class="control__form--label" for="description" >Descripcion Producto:</label>
-                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6" disabled><%=product.description%></textarea>
+                <label class="control__form--label" for="description" >Descripción:</label>
+                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6" disabled><%=productos.description%></textarea>
             </div>
             
             <div class="control__form--photo">
-                <label for="images" class="control__form--label">Imagen del Producto:</label>
-                <% for(let images of product.images) { %>
-                    <img class="image__product" id="images" name="images" src="/images/<%= images %>" alt="<%=product.name %>">
+                <label for="images" class="control__form--label">Imágenes:</label>
+                <% for( let i = 0; i < productos.producto.length; i++ ) { %>
+                    <img class="image__product" id="images" name="images" src="/images/<%= productos.producto[i].name %>" alt="<%=productos.producto[i].name%>">
                 <% } %>
             </div>
+
             <div class="control--form">
-                <label class="control__form--label" for="price" >Precio del producto:</label>
-                <input class="main__input--control"  type="number" id="price" name="price" value="<%=product.price%>" placeholder="Precio" disabled>
+                <label class="control__form--label" for="price" >Precio:</label>
+                <input class="main__input--control"  type="number" id="price" name="price" value="<%=productos.price%>" disabled>
             </div>
             
-            <div class="control--form">
-                <label class="control__form--label" for="colors" >Colores del producto:</label>
-                <input class="main__input--control"  type="text" id="colors" name="colors" value="<%=product.colors%>" placeholder="Colores" disabled>
-            </div>
+                <label class="control__form--label" for="colores" >Colores:</label>
+                <input class="main__input--control" id="colores" name="colores" value="<%=productos.colores.name%>" disabled>
 
             <div class="control--form">
-                <label class="control__form--label" for="stockProduct" >Stock disponible del producto:</label>
-                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=product.stock%>" placeholder="Stock" disabled>
+                <label class="control__form--label" for="stockProduct" >Stock disponible:</label>
+                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=productos.stock%>" disabled>
             </div>
 
-            <div class="control--form">
-                <label class="control__form--label" for="category" >Categoria:</label>
-                <input class="main__input--control"  type="text" id="category" name="category" value="<%=product.category%>" placeholder="Categoria del producto" disabled>
-            </div>
-
+            <label class="control__form--label" for="categorias">Categoría</label>
+            <input class="main__input--control" id="colores" name="colores" value="<%=productos.categorias.name%>" disabled>
+           
             <br>
             <div class="main--buttons">
                 <button type="submit" class="main__buttons--products">Eliminar</button>
                 <a class="product--butt" href="/admin/">Cancelar</a>
-            </div>     
+            </div> 
         </form>
     </main>
 
