@@ -38,10 +38,10 @@
 
             
             <p class="main__input--desc">Fecha de Nacimiento:</p>
-            <input type="date" id="userBirthdate" name="userBirthdate" class="main__form--inputs" value="<%= locals.old && old.userBirthdate %>">
+            <input type="date" id="birthdate" name="birthdate" class="main__form--inputs" value="<%= locals.old && old.userBirthdate %>">
             
             <p class="main__input--desc" for="image">Foto Usuario:</p>
-            <input class="main__form--inputs" type="file" name="image" id="imageInput" accept=".jpg, .png, .svg">
+            <input class="main__form--inputs" type="file" name="image" id="image" accept=".jpg, .png, .svg">
             <div id="previewContainer"></div>
             <script src="/scripts/userRegisterPhoto.js"></script>
 

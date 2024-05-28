@@ -81,12 +81,3 @@ function Imagenes({name,productosId}){
 };
 
 module.exports = adminService;
-function Pelicula({title, rating, awards, release_date, length, genero, ranking}){
-    this.title = title;
-    this.rating = rating;
-    this.awards = awards;
-    this.release_date = release_date;
-    this.length = length;
-    this.genre_id = genero;
-    this.genre_id = ranking;
-}
