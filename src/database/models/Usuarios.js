@@ -32,7 +32,7 @@ module.exports = (Sequelize, DataTypes) => {
             allowNull: false   
         },
         role:{
-            type: DataTypes.ENUM('1','3'),
+            type: DataTypes.INTEGER(2),
             allowNull: false   
         },
     };

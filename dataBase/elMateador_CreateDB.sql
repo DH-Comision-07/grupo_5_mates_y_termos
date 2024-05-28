@@ -12,7 +12,7 @@ CREATE TABLE users (
     birthdate DATE NOT NULL ,
     image VARCHAR(250) NOT NULL DEFAULT 'avatar1.svg',
     password VARCHAR(250) NOT NULL,
-    role ENUM('1', '3') NOT NULL DEFAULT '1'
+    role VARCHAR(10) NOT NULL DEFAULT '1'
 );
 
 -- Tabla categories
