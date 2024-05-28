@@ -5,9 +5,9 @@ const bcrypt = require ("bcryptjs");
 const db = require ("../database/models");
 const Op = db.Sequelize.Op;
 
-let usersService = {
+let usersServices = {
 
-    createUsers: async function(newUsuario,newImage){
+    createUser: async function(newUsuario,newImage){
         console.log(newImage);
         try {
             let user = new Usuario(newUsuario);
@@ -21,7 +21,6 @@ let usersService = {
         } 
     }
 
-
 }
 
 function Usuario({name, lastName, userEmail, birthdate, passwordUser}){
@@ -29,13 +28,13 @@ function Usuario({name, lastName, userEmail, birthdate, passwordUser}){
     this.lastName = lastName;
     this.email = userEmail;
     this.birthdate = birthdate;
-    this.image="avatar1.svg";
+    this.image= "avatar1.svg";
     this.password = bcrypt.hashSync(passwordUser, 12);
     this.role = 1;
-    
 };
+
 function Imagen({image}){
     this.image= image;
 };
 
-module.exports = usersService;
+module.exports = usersServices;

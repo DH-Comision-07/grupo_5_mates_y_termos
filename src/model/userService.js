@@ -14,7 +14,7 @@ let usersService = {
         fs.writeFileSync(usersFilePath, JSON.stringify(this.users));
     },
     
-    createUsers: function(body, file){
+    createUserss: function(body, file){
         const id = idMayor.idMayorUsers() + 1;
         const {name, lastName, userEmail, userBirthdate} = body;
         const passwordUser = bcrypt.hashSync(body.passwordUser, 12) 

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require ("path");
 
-//let usersService = require('../model/userService');
-let usersService = require('../services/UserService');
+let usersService = require('../model/userService');
+let usersServices = require('../services/UserService');
 
 const usersFilePath = path.join(__dirname, '../model/users.json');
 
@@ -41,9 +41,8 @@ const usersController = {
         if (!error.isEmpty()){
             res.render("users/register.ejs", {errors: error.mapped(), old: req.body})
         } else { 
-            
             try {   
-                await usersService.createUsers(req.body, req.file.filename);
+                await usersServices.createUser(req.body, req.file.filename);
                 res.render("users/indexUsers.ejs");
             } catch (error) {
                 res.send(error);
