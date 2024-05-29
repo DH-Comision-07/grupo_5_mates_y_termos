@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title><%=product.name%></title>
+    <title><%=productos.name%></title>
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/productEdit.css">
 </head>
@@ -10,55 +10,72 @@
     <%- include('../partials/headerReduce.ejs') %>
     
     <main class="main--form">
-        <form action="/admin/update/<%=product.id%>?_method=PUT" method="POST" class="product--form">
+        <form action="/admin/update/<%=productos.id%>?_method=PUT" method="POST" class="product--form">
             <label class="main__register--titulares">Editar producto 
 
             </label>
             
             <div class="control--form">
                 <label class="control__form--label" for="id" >ID del Producto:</label>
-                <input class="main__input--control"  type="text" id="id" name="id" value="<%=product.id%>" placeholder="ID producto" disabled>
+                <input class="main__input--control"  type="text" id="id" name="id" value="<%=productos.id%>" placeholder="ID producto" disabled>
             </div>
 
             <div class="control--form">
                 <label class="control__form--label" for="name" >Nombre del producto:</label>
-                <input class="main__input--control"  type="text" id="name" name="name" value="<%=product.name%>" placeholder="Nombre del producto" required>
+                <input class="main__input--control"  type="text" id="name" name="name" value="<%=productos.name%>" placeholder="Nombre del producto" required>
             </div>
 
             <div class="control--form">
                 <label class="control__form--label" for="description" >Descripción:</label>
-                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6" required><%=product.description%></textarea>
+                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6" required><%=productos.description%></textarea>
             </div>
             
             <div class="control__form--photo">
                 <label for="images" class="control__form--label">Imágenes:</label>
-                <% for(let images of product.images) { %>
-                    <img class="image__product" id="images" name="images" src="/images/<%= images %>" alt="<%=product.name %>">
+                <% for( let i = 0; i < productos.producto.length; i++ ) { %>
+                    <img class="image__product" id="images" name="images" src="/images/<%= productos.producto[i].name %>" alt="<%=productos.producto[i].name%>">
                 <% } %>
             </div>
-            
+
             <div class="control--form">
                 <label class="control__form--label" for="price" >Precio:</label>
-                <input class="main__input--control"  type="number" id="price" name="price" value="<%=product.price%>" placeholder="Precio" required>
+                <input class="main__input--control"  type="number" id="price" name="price" value="<%=productos.price%>" placeholder="Precio" required>
             </div>
             
-            <div class="control--form">
-                <label class="control__form--label" for="colors" >Colores:</label>
-                <input class="main__input--control"  type="text" id="colors" name="colors" value="<%=product.colors%>" placeholder="Colores" required>
-            </div>
+                <label class="control__form--label" for="colores" >Colores:</label>
+                <select name="colores" id="colores" class="main__input--control">
+                    <% for( let i = 0; i <colores.length; i++ ) { %>
+                         <% if (colores[i].id == productos.color_id) { %>
+                            <option value="<%= colores[i].id %>" selected>
+                                <%= colores[i].name %>
+                            </option> 
+                        <% } else { %>
+                            <option value="<%= colores[i].id %>">
+                                <%= colores[i].name %>
+                            </option>  
+                        <% } %>
+                    <% } %>
+                </select>
+           
 
             <div class="control--form">
                 <label class="control__form--label" for="stockProduct" >Stock disponible:</label>
-                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=product.stock%>" placeholder="Stock" required>
+                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=productos.stock%>" placeholder="Stock" required>
             </div>
 
-            <label class="control__form--label" for="category">Categoría</label>
-            <select name="category" id="category" class="main__input--control">
-                <option value="<%=product.category%>"><%=product.category%></option>
-                <option value="Mates">Mates</option>
-                <option value="Termos">Termos</option>
-                <option value="Bombillas">Bombillas</option>
-                <option value="Bolso Matero">Bolsos Materos</option>
+            <label class="control__form--label" for="categorias">Categoría</label>
+            <select name="categorias" id="categorias" class="main__input--control">
+                <% for( let i = 0; i <categorias.length; i++ ) { %>
+                    <% if (categorias[i].id == productos.category_id) { %>
+                        <option value="<%= categorias[i].id %>" selected>
+                            <%= categorias[i].name %>
+                        </option> 
+                    <% } else { %>
+                        <option value="<%= categorias[i].id %>">
+                            <%= categorias[i].name %>
+                        </option>  
+                    <% } %>
+                <% } %>
             </select>
            
             <br>

@@ -13,4 +13,5 @@ routes.get("/productDetail/:id", productsController.detail);
 // /* CARRITO compra (cart) producto */ 
 routes.get("/productCart", productsController.getCart);
 
+
 module.exports = routes;

@@ -9,19 +9,11 @@
     <%- include('./partials/header.ejs') %>
    
     <main class="main--home">
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slides">
-                <% for(let i = 1; i <= 3; i++) { %>
-                    <img src="/images/slides/slide<%= i %>.jpg" alt="slide<%= i %>" class="slide">
-                <% } %>
-                </div>
-            </div>
-            <button class="prev"><i class="fa-solid fa-chevron-left main__section--arrow, icon--arrow"></i></button>
-            <button class="next"><i class="fa-solid fa-chevron-right main__section--arrow, icon--arrow"></i></button>
+        
+        <div class="banner--slides">
+            <img class="banner--slide" id="slider0" src="/images/slides/slide1.jpg">
         </div>
-        <script src="scripts/bannerScripts.js"></script>
-
+        
         <section class="main--section">
             <h3 class="main--titulares">Categorías</h3>
             <div class="main__section--div4">
@@ -78,13 +70,13 @@
                 </div>
         </section>
 
-        <section class="main--section">
+        <div class="main--section">
             <h3 class="main--titulares">Promociones</h3>
-            <article class="main--banner">
-                    <img class="banner" src="/images/banner-el-mateador-02.jpg" alt="Programacion Full Stack">                     
-            </article>
-        </section>
-
+        </div>
+        <div class="banner--slides">
+            <img class="banner--slide" id="slider1" src="/images/slides/slide3.jpg">
+        </div>
+        
         <section class="main--section">
             <h3 class="main--titulares">Ofertas exclusivas</h3>
             <div class="main__section--div4">
@@ -152,6 +144,9 @@
     </main>
     
     <%- include('./partials/footer.ejs') %>
+
+    <script src="scripts/bannerHome.js"></script>
+    <script src="scripts/bannerHome.js"></script>
 </body>
 </html>
 

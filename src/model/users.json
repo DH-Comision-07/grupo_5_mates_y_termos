@@ -5,7 +5,7 @@
         "lastName": "Quiroga",
         "userEmail": "rodolfo@example.com",
         "userBirthdate": "15/02/1996",
-        "image": "avatar1.jpg",
+        "image": "avatar1.svg",
         "passwordUser": "$2a$12$Xc7RjOi.8OwQGogKZ5LtKOe8yfWXQQ7fCrq1oM/mYW5OqrKVsVc8u",
         "role": "1"
     },
@@ -15,7 +15,7 @@
         "lastName": "Brito",
         "userEmail": "belen@example.com",
         "userBirthdate": "10/12/2007",
-        "image": "avatar2.jpg",
+        "image": "avatar2.svg",
         "passwordUser": "$2a$12$Rye7FTBWebRscMks.rDokuUuDDwmfOym02m/u2XdhpGPhpxwrDI3a",
         "role": "3"
     },
@@ -25,7 +25,7 @@
         "lastName": "Alvarez",
         "userEmail": "pedro@example.com",
         "userBirthdate": "09/07/1982",
-        "image": "avatar3.jpg",
+        "image": "avatar3.svg",
         "passwordUser": "$2a$12$eVLwgFTph8R/gYOjrHfWBOLregtppX0Lgwy5g4RI9rZrYykwvzqHy",
         "role": "1"
     }

@@ -10,29 +10,39 @@
     <%- include('../partials/header.ejs') %>
     
     <main class="main--form">
-        
         <div class="images__products">
-            <!-- <div><img class="image__product--grande" src="/images/<= images %>"
-                alt="el-mateador-imagenes-01" /></div> -->
-            <% for(let images of product.images) { %>
-                <img class="image__product" id="images" name="images" src="/images/<%= images %>" alt="<%=product.name %>">
+            <% for( let i = 0; i < productos.producto.length; i++ ) { %>
+                <img class="image__product" id="images" name="images" src="/images/<%= productos.producto[i].name %>" alt="<%=productos.producto[i].name%>">
             <% } %>
         </div>
-        <p class="titles"><%=product.name%></p>
-        <p class="price">$<%=product.price%></p>
-
-        <span style="box-shadow: 6px 6px 10px #344c2a99; border-radius: 6px;">
-        <label class="color label" for="color">Colores:</label>
-        <label class="price"> <%=product.colors%> </label>
+        <p class="titles"><%=productos.name%></p>
+        <p class="price">$<%=productos.price%></p>
+        
+        <span class="span--detail">
+            <label class="label" for="color">Categoria:</label>
+            <label class="price"> <%=productos.categorias.name%> </label>
         </span>
-        <label class="cantidad label" for="color">Cantidad:</label>
-        <select name="color" id="color">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="3">4</option>
-            <option value="3">5</option>
-        </select>
+
+        <span class="span--detail">
+            <label class="label" for="color">Colores:</label>
+            <label class="price"> <%=productos.colores.name%> </label>
+        </span>
+        <br>
+        <br>
+        <span class="span--detail" >
+            <label class="label" for="stock">Stock disponible:</label>
+            <label class="price"> <%=productos.stock%> </label>
+        </span>
+        
+        <span class="span--detail">
+            <label class="label" for="cantidad">Cantidad:</label>
+            <select class="select--stock" name="cantidad" id="cantidad">
+                <option value="1">1 Unidad</option>
+                <option value="2">2 Unidades</option>
+                <option value="3">3 Unidades</option>
+                <option value="3">4 Unidades</option>
+            </select>
+        </span>
 
         <div class="main__continuar">
             <a href="#"><button class="main__continuar--button">Comprar ahora</button></a>
@@ -42,7 +52,7 @@
         </div>
         <div>
             <h4 class="titles details">Descripción</h4>
-            <li class="product__details"><%=product.description%></li>
+            <li class="product__details"><%=productos.description%></li>
         </div>
 
     </main>
