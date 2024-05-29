@@ -1,4 +1,4 @@
-# Retrospectiva Sprint 5
+# Retrospectiva Sprint 6
 
 ## Dinamica Estrella de Mar
 
@@ -11,28 +11,30 @@
 
 **2. Hacer más.**
 
-    - Organizar encuentros semanales para revisar progresos y elaborar reportes
-    - Hacer más commits
+    - Discutir obstáculos encontrados y posibles soluciones.
+    - Establecer objetivos para la semana siguiente.
+    - Realizar más commits y revisar los hechos.
    
     
 
 **3. Continuar haciendo.**
 
-    - Seguir colaborando entre nosotros para resolver conflictos de manera efectiva.
-    - Continuar con la comunicación diaria a través de Whatsapp.
-    - Seguir el desarrollando mediante los tableros de trabajo en Trello.
-    
+    - Compartir actualizaciones de progreso con regularidad.
+    - Organizar y asignar tareas para garantizar el cumplimiento de los plazos.
+    - Mantener un seguimiento continuo de los objetivos establecidos.
+    - Fomentar un ambiente de colaboración y apoyo mutuo.
 
 
 **4. Hacer menos.**
 
-    - Trabajar individualmente sin consultarlo con el equipo.
-    - No participar en las reuniones .    
-    - No estar activamente en el grupo de whatsapp.
+    - Ausentarse de las reuniones programadas.
+    - No interactuar activamente en el grupo de WhatsApp.
+    - Desatender la comunicación y la colaboración grupal.
+    - Ignorar las actualizaciones y directrices compartidas.
     
 
 **5. Dejar de hacer.**
 
-    - No realizar ninguna tarea del tablero.
-    - No mostrar interes en el avance del proyecto.
-    - No responder en ningun canal.
+    - No preguntar por los avances del proyecto.
+    - No responder.
+    - No proponer reuniones.
