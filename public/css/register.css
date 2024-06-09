@@ -76,3 +76,10 @@
     flex-direction: column;
     margin-bottom: 15px;
 }
+.errores, .erroresName, .erroresLastName{
+    margin-top: -10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: red; 
+    font-size: 12px;
+}

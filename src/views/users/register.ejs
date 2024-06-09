@@ -14,17 +14,20 @@
     <%- include('../partials/headerReduce.ejs') %>
 
     <main class="main--form">
+        
         <form action="indexUsers" method="POST" class="form--register" enctype="multipart/form-data">
             <p class="main__register--titulares">Crear cuenta</p>
-            
+            <div class="errores"><ul></ul></div>
             <p class="main__input--desc">Nombre*</p>
-            <input class="main__form--inputs" type="text" name="name" id="name" value="<%= locals.old && old.name %>"  placeholder="Nombre">
+            <input class="main__form--inputs name" type="text" name="name" id="name" value="<%= locals.old && old.name %>"  placeholder="Nombre">
+            <div class="erroresName"><ul></ul></div>
             <% if (locals.errors && errors.name) { %>
                 <p class= "input--error" ><%= errors.name.msg %></p>
             <% } %>
             
             <p class="main__input--desc">Apellido*</p>
-            <input class="main__form--inputs" type="text" name="lastName" id="lastName" value="<%= locals.old && old.lastName %>" placeholder="Apellido">
+            <input class="main__form--inputs lastName" type="text" name="lastName" id="lastName" value="<%= locals.old && old.lastName %>" placeholder="Apellido">
+            <div class="erroresLastName"><ul></ul></div>
             <% if (locals.errors && errors.lastName) { %>
                 <p class= "input--error"><%= errors.lastName.msg %></p>
             <% } %>
@@ -72,7 +75,7 @@
             </div>
         </form>
     </main>
-
+    <script src="/scripts/usersRegister.js"></script>
     <%- include('../partials/footerReduce.ejs') %>  %>
 </body>
 </html> 

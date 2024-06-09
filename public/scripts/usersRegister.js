@@ -1,17 +1,32 @@
-document.getElementById('imageInput').addEventListener('change', function(event) {
-    const files = event.target.files;
-    const previewContainer = document.getElementById('previewContainer');
-    previewContainer.innerHTML = ''; // Limpiar previsualizaciones anteriores
+window.addEventListener("load", function(){
+    let formulario = document.querySelector("form.form--register");
 
-    for (const file of files) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.style.maxWidth = '90px';
-            img.style.maxHeight = '90px';
-            previewContainer.appendChild(img);
-        };
-        reader.readAsDataURL(file);
-    }
-});
+    formulario.addEventListener("submit", function(e){
+        let errores = [];
+        let campoNombre = document.querySelector("input.main__form--inputs");
+
+        if(campoNombre.value == ""){
+            errores = [];
+            errores.push("El campo Nombre tiene que estar completo");
+        } else if(campoNombre.value.length < 3){
+            errores.push("El campo Nombre tiene que tener al menos tres caracteres");
+        }
+        if (errores.length > 0){
+            e.preventDefault();
+            let ulErrores = document.querySelector("div.erroresName ul");
+            for (let i = 0; i < errores.length; i++) {
+            ulErrores.innerHTML += "<li>"+ errores[i] + "</li>" } 
+        }
+        let campoApellido = document.querySelector("input.lastName");
+
+        if(campoApellido.value == ""){
+            errores = [];
+            errores.push("El campo Apellido tiene que estar completo");
+        }
+        if (errores.length > 0){
+            e.preventDefault();
+            let ulErrores = document.querySelector("div.erroresLastName ul");
+            for (let i = 0; i < errores.length; i++) {
+            ulErrores.innerHTML += "<li>"+ errores[i] + "</li>" } 
+    }})
+})
