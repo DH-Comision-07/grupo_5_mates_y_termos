@@ -13,7 +13,7 @@ window.addEventListener("load", function(){
         }
         if (errores.length > 0){
             e.preventDefault();
-            let ulErrores = document.querySelector("div.erroresName");
+            let ulErrores = document.querySelector("div.erroresName ul");
             for (let i = 0; i < errores.length; i++) {
             ulErrores.innerHTML += "<li>"+ errores[i] + "</li>" } 
         }
@@ -27,8 +27,45 @@ window.addEventListener("load", function(){
         }
         if (errores.length > 0){
             e.preventDefault();
-            let ulErrores = document.querySelector("div.erroresLastName");
+            let ulErrores = document.querySelector("div.erroresLastName ul");
             for (let i = 0; i < errores.length; i++) {
             ulErrores.innerHTML += "<li>"+ errores[i] + "</li>" } 
-    }})
+        }
+        let campoEmail = document.querySelector("input.email");
+
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(campoEmail.value == ""){
+            errores = [];
+            errores.push("El campo Correo tiene que estar completo");
+        } else if(!emailRegex.test(campoEmail.value)){
+            errores.push("El campo Correo no es válido");
+        }
+        if (errores.length > 0){
+            e.preventDefault();
+            let ulErrores = document.querySelector("div.erroresEmail ul");
+            for (let i = 0; i < errores.length; i++) {
+            ulErrores.innerHTML += "<li>"+ errores[i] + "</li>" } 
+        }
+    
+        let campoPassword = document.querySelector("input.password");
+
+        // Validación del campo Contraseña
+        let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if(campoPassword.value == ""){
+            errores = [];
+            errores.push("El campo Contraseña tiene que estar completo");
+        } else if(!passwordRegex.test(campoPassword.value)){
+            errores.push("La contraseña debe tener al menos 8 caracteres, incluyendo letras mayúsculas, minúsculas, un número y un carácter especial.");
+        }
+
+        // Mostrar errores de la Contraseña
+        if (errores.length > 0){
+            e.preventDefault();
+            let ulErrores = document.querySelector("div.erroresPassword ul");
+            ulErrores.innerHTML = ""; // Limpiar errores previos
+            for (let i = 0; i < errores.length; i++) {
+                ulErrores.innerHTML += "<li>"+ errores[i] + "</li>";
+            }
+        }
+    })
 })

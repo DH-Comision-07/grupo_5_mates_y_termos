@@ -35,6 +35,7 @@
             
             <p class="main__input--desc">Correo electrónico*</p>            
             <input class="main__form--inputs email" type="email" name="userEmail" id="userEmail" value="<%= locals.old && old.userEmail %>"  placeholder="E-mail" >
+            <div class="erroresEmail"><ul></ul></div>
             <% if (locals.errors && errors.userEmail) { %>
                 <p class= "input--error"><%= errors.userEmail.msg %></p>
             <% } %>
@@ -49,7 +50,8 @@
             <script src="/scripts/userRegisterPhoto.js"></script>
 
             <p class="main__input--desc">Contraseña*</p>
-            <input class="main__form--inputs" type="password" name="passwordUser" id="passwordUser" placeholder="Contraseña">
+            <input class="main__form--inputs password" type="password" name="passwordUser" id="passwordUser" placeholder="Contraseña">
+            <div class="erroresPassword"><ul></ul></div>
             <% if (locals.errors && errors.passwordUser) { %>
                 <p class= "input--error"><%= errors.passwordUser.msg %></p>
             <% } %>
