@@ -34,7 +34,7 @@
        
             
             <p class="main__input--desc">Correo electrónico*</p>            
-            <input class="main__form--inputs" type="email" name="userEmail" id="userEmail" value="<%= locals.old && old.userEmail %>"  placeholder="E-mail" >
+            <input class="main__form--inputs email" type="email" name="userEmail" id="userEmail" value="<%= locals.old && old.userEmail %>"  placeholder="E-mail" >
             <% if (locals.errors && errors.userEmail) { %>
                 <p class= "input--error"><%= errors.userEmail.msg %></p>
             <% } %>
