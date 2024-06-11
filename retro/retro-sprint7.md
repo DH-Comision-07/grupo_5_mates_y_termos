@@ -1,4 +1,4 @@
-# Retrospectiva Sprint 6
+# Retrospectiva Sprint 7
 
 ## Dinamica Estrella de Mar
 
@@ -6,35 +6,27 @@
 
 
     - Sincronizar el avance del proyecto integrador con el contenido aprendido en las clases en tiempo real.
-    - Organizar las actividades para evitar conflictos durante el desarrollo del trabajo en paralelo.
+    - Coordinar el progreso del proyecto integrador con el contenido
 
 
 **2. Hacer más.**
 
-    - Discutir obstáculos encontrados y posibles soluciones.
-    - Establecer objetivos para la semana siguiente.
-    - Realizar más commits y revisar los hechos.
-   
+    - Definir objetivos para la próxima semana.
+    - Hacer más commits y revisar los ya realizados.   
     
 
 **3. Continuar haciendo.**
 
-    - Compartir actualizaciones de progreso con regularidad.
-    - Organizar y asignar tareas para garantizar el cumplimiento de los plazos.
-    - Mantener un seguimiento continuo de los objetivos establecidos.
-    - Fomentar un ambiente de colaboración y apoyo mutuo.
+    - Supervisar continuamente los objetivos fijados.
+    - Promover un entorno de colaboración y apoyo mutuo.
 
 
 **4. Hacer menos.**
 
-    - Ausentarse de las reuniones programadas.
-    - No interactuar activamente en el grupo de WhatsApp.
-    - Desatender la comunicación y la colaboración grupal.
-    - Ignorar las actualizaciones y directrices compartidas.
-    
+    - Descuidar la comunicación 
+    - Dejar pasar mucho tiempo desde que comienza el sprint hasta organizar las tareas  
 
 **5. Dejar de hacer.**
 
-    - No preguntar por los avances del proyecto.
-    - No responder.
-    - No proponer reuniones.
+    - No indagar sobre los avances del proyecto.
+    - No cumplir con las tareas de trello.
