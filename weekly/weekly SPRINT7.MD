@@ -2,26 +2,21 @@
 
 ## Tareas completadas:
 
-1- CRUD de usuarios.
+1- Validaciones del front-end con JavaScript
 
-2- CRUD de productos.
+2-  Validaciones del back-end con Express Validator
 
-3- Script de escritura.
-
-4- Script de datos.
-
-5- Diagrama DER.
 
 ## Impedimentos encontrados:
 
-1- La dificultad de algunos integrantes para comprender el contenido.
+1- Dificultad en el uso de alguno de los contenidos.
 
-2- No poder coincidir en tiempos de reunión.
+2- No poder reunirnos mucho.
 
 ## Soluciones propuestas:
 
-1- Verificar entre todos. 
+1- En discord poder despejar dudas 
 
-2- Charla, debate y análisis para lograr el consenso de una estructura óptima.
+2- Fomentar el apoyo en el grupo.
 
-3- Definir un día por semana para dividir y realizar las tareas.
+3- Volver a ver el material de playground para reforzar.
