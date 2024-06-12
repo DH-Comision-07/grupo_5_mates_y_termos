@@ -4,6 +4,10 @@ const path = require ("path");
 const usersFilePath = path.join(__dirname, '../model/users.json');
 let archivoUsuarios = JSON.parse(fs.readFileSync(usersFilePath));
 
+let usersServices = require('../services/UserService');
+const db = require ("../database/models");
+const Op = db.Sequelize.Op;
+
 // middelwares que determinan acceso segun el logueo
 let credentialMid = {
 	isLogged: function (req) {
@@ -30,6 +34,18 @@ let credentialMid = {
 	access: function (req, res, next) {
     	if (!this.isLogged(req) && req.cookies.userEmail) {
         	return req.session.logueadoUsuario = archivoUsuarios.find(usuario => usuario.userEmail == req.cookies.email);
+    	}
+    	next();
+	},
+
+	//para base de datos
+	access1: async function (req, res, next) {
+    	if (!this.isLogged(req) && req.cookies.userEmail) {
+			try {
+        		return req.session.logueadoUsuario = await db.Usuarios.findAll(usuario => usuario.email == req.cookies.email);
+			} catch (error) {
+				res.send("Error middleware " + error);
+			}
     	}
     	next();
 	},

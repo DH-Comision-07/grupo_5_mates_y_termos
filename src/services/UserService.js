@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require ("path");
-const bcrypt = require ("bcryptjs");
+//const bcrypt = require ("bcryptjs");
 
 const db = require ("../database/models");
 const Op = db.Sequelize.Op;
@@ -8,11 +8,15 @@ const Op = db.Sequelize.Op;
 let usersServices = {
 
     createUser: async function(newUsuario,newImage){
-        console.log(newImage);
+
         try {
-            let user = new Usuario(newUsuario);
-            //let image = new Imagen(newImage);
-            let addUser = await db.Usuarios.create(user, {include:[{association: "productos"}]})
+            //let user = new Usuario(newUsuario);
+            let {name, lastName, userEmail, birthdate, passwordUser} = newUsuario;
+            let email = userEmail
+            let image = newImage;
+            let password = passwordUser;
+            let role = 1;
+            let addUser = await db.Usuarios.create({name, lastName, email, birthdate, image, password, role}, {include:[{association: "productos"}]})
             
             return addUser.dataValues
         } catch (error) {
@@ -29,7 +33,7 @@ function Usuario({name, lastName, userEmail, birthdate, passwordUser}){
     this.email = userEmail;
     this.birthdate = birthdate;
     this.image= "avatar1.svg";
-    this.password = bcrypt.hashSync(passwordUser, 12);
+    this.password = passwordUser;
     this.role = 1;
 };
 

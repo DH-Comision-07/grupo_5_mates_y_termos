@@ -2,9 +2,11 @@ const fs = require('fs');
 const path = require ("path");
 
 let usersService = require('../model/userService');
-let usersServices = require('../services/UserService');
-
 const usersFilePath = path.join(__dirname, '../model/users.json');
+
+let usersServices = require('../services/UserService');
+const db = require ("../database/models");
+const Op = db.Sequelize.Op;
 
 const { validationResult } = require('express-validator');
 
@@ -12,6 +14,28 @@ const usersController = {
     start: (req,res) =>{res.render("users/indexUsers.ejs")},
 
     getLogin: (req,res)=> {res.render("users/login.ejs")},
+    
+    processLogin1: async function (req,res) {
+        let error = validationResult(req);
+        if (error.isEmpty()) {
+            try {
+                let usuarioLogueado = await db.Usuarios.findOne(usuario => usuario.email == req.body.userEmail);
+                if (usuarioLogueado){
+                    req.session.logueadoUsuario = usuarioLogueado;
+                }
+                // Guardo las cookies si el usuario tildo "recordar usuario"
+                if (usuarioLogueado && req.body.rememberUsers) {
+                    res.cookie("email", usuarioLogueado.email, {maxAge:90000});
+                }
+                res.redirect("/");
+            } catch (error) {
+                res.send("Error controller"+error);
+            }
+            
+        } else {
+            res.render("users/login.ejs", {errors: error.mapped(), old: req.body});
+        }
+    },
 
     processLogin: (req,res)=> {
         let error = validationResult(req);
@@ -45,7 +69,7 @@ const usersController = {
                 await usersServices.createUser(req.body, req.file.filename);
                 res.render("users/indexUsers.ejs");
             } catch (error) {
-                res.send(error);
+                res.send("Error al crear usuario " + error);
             }
         }
     },

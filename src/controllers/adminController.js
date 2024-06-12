@@ -18,7 +18,7 @@ const adminController = {
             const {categorias, colores} = await adminService.getAll() //esta es la promesa
             res.render("products/productCreate.ejs", {categorias, colores});
         } catch (error) {
-            console.error('Error fetching categories and colors:', error);
+            console.error('Error categories and colors:', error);
             res.status(500).send('Internal Server Error');
         }
     },
