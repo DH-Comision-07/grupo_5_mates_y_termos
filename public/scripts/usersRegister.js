@@ -2,8 +2,15 @@ window.addEventListener("load", function(){
     let formulario = document.querySelector("form.form--register");
 
     formulario.addEventListener("submit", function(e){
-        let errores = [];
+
+        document.querySelector("div.erroresName ul").innerHTML = '';
+        document.querySelector("div.erroresLastName ul").innerHTML = '';
+        document.querySelector("div.erroresEmail ul").innerHTML = '';    
+        document.querySelector("div.erroresPassword ul").innerHTML = '';
+
+        
         let campoNombre = document.querySelector("input.name");
+        let errores = [];
 
         if(campoNombre.value == ""){
             errores = [];
