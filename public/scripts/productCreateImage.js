@@ -1,7 +1,7 @@
 document.getElementById('imageInput').addEventListener('change', function(event) {
     const files = event.target.files;
     const previewContainer = document.getElementById('previewContainer');
-    previewContainer.innerHTML = ''; // Limpiar previsualizaciones anteriores
+    previewContainer.innerHTML = ''; // Limpia previsualizaciones anteriores
 
     for (const file of files) {
         const reader = new FileReader();

@@ -1,3 +1,5 @@
+const bcrypt = require ("bcryptjs");
+
 module.exports = (Sequelize, DataTypes) => {
     let alias = "Usuarios";
     let cols = {
@@ -51,6 +53,12 @@ module.exports = (Sequelize, DataTypes) => {
             otherKey:"product_id",
             timestamps: false
         })
-    }
+    },
+
+    Users.beforeCreate(async (user) => {
+        const salt = await bcrypt.genSalt(10); //Salt genera secuencia aleatoria de bytes 
+        user.password = await bcrypt.hash(user.password, salt);
+      })
+
     return Users;
 };

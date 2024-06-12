@@ -39,3 +39,20 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+/* Validaciones */
+.name{
+    margin-top: 0px; 
+}
+.price{
+    margin-top: 0px;
+}
+
+.erroresName, .erroresDescription, .erroresImage,.erroresPrice, .erroresStock{
+    color: red;
+    font-size: 12px;
+    margin-top: -6px;
+    margin-bottom: 10px;
+    margin-left: 21px;
+    width: 100%
+}

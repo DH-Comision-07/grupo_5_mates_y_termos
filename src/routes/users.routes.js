@@ -14,7 +14,7 @@ routes.get("/login", credentialMid.guestMid, usersController.getLogin);
 routes.post('/login', validateLogin, usersController.processLogin); 
 
 routes.get("/register", credentialMid.guestMid, usersController.getRegister);
-routes.post('/indexUsers',  uploadFileUsers.single("image"), validateRegister, usersController.register); 
+routes.post('/indexUsers',  validateRegister, uploadFileUsers.single("image"),  usersController.register); 
 
 routes.get("/logout", usersController.logout);
 
