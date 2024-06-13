@@ -39,7 +39,7 @@
             <script src="/scripts/productCreateImage.js"></script>
 
             <label class="main__input--desc" for="price">Precio</label>
-            <input type="number" class="price, main__form--inputs" id="price" name="price" value="<%= locals.old && old.price %>" >
+            <input type="number" class="main__form--inputs prices" id="price" name="price" value="<%= locals.old && old.price %>" >
             <% if (locals.errors && errors.price) { %>
                 <p class= "input--error" ><%= errors.price.msg %></p>
             <% } %>

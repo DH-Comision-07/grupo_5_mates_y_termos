@@ -40,14 +40,7 @@
     margin-top: 20px;
 }
 
-/* Validaciones */
-.name{
-    margin-top: 0px; 
-}
-.price{
-    margin-top: 0px;
-}
-
+/* Validaciones front end*/
 .erroresName, .erroresDescription, .erroresImage,.erroresPrice, .erroresStock{
     color: red;
     font-size: 12px;
