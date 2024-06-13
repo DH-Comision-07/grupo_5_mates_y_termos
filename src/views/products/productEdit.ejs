@@ -22,13 +22,15 @@
 
             <div class="control--form">
                 <label class="control__form--label" for="name" >Nombre del producto:</label>
-                <input class="main__input--control"  type="text" id="name" name="name" value="<%=productos.name%>" placeholder="Nombre del producto" required>
+                <input class="main__input--control name"  type="text" id="name" name="name" value="<%=productos.name%>" placeholder="Nombre del producto">
             </div>
+            <div class="erroresName"><ul></ul></div>
 
             <div class="control--form">
                 <label class="control__form--label" for="description" >Descripción:</label>
-                <textarea class="main__input--control" name="description" id="description" cols="15" rows="6" required><%=productos.description%></textarea>
+                <textarea class="main__input--control description" name="description" id="description" cols="15" rows="6"><%=productos.description%></textarea>
             </div>
+            <div class="erroresDescription"><ul></ul></div>
             
             <div class="control__form--photo">
                 <label for="images" class="control__form--label">Imágenes:</label>
@@ -36,11 +38,13 @@
                     <img class="image__product" id="images" name="images" src="/images/<%= productos.producto[i].name %>" alt="<%=productos.producto[i].name%>">
                 <% } %>
             </div>
+     
 
             <div class="control--form">
                 <label class="control__form--label" for="price" >Precio:</label>
-                <input class="main__input--control"  type="number" id="price" name="price" value="<%=productos.price%>" placeholder="Precio" required>
+                <input type="number" class="main__input--control prices"  id="price" name="price" value="<%=productos.price%>" placeholder="Precio">
             </div>
+            <div class="erroresPrice"><ul></ul></div>
             
                 <label class="control__form--label" for="colores" >Colores:</label>
                 <select name="colores" id="colores" class="main__input--control">
@@ -60,8 +64,9 @@
 
             <div class="control--form">
                 <label class="control__form--label" for="stockProduct" >Stock disponible:</label>
-                <input class="main__input--control"  type="number" id="stock" name="stock" value="<%=productos.stock%>" placeholder="Stock" required>
+                <input class="main__input--control stocks"  type="number" id="stock" name="stock" value="<%=productos.stock%>" placeholder="Stock">
             </div>
+            <div class="erroresStock"><ul></ul></div>
 
             <label class="control__form--label" for="categorias">Categoría</label>
             <select name="categorias" id="categorias" class="main__input--control">
@@ -88,5 +93,7 @@
     </main>
 
     <%- include('../partials/footerReduce.ejs') %>
+
+    <script src="/scripts/validationEditProduct.js"></script>
 </body>
 </html>

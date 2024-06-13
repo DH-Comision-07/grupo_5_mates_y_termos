@@ -1,11 +1,10 @@
 window.addEventListener("load", function() {
-    let formCreateProduct = document.querySelector("form.form--products");
+    let formEditProduct = document.querySelector("form.product--form");
 
-    formCreateProduct.addEventListener("submit", function(e) {
+    formEditProduct.addEventListener("submit", function(e) {
         
         // Vaciar las listas de errores previas
         document.querySelector("div.erroresName ul").innerHTML = '';
-        document.querySelector("div.erroresImage ul").innerHTML = '';
         document.querySelector("div.erroresDescription ul").innerHTML = '';
         document.querySelector("div.erroresPrice ul").innerHTML = '';
         document.querySelector("div.erroresStock ul").innerHTML = '';
@@ -48,22 +47,6 @@ window.addEventListener("load", function() {
                   ulErrores.innerHTML += "<li>" + error + "</li>";
               });
           }
-
-        // Campo Imagen
-        let imagen = document.querySelector("input.image");
-        //let erroresImage = [];
-        errores =[]
-        if (imagen.value == "") {
-            errores.push("Subir imagenes producto.");
-        }
-        
-        if (errores.length > 0) {
-            e.preventDefault();
-            let ulErrores = document.querySelector("div.erroresImage ul");
-            errores.forEach(error => {
-                ulErrores.innerHTML += "<li>" + error + "</li>";
-            });
-        }
 
         // Campo Precio
         let precio = document.querySelector("input.prices");
