@@ -13,7 +13,7 @@ routes.get('/', credentialMid.adminMid, adminController.start);
 
 /* CREAR (create) producto */
 routes.get("/create", credentialMid.adminMid, adminController.create);
-routes.post('/', validCreateProduct, uploadFile, adminController.store); 
+routes.post('/', uploadFile, validCreateProduct, adminController.store); 
 
 /* EDITAR (update) producto */ 
 routes.get("/update/:id/", credentialMid.adminMid, adminController.edit);
