@@ -12,62 +12,76 @@
     <%- include('../partials/headerReduce.ejs') %>
     
     <main class="main--form">
+        <script src="/scripts/validationCreateProduct.js"></script>
+        
         <form action="/admin/" method="POST" enctype="multipart/form-data" class="form--products">
             <p class="main__products--titulares">Crear Producto</p>
+            
             <label class="main__input--desc" for="name">Nombre</label></br>
-            <input class="main__form--inputs" id="name" name="name" required></br>
+            <input class="main__form--inputs name" id="name" name="name" value="<%= locals.old && old.name %>" >
+            <% if (locals.errors && errors.name) { %>
+                <p class= "input--error" ><%= errors.name.msg %></p>
+            <% } %>
+            <div class="erroresName"><ul></ul></div>            
 
             <label class="main__input--desc" for="description">Descripción</label></br>
-            <textarea class="main__form--inputs" id="description" name="description" cols="35" rows="6"></textarea></br>
-            
+            <textarea class="main__form--inputs description" id="description" name="description" value="<%= locals.old && old.description %>" cols="35" rows="6"></textarea></br>
+            <% if (locals.errors && errors.description) { %>
+                <p class= "input--error" ><%= errors.description.msg %></p>
+            <% } %>
+            <div class="erroresDescription"><ul></ul></div>
+
             <label class="main__input--desc" for="images">Imágenes</label>
-            <input class="main__form--inputs" type="file" name="images" id="imageInput" multiple accept="image/*">
+            <input class="main__form--inputs image" type="file" name="images" id="imageInput" multiple accept="image/*">
             <div id="previewContainer"></div>
+            <div class="erroresImage"><ul></ul></div>
             
             <script src="/scripts/productCreateImage.js"></script>
 
             <label class="main__input--desc" for="price">Precio</label>
-            <input type="number" class="main__form--inputs" id="price" name="price" ></br>          
-            
+            <input type="number" class="main__form--inputs prices" id="price" name="price" value="<%= locals.old && old.price %>" >
+            <% if (locals.errors && errors.price) { %>
+                <p class= "input--error" ><%= errors.price.msg %></p>
+            <% } %>
+            <div class="erroresPrice"><ul></ul></div>
+
             <label class="main__input--desc" for="colores">Colores</label>
-            <select name="colores"  class="main__form--inputs">
+            <select name="colores"  class="main__form--inputs" value="<%= locals.old && old.colores %>">
                 <% for( let i = 0; i < colores.length; i++ ) { %>
                     <option value="<%= colores[i].id %>">
                         <%= colores[i].name %>
                     </option>  
                 <% } %>
             </select>
-
-           <!--  <label class="main__input--desc" for="colores">Agregar color</label>
-            <input class="main__form--inputs" id="colores" name="colores" ></br> -->
-            
-              <!--   
-                 <label class="main__input--desc">Colores:</label>
-            <fieldset  class="main__form--inputs" id="colorAdd">
-                <div>
-                    <button type="button" onclick="addColor()" class="form__buttons--colors">Agregar Color</button>
-                </div>
-            </fieldset>
-            <script src="/scripts/productCreateColors.js"></script> -->
+            <% if (locals.errors && errors.colores) { %>
+                <p class= "input--error" ><%= errors.colores.msg %></p>
+            <% } %>
             
             <label class="main__input--desc" for="stock">Stock</label>
-            <input type="number" class="main__form--inputs" id="stock" name="stock"></br>
+            <input type="number" class="main__form--inputs stocks" id="stock" name="stock" value="<%= locals.old && old.stock %>"></br>
+            <% if (locals.errors && errors.stock) { %>
+                <p class= "input--error" ><%= errors.stock.msg %></p>
+            <% } %>
+            <div class="erroresStock"><ul></ul></div>
 
             <label class="main__input--desc" for="categorias">Categoría</label>
-            <select name="categorias"  class="main__form--inputs">
+            <select name="categorias"  class="main__form--inputs" value="<%= locals.old && old.categorias %>">
                 <% for( let i = 0; i < categorias.length; i++ ) { %>
                     <option value="<%= categorias[i].id %>">
                         <%= categorias[i].name %>
                     </option>  
                 <% } %>
             </select>
+            <% if (locals.errors && errors.categorias) { %>
+                <p class= "input--error" ><%= errors.categorias.msg %></p>
+            <% } %>
             
             <div class="main--buttons">
                 <button class="main__buttons--products" type="submit" >Crear</button>
                 <a class="product--butt" href="/admin/">Cancelar</a>
             </div>
         </form>
-
+        
     </main>
 
     <%- include('../partials/footerReduce.ejs') %>

@@ -6,6 +6,8 @@ const Op = db.Sequelize.Op;
 
 const adminService = require ('../services/adminService');
 
+const { validationResult } = require('express-validator');
+
 const adminController = { 
 
     // Admin Products
@@ -18,20 +20,26 @@ const adminController = {
             const {categorias, colores} = await adminService.getAll() //esta es la promesa
             res.render("products/productCreate.ejs", {categorias, colores});
         } catch (error) {
-            console.error('Error fetching categories and colors:', error);
+            console.error('Error categories and colors:', error);
             res.status(500).send('Internal Server Error');
         }
     },
     
     // Create products button
     store: async function (req,res) {
-        try {   
+        let error = validationResult(req);
+        if (error.isEmpty()) { 
+        try {
             await adminService.createProduct(req.body, req.files);
             res.redirect(`/admin`);
         } catch (error) {
             res.send(error);
         } 
-    },
+    } else {
+        const {categorias, colores} = await adminService.getAll();
+        res.render("products/productCreate.ejs", {categorias, colores, errors: error.mapped(), old: req.body});
+    }
+        },
 
     // Edit products form
     edit: async function(req, res) {

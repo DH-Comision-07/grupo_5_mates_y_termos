@@ -23,7 +23,6 @@ let productsService = {
                 id: 0,
                 name: "Producto No Encontrado",
                 price: 0,
-                discount: 0,
                 stock: 0,
                 description: "",
                 image: "",
