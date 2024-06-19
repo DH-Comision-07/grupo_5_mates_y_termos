@@ -29,7 +29,7 @@ const usersController = {
                 }
                 res.redirect("/");
             } catch (error) {
-                res.send("Error controller"+error);
+                res.send("Error controller" + error);
             }
             
         } else {

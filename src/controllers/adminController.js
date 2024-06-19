@@ -6,6 +6,8 @@ const Op = db.Sequelize.Op;
 
 const adminService = require ('../services/adminService');
 
+const { validationResult } = require('express-validator');
+
 const adminController = { 
 
     // Admin Products
@@ -25,13 +27,19 @@ const adminController = {
     
     // Create products button
     store: async function (req,res) {
-        try {   
+        let error = validationResult(req);
+        if (error.isEmpty()) { 
+        try {
             await adminService.createProduct(req.body, req.files);
             res.redirect(`/admin`);
         } catch (error) {
             res.send(error);
         } 
-    },
+    } else {
+        const {categorias, colores} = await adminService.getAll();
+        res.render("products/productCreate.ejs", {categorias, colores, errors: error.mapped(), old: req.body});
+    }
+        },
 
     // Edit products form
     edit: async function(req, res) {
