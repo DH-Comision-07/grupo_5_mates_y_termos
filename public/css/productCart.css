@@ -17,7 +17,7 @@
 
 .main__item {
   width: 90%;
-  height: 95px;
+  
   display: flex;
   justify-content: space-between;
   border: 1px solid #1B1B1D;
@@ -75,11 +75,17 @@
 }
 
 .main__continuar--button {
-  width: 100%;
+  width: 40%;
   background: #344C2A;
-  border: none;
   border-radius: 10px; 
   font-family: "Poppins", sans-serif;
-  padding: 12px;
+  padding: 10px;
   color: white;
+}
+
+@media (min-width:1200px) {
+  .max__width--cart{
+      max-width: 1000px;
+      margin: 0 auto;
+  }
 }

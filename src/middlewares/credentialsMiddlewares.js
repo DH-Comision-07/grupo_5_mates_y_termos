@@ -1,9 +1,6 @@
 const fs = require('fs');
 const path = require ("path");
 
-const usersFilePath = path.join(__dirname, '../model/users.json');
-let archivoUsuarios = JSON.parse(fs.readFileSync(usersFilePath));
-
 let usersServices = require('../services/UserService');
 const db = require ("../database/models");
 const Op = db.Sequelize.Op;
@@ -29,25 +26,18 @@ let credentialMid = {
 		};
 		next();
 	},
-	
-	// Middlewares loguea automaticamente si esta el mail en cookies
-	access: function (req, res, next) {
-    	if (!this.isLogged(req) && req.cookies.userEmail) {
-        	return req.session.logueadoUsuario = archivoUsuarios.find(usuario => usuario.userEmail == req.cookies.email);
-    	}
-    	next();
-	},
 
-	//para base de datos
-	access1: async function (req, res, next) {
+	//acceso desde base de datos
+	access: async function (req, res, next) {
     	if (!this.isLogged(req) && req.cookies.userEmail) {
 			try {
-        		return req.session.logueadoUsuario = await db.Usuarios.findAll(usuario => usuario.email == req.cookies.email);
+        		return req.session.logueadoUsuario = db.Usuarios.findOne({ where: { email: req.cookies.Usermail } });
 			} catch (error) {
 				res.send("Error middleware " + error);
 			}
     	}
-    	next();
+		next();
+    	
 	},
 	
 	currentUserMid: function (req, res, next) {
@@ -68,3 +58,59 @@ credentialMid.access = credentialMid.access.bind(credentialMid);
 credentialMid.currentUserMid = credentialMid.currentUserMid.bind(credentialMid);
 
 module.exports = credentialMid;
+
+
+
+/* let credentialMid = {
+    isLogged: function (req) {
+        return req.session.logueadoUsuario !== undefined;
+    },
+
+    guestMid: function (req, res, next) {
+        if (this.isLogged(req)) {
+            return res.redirect("/");
+        }
+        next();
+    },
+
+    adminMid: function (req, res, next) {
+        if (!this.isLogged(req) || !this.isAdmin(req.session.logueadoUsuario)) {
+            return res.render("users/sinPermiso.ejs");
+        }
+        next();
+    },
+
+    access: async function (req, res, next) {
+        if (!this.isLogged(req) && req.cookies.userEmail) {
+            try {
+                let usuarioEncontrado = await db.Usuarios.findOne({ where: { email: req.cookies.userEmail } });
+                if (usuarioEncontrado) {
+                    req.session.logueadoUsuario = usuarioEncontrado;
+                }
+            } catch (error) {
+                return res.send("Error middleware: " + error);
+            }
+        }
+        next();
+    },
+
+    currentUserMid: function (req, res, next) {
+        if (this.isLogged(req)) {
+            res.locals.usuario = req.session.logueadoUsuario;
+            res.locals.isAdmin = this.isAdmin(req.session.logueadoUsuario);
+        }
+        next();
+    },
+
+    isAdmin: function (usuario) {
+        return usuario && usuario.role === 3;
+    }
+};
+
+// Asegurarse de que las funciones están vinculadas al objeto `credentialMid`
+credentialMid.guestMid = credentialMid.guestMid.bind(credentialMid);
+credentialMid.adminMid = credentialMid.adminMid.bind(credentialMid);
+credentialMid.access = credentialMid.access.bind(credentialMid);
+credentialMid.currentUserMid = credentialMid.currentUserMid.bind(credentialMid);
+
+module.exports = credentialMid; */
