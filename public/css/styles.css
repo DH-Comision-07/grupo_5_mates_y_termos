@@ -420,7 +420,7 @@
 
 /* Media Query */
 @media screen and (max-width:481px) {
-    .nav--option{
+    .header__nav--menu{
         display: flex;
         visibility: hidden;
         flex-direction: column;
@@ -436,8 +436,10 @@
         padding-top: 54px;
         padding-left: 40px;
         box-shadow: 0 0 0 100vmax rgba(236, 236, 236, 0.7);
+        flex-direction: column;
+        align-items: end;
     }
-    .nav--option.visible{
+    .header__nav--menu.visible{
         display: inline-block;
         gap: 33px;
         visibility: visible;
@@ -451,23 +453,19 @@
         background-color: transparent;
         align-self: end;        
     }
-    .nav--option {
-        flex-direction: column;
-        align-items: end;
-    }
+ 
     .header__nav--menu a{
         font-size: 16px;
         padding-bottom: 16px;
         font-weight: 400;
         color:black;
     }
-    .nav--login{
-        display: none;
+    .visibleCart{
+        display:none
     }
 }
 
 @media(min-width:481px) {
-  
     .header__nav--menu{
         display: flex;
         justify-content: space-between;
@@ -496,7 +494,9 @@
     .header__div--burger, .header__div--cart, .close--burger{
         display: none;
     }
-    
+    .visibleline{
+        display: none;
+    }
 }
 
 @media(min-width:769px) {
