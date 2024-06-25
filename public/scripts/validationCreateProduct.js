@@ -13,7 +13,6 @@ window.addEventListener("load", function() {
         let errores =[]
         // Campo Nombre
         let nombre = document.querySelector("input.name");
-        //let erroresNombre = [];
         errores =[]
         if (nombre.value == "") {
             errores.push("Completar Nombre del producto");
@@ -32,7 +31,6 @@ window.addEventListener("load", function() {
 
           // Campo Descripción
           let description = document.querySelector("textarea.description");
-          //let erroresDescripcion = [];
           errores =[]
           if (description.value == "") {
               errores.push("Completar descripción del producto");
@@ -51,7 +49,6 @@ window.addEventListener("load", function() {
 
         // Campo Imagen
         let imagen = document.querySelector("input.image");
-        //let erroresImage = [];
         errores =[]
         if (imagen.value == "") {
             errores.push("Subir imagenes producto.");
@@ -67,7 +64,6 @@ window.addEventListener("load", function() {
 
         // Campo Precio
         let precio = document.querySelector("input.prices");
-        //let erroresPrecio = [];
         errores =[]
         if (precio.value == "") {
             errores.push("Completar Precio del producto");
@@ -83,7 +79,6 @@ window.addEventListener("load", function() {
 
         // Campo Stock
         let stock = document.querySelector("input.stocks");
-        //let erroresStock = [];
         errores =[]
         if (stock.value == "") {
             errores.push("Cargar stock del producto");

@@ -14,7 +14,11 @@ routes.get("/login", credentialMid.guestMid, usersController.getLogin);
 routes.post('/login', validateLogin, usersController.processLogin); 
 
 routes.get("/register", credentialMid.guestMid, usersController.getRegister);
-routes.post('/indexUsers',  validateRegister, uploadFileUsers.single("image"),  usersController.register); 
+routes.post('/indexUsers',  uploadFileUsers.single("image"),  validateRegister, usersController.register); 
+
+/* EDITAR (update)  */ 
+routes.get("/edit/:id/", usersController.getUpdate);
+routes.put('/edit/:id/', validateRegister, usersController.update); 
 
 routes.get("/logout", usersController.logout);
 

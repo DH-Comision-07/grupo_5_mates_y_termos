@@ -34,13 +34,29 @@ let adminService = {
     },
     getOneBy: async function (id) {
         try {
-            return await db.Productos.findByPk(id,{include:[{association: "producto"},{association: "colores"},{association: "categorias"},{association: "usuarios"}]}); //esta es la promesa
+            const producto = await db.Productos.findByPk(id, {
+                include: [
+                    { association: "producto" },
+                    { association: "colores" },
+                    { association: "categorias" },
+                    { association: "usuarios" }
+                ]
+            });
+    
+            if (!producto) {
+                return {
+                    id: 0,
+                    name: "Producto No Encontrado"
+                };
+            }
+    
+            return producto;
         } catch (error) {
-            console.log(error)
+            console.log(error);
             return {
                 id: 0,
-                name: "Producto No Encontrado",
-            }  
+                name: "Producto No Encontrado"
+            };
         }
     },
 

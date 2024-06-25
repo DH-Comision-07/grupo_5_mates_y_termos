@@ -1,12 +1,3 @@
-.main--form {
-    box-shadow:
-        inset 0 -10px 40px 21px rgb(255,255,255),
-        inset 0 6px 9px 0px rgb(100, 100, 100, 0.6 );
-    padding: 10px;
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-}
-
 .main__form--inputs {
     width: 100%;
     padding: 10px;
@@ -14,20 +5,14 @@
     margin-bottom: 15px;
     border: 1px solid #1B1B1D;
     font-size: 15px;
-    background-color: rgb(255,255,255)
+}
+.main--image{
+    width: 24%;
 }
 
-.main__input--desc {
-    text-align: left;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    color:#1B1B1D;
-}
-
-.form--products {
+.form--register {
     width: 100%;
     max-width: 550px;
-    /* background-color: #f1f3f0; */
     border: none;
     padding: 20px 30px;
     color: black;
@@ -37,17 +22,7 @@
     padding: 20px 30px;
 }
 
-.form--products h4 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-/* .form--products a:hover {
-    color: black;
-    text-decoration: underline;
-} */
-
-.main__buttons--products {
+.main__buttons--register {
     width: 100%;
     background: #344C2A;
     border: none;
@@ -56,22 +31,20 @@
     padding: 12px;
     color: white;
     margin-bottom: 20px;
-    margin-top: 20px;
 }
-
-.main__products--titulares {
+.main__register--titulares {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     color:#1B1B1D;
     height: 40px;
-    /* margin-left: 20px;  */
-  }
+}
 
 .main__input--desc {
     text-align: left;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     color:#1B1B1D;
+    margin-left: 9px;
 }
 
 .main__form--bottom-options{
@@ -79,4 +52,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
+.register__cancel--butt {
+    width: 100%;
+    background: #344C2A;
+    text-decoration: none;
+    border-radius: 10px; 
+    font-family: "Poppins", sans-serif;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    list-style: none;
+}
+.main--buttons{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.errores, .erroresName, .erroresLastName, .erroresEmail , .erroresPassword{
+    margin-top: -10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: red; 
+    font-size: 12px;
+}

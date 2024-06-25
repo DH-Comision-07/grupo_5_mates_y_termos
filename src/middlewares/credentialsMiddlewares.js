@@ -1,10 +1,6 @@
 const fs = require('fs');
 const path = require ("path");
 
-const usersFilePath = path.join(__dirname, '../model/users.json');
-let archivoUsuarios = JSON.parse(fs.readFileSync(usersFilePath));
-
-let usersServices = require('../services/UserService');
 const db = require ("../database/models");
 const Op = db.Sequelize.Op;
 
@@ -29,25 +25,22 @@ let credentialMid = {
 		};
 		next();
 	},
-	
-	// Middlewares loguea automaticamente si esta el mail en cookies
-	access: function (req, res, next) {
-    	if (!this.isLogged(req) && req.cookies.userEmail) {
-        	return req.session.logueadoUsuario = archivoUsuarios.find(usuario => usuario.userEmail == req.cookies.email);
-    	}
-    	next();
-	},
 
-	//para base de datos
-	access1: async function (req, res, next) {
+	//acceso desde base de datos
+	access: async function (req, res, next) {
     	if (!this.isLogged(req) && req.cookies.userEmail) {
 			try {
-        		return req.session.logueadoUsuario = await db.Usuarios.findAll(usuario => usuario.email == req.cookies.email);
+				let usuario = await db.Usuarios.findOne({ where: { email: req.cookies.userEmail } });
+				if (usuario) {
+				return req.session.logueadoUsuario = usuario;
+			}
+				/* return req.session.logueadoUsuario = db.Usuarios.findOne({ where: { email: req.cookies.userEmail } }); */
 			} catch (error) {
 				res.send("Error middleware " + error);
 			}
     	}
-    	next();
+		next();
+    	
 	},
 	
 	currentUserMid: function (req, res, next) {

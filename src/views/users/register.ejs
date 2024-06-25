@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/head.ejs') %>
     <title>Register</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
@@ -17,29 +12,29 @@
         
         <form action="indexUsers" method="POST" class="form--register" enctype="multipart/form-data">
             <p class="main__register--titulares">Crear cuenta</p>
-            <div class="errores"><ul></ul></div>
+
+           
             <p class="main__input--desc">Nombre*</p>
             <input class="main__form--inputs name" type="text" name="name" id="name" value="<%= locals.old && old.name %>"  placeholder="Nombre">
-            <div class="erroresName"><ul></ul></div>
-            <% if (locals.errors && errors.name) { %>
-                <p class= "input--error" ><%= errors.name.msg %></p>
+             <% if (locals.errors && errors.name) { %>
+                <li class= "input--error" ><%= errors.name.msg %></li>
             <% } %>
-            
+            <div class="erroresName"><ul></ul></div>
+
             <p class="main__input--desc">Apellido*</p>
             <input class="main__form--inputs lastName" type="text" name="lastName" id="lastName" value="<%= locals.old && old.lastName %>" placeholder="Apellido">
-            <div class="erroresLastName"><ul></ul></div>
+            
             <% if (locals.errors && errors.lastName) { %>
-                <p class= "input--error"><%= errors.lastName.msg %></p>
+                <li class= "input--error"><%= errors.lastName.msg %></li>
             <% } %>
-       
+            <div class="erroresLastName"><ul></ul></div>
             
             <p class="main__input--desc">Correo electrónico*</p>            
             <input class="main__form--inputs email" type="email" name="userEmail" id="userEmail" value="<%= locals.old && old.userEmail %>"  placeholder="E-mail" >
-            <div class="erroresEmail"><ul></ul></div>
             <% if (locals.errors && errors.userEmail) { %>
-                <p class= "input--error"><%= errors.userEmail.msg %></p>
+                <li class= "input--error"><%= errors.userEmail.msg %></li>
             <% } %>
-
+            <div class="erroresEmail"><ul></ul></div>
             
             <p class="main__input--desc">Fecha de Nacimiento:</p>
             <input type="date" id="birthdate" name="birthdate" class="main__form--inputs" value="<%= locals.old && old.userBirthdate %>">
@@ -51,15 +46,16 @@
 
             <p class="main__input--desc">Contraseña*</p>
             <input class="main__form--inputs password" type="password" name="passwordUser" id="passwordUser" placeholder="Contraseña">
-            <div class="erroresPassword"><ul></ul></div>
             <% if (locals.errors && errors.passwordUser) { %>
-                <p class= "input--error"><%= errors.passwordUser.msg %></p>
+                <li class= "input--error"><%= errors.passwordUser.msg %></li>
             <% } %>
+            <div class="erroresPassword"><ul></ul></div>
             
+
             <p class="main__input--desc">Repetir contraseña*</p>
             <input class="main__form--inputs" type="password" name="confirmPassword" id="confirmPassword" placeholder="Repetir Contraseña">
             <% if (locals.errors && errors.confirmPassword) { %>
-                <p class= "input--error"><%= errors.confirmPassword.msg %></p>
+                <li class= "input--error"><%= errors.confirmPassword.msg %></li>
             <% } %>
             
             <div>
@@ -67,17 +63,19 @@
             </div>
             <br>
 
-        <div class="main--buttons">
-            <button class="main__buttons--register" type="submit" >Crear cuenta</button>
-            <a class="register__cancel--butt" href="/">Cancelar</a>
-        </div>
+            <div class="main--buttons">
+                <button class="main__buttons--register" type="submit" >Crear cuenta</button>
+                <a class="register__cancel--butt" href="/">Cancelar</a>
+            </div>
             
             <div class="main__form--bottom-options">
                 <p><a href="/users/login">¿Ya tengo Cuenta?</a></p>
             </div>
         </form>
     </main>
-    <script src="/scripts/usersRegister.js"></script>
+    
     <%- include('../partials/footerReduce.ejs') %>  %>
+
+    <script src="/scripts/usersRegister.js"></script>
 </body>
 </html> 
