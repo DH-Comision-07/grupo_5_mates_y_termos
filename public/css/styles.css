@@ -12,10 +12,8 @@
     background-color: #ececec;
     margin: 0;
     padding: 15px 15px 10px 15px;
-
     position: sticky;
     top: 0;
-   
 }
 .header__main--bar {
     width: 100%;
@@ -49,8 +47,6 @@
     margin-top:-9px;
     font-size: 13px;
 }
-
-
 /* Fin Header */
    
 /* Desarrollo Footer */
@@ -120,7 +116,6 @@
         color: #344C2A;
     }
 }
-
 .footer__section--iconLocation {
     display:flex;
     color:#FFFFFF;
@@ -193,7 +188,7 @@
 
 .main__section{
     background: #fff;
-    background: linear-gradient(to bottom, #e7e7e7, #fff 3%); /* Adjust colors as needed */
+    background: linear-gradient(to bottom, #e7e7e7, #fff 3%);
     padding: 10px;
     font-family: "Poppins", sans-serif;
     font-size: 20px;
@@ -213,9 +208,9 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid #1B1B1D;
-  border-radius: 10px; /* Adjust the border-radius as needed for rounded corners */
-  margin: 20px 20px 20px 20px; /* Adjust the margin to add space between items */
-  overflow: hidden; /* Ensure rounded corners overflow correctly */
+  border-radius: 10px;
+  margin: 20px 20px 20px 20px;
+  overflow: hidden;
 }  
 
 .main__item--div-img, .main__item--product, .main__item--right {
@@ -297,7 +292,6 @@
     font-size: 15px;
     padding: 12px;
     color: white;
-   
 }
 
 .main__continuar {
@@ -375,6 +369,7 @@
 .product__details li {
     padding: 10px;
 }
+
 /* Error404 */
 .body__div--error404 {
     display: flex;
@@ -397,8 +392,8 @@
     background-color:#4d9e2e;
     border-radius: 9px;
 }
-/* menu hamburguesa */
 
+/* menu hamburguesa */
 
 .header__nav--menu ul { 
     list-style: none;
@@ -414,9 +409,9 @@
 .header__div--burger, .header__div--cart{
     display: block;
     margin-top: 21px;
-    font-size: 16px;
-    
+    font-size: 16px;   
 }
+
 
 /* Media Query */
 @media screen and (max-width:481px) {
@@ -453,7 +448,6 @@
         background-color: transparent;
         align-self: end;        
     }
- 
     .header__nav--menu a{
         font-size: 16px;
         padding-bottom: 16px;
@@ -463,13 +457,20 @@
     .visibleCart{
         display:none
     }
+    .burger--userName{
+        font-weight: 600;
+    }
+    .figure--avatar{
+        display: none;
+    }
+    
 }
 
 @media(min-width:481px) {
+  
     .header__nav--menu{
         display: flex;
         justify-content: space-between;
-        
     }
     .header__nav--option {
         list-style-type: none;
@@ -491,7 +492,7 @@
         text-decoration: none;
         font-size: 12px;
     }
-    .header__div--burger, .header__div--cart, .close--burger{
+    .header__div--burger, .header__div--cart, .close--burger, .burger--userName{
         display: none;
     }
     .visibleline{
@@ -500,7 +501,6 @@
 }
 
 @media(min-width:769px) {
-
 }
 
 @media (min-width:1200px) {

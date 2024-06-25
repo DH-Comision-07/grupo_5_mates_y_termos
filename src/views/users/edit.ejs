@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Editar</title>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+    <%- include('../partials/headerReduce.ejs') %>
+
+    <main class="main--form">
+        
+        <form action="/users/edit/<%= usuario.id %>?_method=PUT" method="POST" class="form--register">
+            <p class="main__register--titulares">Editar Usuario</p>
+            
+            <img  class="main__form--inputs main--image" src="/images/avatars/<%= usuario.image %>" alt="Mates">
+
+            <p class="main__input--desc">Correo electrónico</p>            
+            <input class="main__form--inputs" type="email" name="userEmail" id="userEmail" value="<%=usuario.email%>" disabled >
+      
+           
+            <p class="main__input--desc">Nombre*</p>
+            <input class="main__form--inputs name" type="text" name="name" id="name" value="<%=usuario.name%>" placeholder="Nombre">
+             <% if (locals.errors && errors.name) { %>
+                <li class= "input--error" ><%= errors.name.msg %></li>
+            <% } %>
+            <div class="erroresName"><ul></ul></div>
+
+            <p class="main__input--desc">Apellido*</p>
+            <input class="main__form--inputs lastName" type="text" name="lastName" id="lastName" value="<%=usuario.lastName%>" placeholder="Apellido">
+            <% if (locals.errors && errors.lastName) { %>
+                <li class= "input--error"><%= errors.lastName.msg %></li>
+            <% } %>
+            <div class="erroresLastName"><ul></ul></div>
+            
+            
+            <p class="main__input--desc">Fecha de Nacimiento:</p>
+            <input type="date" id="birthdate" name="birthdate" class="main__form--inputs" value="<%=usuario.birthdate%>">
+            
+            <br>
+
+            <div class="main--buttons">
+                <button class="main__buttons--register" type="submit" >Modificar datos</button>
+                <a class="register__cancel--butt" href="/">Cancelar</a>
+            </div>
+            
+        </form>
+    </main>
+    
+    <%- include('../partials/footerReduce.ejs') %>  %>
+
+    <script src="/scripts/usersRegister.js"></script>
+</body>
+</html> 

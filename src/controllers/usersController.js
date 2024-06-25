@@ -34,27 +34,7 @@ const usersController = {
         res.render("users/login.ejs", { errors: errors.mapped(), old: req.body });
     }
 },
-    processLogin1: (req,res)=> {
-        let error = validationResult(req);
-        if (error.isEmpty()) {
-            let archivoUsuarios = JSON.parse(fs.readFileSync(usersFilePath));
-            let usuarioLogueado = archivoUsuarios.find(usuario => usuario.userEmail == req.body.userEmail);
-           
-            if (usuarioLogueado){
-                req.session.logueadoUsuario = usuarioLogueado;
-            }
-
-            // Guardo las cookies si el usuario tildo "recordar usuario"
-            if (usuarioLogueado && req.body.rememberUsers) {
-                res.cookie("email", usuarioLogueado.userEmail, {maxAge:90000});
-            }
-            res.redirect("/");
-            
-        } else {
-            res.render("users/login.ejs", {errors: error.mapped(), old: req.body});
-        }
-    },
-
+    
     getRegister: (req,res)=> {res.render("users/register.ejs")},
 
     register: async function (req,res) {
@@ -68,6 +48,18 @@ const usersController = {
             }
         } else { 
             res.render("users/register.ejs", {errors: error.mapped(), old: req.body})
+        }
+    },
+
+    getUpdate: (req,res)=> {res.render("users/edit.ejs")},
+  
+    // Edit users button
+    update: async function(req, res) {
+        try {
+            await usersServices.updateBy(req.body, req.params.id);
+            res.redirect(`/`);
+        } catch (error) {
+            res.send("No se pudo editar!!");
         }
     },
 

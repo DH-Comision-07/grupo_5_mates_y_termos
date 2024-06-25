@@ -1,0 +1,78 @@
+.main__form--inputs {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #1B1B1D;
+    font-size: 15px;
+}
+.main--image{
+    width: 24%;
+}
+
+.form--register {
+    width: 100%;
+    max-width: 550px;
+    border: none;
+    padding: 20px 30px;
+    color: black;
+    margin: 0 auto;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 20px 30px;
+}
+
+.main__buttons--register {
+    width: 100%;
+    background: #344C2A;
+    border: none;
+    border-radius: 10px; 
+    font-family: "Poppins", sans-serif;
+    padding: 12px;
+    color: white;
+    margin-bottom: 20px;
+}
+.main__register--titulares {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    color:#1B1B1D;
+    height: 40px;
+}
+
+.main__input--desc {
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color:#1B1B1D;
+    margin-left: 9px;
+}
+
+.main__form--bottom-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.register__cancel--butt {
+    width: 100%;
+    background: #344C2A;
+    text-decoration: none;
+    border-radius: 10px; 
+    font-family: "Poppins", sans-serif;
+    padding: 12px;
+    color: white;
+    text-align: center;
+    list-style: none;
+}
+.main--buttons{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.errores, .erroresName, .erroresLastName, .erroresEmail , .erroresPassword{
+    margin-top: -10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: red; 
+    font-size: 12px;
+}

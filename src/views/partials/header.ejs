@@ -32,14 +32,17 @@
                 <% } %>
                 <% if (locals.usuario) { %>
                     <figure class="figure--avatar">
-                        <a href="/"><img  class="header--avatar" src="/images/avatars/<%= usuario.image %>" alt="Mates"></a>
+                        <a href="http://localhost:3043/users/edit/<%=usuario.id%>"><img  class="header--avatar" src="/images/avatars/<%= usuario.image %>" alt="Mates"></a>
                         <p class="header--users header--avatar"><%= usuario.name %></p>
                     </figure>
-                    <li type="none"> <a href="/users/logout"> Cerrar sesión&ensp; <i class="fas fa-sign-out-alt"></i> </a> </li>
+                        <p class="burger--userName"><a style="font-weight: 600;" href="http://localhost:3043/users/edit/<%=usuario.name%>"><%=usuario.name%>  <%=usuario.lastName%></a></p>
+                        
+                        <% if (locals.usuario && locals.isAdmin) { %>
+                            <li type="none"> <a href="/admin"> Admin&ensp; <i class="fa-solid fa-toolbox"></i> </a> </li>
+                        <% } %>
+                        
+                        <li type="none"> <a href="/users/logout"> Cerrar sesión&ensp; <i class="fas fa-sign-out-alt"></i> </a> </li>
                 <% } %>
-                <% if (locals.usuario && locals.isAdmin) { %>
-                    <li type="none"> <a href="/admin"> Admin&ensp; <i class="fa-solid fa-toolbox"></i> </a> </li>
-                <% } %> 
                 <li type="none"> <a href="/products/productCart"> <i style="margin: 0 auto; font-size: 120%;" class="fa-solid fa-shopping-cart visibleCart"></i> </a> </li> 
             </ul>
         </nav> 
