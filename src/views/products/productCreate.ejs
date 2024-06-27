@@ -12,7 +12,6 @@
     <%- include('../partials/headerReduce.ejs') %>
     
     <main class="main--form">
-        <script src="/scripts/validationCreateProduct.js"></script>
         
         <form action="/admin/" method="POST" enctype="multipart/form-data" class="form--products">
             <p class="main__products--titulares">Crear Producto</p>
@@ -20,14 +19,14 @@
             <label class="main__input--desc" for="name">Nombre</label></br>
             <input class="main__form--inputs name" id="name" name="name" value="<%= locals.old && old.name %>" >
             <% if (locals.errors && errors.name) { %>
-                <p class= "input--error" ><%= errors.name.msg %></p>
+                <li class= "input--error" ><%= errors.name.msg %></li>
             <% } %>
             <div class="erroresName"><ul></ul></div>            
 
             <label class="main__input--desc" for="description">Descripción</label></br>
             <textarea class="main__form--inputs description" id="description" name="description" value="<%= locals.old && old.description %>" cols="35" rows="6"></textarea></br>
             <% if (locals.errors && errors.description) { %>
-                <p class= "input--error" ><%= errors.description.msg %></p>
+                <li class= "input--error" ><%= errors.description.msg %></li>
             <% } %>
             <div class="erroresDescription"><ul></ul></div>
 
@@ -41,7 +40,7 @@
             <label class="main__input--desc" for="price">Precio</label>
             <input type="number" class="main__form--inputs prices" id="price" name="price" value="<%= locals.old && old.price %>" >
             <% if (locals.errors && errors.price) { %>
-                <p class= "input--error" ><%= errors.price.msg %></p>
+                <li class= "input--error" ><%= errors.price.msg %></li>
             <% } %>
             <div class="erroresPrice"><ul></ul></div>
 
@@ -54,13 +53,13 @@
                 <% } %>
             </select>
             <% if (locals.errors && errors.colores) { %>
-                <p class= "input--error" ><%= errors.colores.msg %></p>
+                <li class= "input--error" ><%= errors.colores.msg %></li>
             <% } %>
             
             <label class="main__input--desc" for="stock">Stock</label>
             <input type="number" class="main__form--inputs stocks" id="stock" name="stock" value="<%= locals.old && old.stock %>"></br>
             <% if (locals.errors && errors.stock) { %>
-                <p class= "input--error" ><%= errors.stock.msg %></p>
+                <li class= "input--error" ><%= errors.stock.msg %></li>
             <% } %>
             <div class="erroresStock"><ul></ul></div>
 
@@ -73,7 +72,7 @@
                 <% } %>
             </select>
             <% if (locals.errors && errors.categorias) { %>
-                <p class= "input--error" ><%= errors.categorias.msg %></p>
+                <li class= "input--error" ><%= errors.categorias.msg %></li>
             <% } %>
             
             <div class="main--buttons">
@@ -83,8 +82,11 @@
         </form>
         
     </main>
-
+    
     <%- include('../partials/footerReduce.ejs') %>
+
+    <script src="/scripts/validationCreateProduct.js"></script>
+
 </body>
 
 </html>

@@ -1,16 +1,14 @@
 const fs = require('fs');
 const path = require ("path");
-//const bcrypt = require ("bcryptjs");
+const bcrypt = require ("bcryptjs");
 
 const db = require ("../database/models");
 const Op = db.Sequelize.Op;
 
 let usersServices = {
-
     createUser: async function(newUsuario,newImage){
 
         try {
-            //let user = new Usuario(newUsuario);
             let {name, lastName, userEmail, birthdate, passwordUser} = newUsuario;
             let email = userEmail
             let image = newImage;
@@ -23,18 +21,24 @@ let usersServices = {
             console.error('Error en Creacion Usuario:', error);
             res.status(500).send('Internal Server Error');
         } 
-    }
+    },
+
+    updateBy: async function (body, id){
+        try {
+            let usuario = new Usuario(body);
+            await db.Usuarios.update(usuario, {where: {id: id}});
+        } catch (error) {
+            console.error('Error en Modificacion Usuario:', error);
+            res.status(500).send('Internal Server Error');
+        }
+    },
 
 }
 
-function Usuario({name, lastName, userEmail, birthdate, passwordUser}){
+function Usuario({name, lastName,birthdate}){
     this.name = name;
     this.lastName = lastName;
-    this.email = userEmail;
     this.birthdate = birthdate;
-    this.image= "avatar1.svg";
-    this.password = passwordUser;
-    this.role = 1;
 };
 
 function Imagen({image}){

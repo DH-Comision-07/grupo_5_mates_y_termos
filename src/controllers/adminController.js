@@ -44,17 +44,33 @@ const adminController = {
     // Edit products form
     edit: async function(req, res) {
         try {
-            const productos = await adminService.getOneBy(req.params.id)
-            const categorias = db.Categorias.findAll()
-            const colores = db.Colores.findAll()
-            const imagenes = db.Images.findAll()
-            Promise.all([productos, categorias, colores, imagenes])
-                .then(function([productos, categorias, colores, imagenes]){
-                    res.render("products/productEdit.ejs", {productos:productos, categorias: categorias, colores:colores, imagenes:imagenes});
+            const productos = await adminService.getOneBy(req.params.id);
+            
+            if (productos.id === 0) {
+                return res.render("products/indexProduct.ejs");;
+            }
+    
+            const categorias = db.Categorias.findAll();
+            const colores = db.Colores.findAll();
+            const imagenes = db.Images.findAll();
+    
+            Promise.all([categorias, colores, imagenes])
+                .then(function([categorias, colores, imagenes]){
+                    res.render("products/productEdit.ejs", {
+                        productos: productos, 
+                        categorias: categorias, 
+                        colores: colores, 
+                        imagenes: imagenes
+                    });
                 })
+                .catch(error => {
+                    console.error('Error fetching categories, colors, or images:', error);
+                    res.status(500).send("Ha ocurrido un error inesperado");
+                });
         } catch (error) {
-            res.send("Ha ocurrido un error inesperado").status(500);
-        }     
+            console.error('Error fetching product:', error);
+            res.status(500).send("Ha ocurrido un error inesperado");
+        }  
     },
 
     // Edit product button
@@ -71,12 +87,22 @@ const adminController = {
     delete: async function(req, res) {
         try {
             const productos = await adminService.getOneBy(req.params.id)
+            
+            if (productos.id === 0) {
+                return res.render("products/indexProduct.ejs");;
+            }
+
             const categorias = db.Categorias.findAll()
             const colores = db.Colores.findAll()
             const imagenes = db.Images.findAll()
             Promise.all([productos, categorias, colores, imagenes])
                 .then(function([productos, categorias, colores, imagenes]){
-                    res.render("products/productDelete.ejs", {productos:productos, categorias: categorias, colores:colores, imagenes:imagenes});
+                    res.render("products/productDelete.ejs", {
+                        productos:productos, 
+                        categorias: categorias, 
+                        colores:colores, 
+                        imagenes:imagenes
+                    });
                 })
         } catch (error) {
             res.send("Ha ocurrido un error inesperado").status(500);

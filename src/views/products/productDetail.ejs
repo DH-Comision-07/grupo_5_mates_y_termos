@@ -10,6 +10,7 @@
     <%- include('../partials/header.ejs') %>
     
     <main class="main--form">
+        <div class="max--width">
         <div class="images__products">
             <% for( let i = 0; i < productos.producto.length; i++ ) { %>
                 <img class="image__product" id="images" name="images" src="/images/<%= productos.producto[i].name %>" alt="<%=productos.producto[i].name%>">
@@ -54,7 +55,7 @@
             <h4 class="titles details">Descripción</h4>
             <li class="product__details"><%=productos.description%></li>
         </div>
-
+    </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>

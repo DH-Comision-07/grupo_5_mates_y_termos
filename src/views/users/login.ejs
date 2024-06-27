@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/head.ejs') %>
     <title>Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
@@ -18,15 +13,15 @@
             <p class="main__login--titulares">Iniciar sesión</p>
             
             <p class="main__input--desc">Correo electrónico</p>
-            <input class="main__form--inputs" type="text" name="userEmail" value="<%= locals.old && old.userEmail %>" placeholder="Email de Usuari@">
+            <input class="main__form--inputs" type="email" name="userEmail" value="<%= locals.old && old.userEmail %>" placeholder="Email de Usuari@">
             <% if (locals.errors && errors.userEmail) { %>
-                <p class= "input--error"><%= errors.userEmail.msg %></p>
+                <li class= "input--error"><%= errors.userEmail.msg %></li>
             <% } %>
            
             <p class="main__input--desc">Contraseña</p>
             <input class="main__form--inputs" type="password" name="passwordUser" value="" placeholder="Contraseña">
             <% if (locals.errors && errors.passwordUser) { %>
-                <p class= "input--error"><%= errors.passwordUser.msg %></p>
+                <li class= "input--error"><%= errors.passwordUser.msg %></li>
             <% } %>
 
             <input class="main__input--desc" type="checkbox" name="rememberUsers">Recordar sesión

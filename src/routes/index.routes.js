@@ -1,11 +1,13 @@
 const express = require('express');
 const routes = express.Router(); 
 
+const homeRoutes = require('./home.routes');
 const productRoutes = require('./products.routes');
 const userRoutes = require('./users.routes');
 const adminRoutes = require('./admins.routes'); 
 
-routes.get("/", (req,res)=>{res.render("index.ejs")});
+routes.use("/", homeRoutes);
+//routes.get("/", (req,res)=>{res.render("index.ejs")});
 
 routes.use('/products', productRoutes);
 

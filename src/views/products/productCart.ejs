@@ -9,65 +9,67 @@
     <%- include('../partials/header.ejs') %>
     
     <main>
-        <section class="main__section"> 
-            <p class="main__titulares">Mi Carrito</p>
-            <div class="main__item">
-                <div class="main__item--div-img">
-                    <img class="main__item--image" src="/images/el-mateador-imagenes-01.jpg" alt="Mate">
+        <section class="main__section">
+            <div class="max__width--cart">
+                <p class="main__titulares">Mi Carrito</p>
+                <div class="main__item">
+                    <div class="main__item--div-img">
+                        <img class="main__item--image" src="/images/el-mateador-imagenes-01.jpg" alt="Mate">
+                    </div>
+                    <div class="main__item--product">
+                        <h4 class="main__item--name">Mate clásico</h4>
+                        <p class="main__item--description">Mate clásico color negro</p>
+                        <p class="main__item--cantidad">
+                            <select name="cantidad" id="cantidad">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="3">4</option>
+                                <option value="3">5</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="main__item--right">
+                        <i class="fa-solid fa-trash-can" style="color: #1b1b1d;" onclick="removeItem(this)"></i>
+                        <p class="main__item--price">$3500</p>
+                    </div>
                 </div>
-                <div class="main__item--product">
-                    <h4 class="main__item--name">Mate clásico</h4>
-                    <p class="main__item--description">Mate clásico color negro</p>
-                    <p class="main__item--cantidad">
-                        <select name="cantidad" id="cantidad">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="3">4</option>
-                            <option value="3">5</option>
-                        </select>
-                    </p>
+                <div class="main__item">
+                    <div class="main__item--div-img">
+                        <img class="main__item--image" src="/images/el-mateador-imagenes-07.jpg" alt="Bombilla">
+                    </div>
+                    <div class="main__item--product">
+                        <h4 class="main__item--name">Bombilla</h4>
+                        <p class="main__item--description">Bombilla metálica</p>
+                        <p class="main__item--cantidad">
+                            <select name="cantidad" id="cantidad">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="3">4</option>
+                                <option value="3">5</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="main__item--right">
+                        <i class="fa-solid fa-trash-can" style="color: #1b1b1d;" onclick="removeItem(this)"></i>
+                        <p class="main__item--price">$1500</p>
+                    </div>
                 </div>
-                <div class="main__item--right">
-                    <i class="fa-solid fa-trash-can" style="color: #1b1b1d;" onclick="removeItem(this)"></i>
-                    <p class="main__item--price">$3500</p>
-                </div>
-            </div>
-            <div class="main__item">
-                <div class="main__item--div-img">
-                    <img class="main__item--image" src="/images/el-mateador-imagenes-07.jpg" alt="Bombilla">
-                </div>
-                <div class="main__item--product">
-                    <h4 class="main__item--name">Bombilla</h4>
-                    <p class="main__item--description">Bombilla metálica</p>
-                    <p class="main__item--cantidad">
-                        <select name="cantidad" id="cantidad">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="3">4</option>
-                            <option value="3">5</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="main__item--right">
-                    <i class="fa-solid fa-trash-can" style="color: #1b1b1d;" onclick="removeItem(this)"></i>
-                    <p class="main__item--price">$1500</p>
-                </div>
-            </div>
 
-            <script>
-                function removeItem(icon) {
-                    // Get the parent main__item div and remove it
-                    var mainItemDiv = icon.closest('.main__item');
-                    mainItemDiv.remove();
-                }
-            </script>
-
-            <div class="main__continuar">
-                <button class="main__continuar--button">Continuar Compra</button>
-            </div>
+                <script>
+                    function removeItem(icon) {
+                        // Get the parent main__item div and remove it
+                        var mainItemDiv = icon.closest('.main__item');
+                        mainItemDiv.remove();
+                    }
+                </script>
+                
+                <div class="main__continuar">
+                    <a class="main__continuar--button" href="/">Continuar Compra</a>
+                </div>
         </section>
+
     </main>
     
     <%- include('../partials/footer.ejs') %>

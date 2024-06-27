@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// const productService = require ('../model/productService')
 const productService = require ('../services/productService')
 
 const db = require ("../database/models");
@@ -35,8 +34,7 @@ const productsController = {
     },
 
     // Cart products
-    getCart: (req,res)=> {res.render("products/productCart.ejs")},
-    
+    getCart: (req,res)=> {res.render("products/productCart.ejs")},  
 };
 
 module.exports = productsController;
