@@ -78,7 +78,7 @@
     margin: 9px;
     border: solid 0.6px #344c2a;
     border-radius: 10px;
-    transition: all 700ms;
+    transition: all 300ms;
 }
 
 .main__section--articleSend {

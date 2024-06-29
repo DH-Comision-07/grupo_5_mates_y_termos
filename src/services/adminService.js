@@ -82,10 +82,11 @@ let adminService = {
     }
 };
 
-function Producto({name, description, price, stock, categorias, colores,}){
+function Producto({name, description, price, offer, discount, stock, categorias, colores,}){
     this.name = name;
     this.description = description;
     this.price = price;
+    this.discount = discount;
     this.stock = stock;
     this.category_id = categorias;
     this.color_id = colores;

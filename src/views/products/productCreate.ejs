@@ -44,6 +44,26 @@
             <% } %>
             <div class="erroresPrice"><ul></ul></div>
 
+
+           
+
+            <label class="main__input--desc" for="discount">Porcentaje Descuento</label>
+            <input type="number" class="main__form--inputs prices" id="discount" name="discount" value="<%= locals.old && old.discount %>">
+            <% if (locals.errors && errors.discount) { %>
+                <li class= "input--error" ><%= errors.discount.msg %></li>
+            <% } %>
+
+
+           
+
+
+
+
+
+
+
+
+
             <label class="main__input--desc" for="colores">Colores</label>
             <select name="colores"  class="main__form--inputs" value="<%= locals.old && old.colores %>">
                 <% for( let i = 0; i < colores.length; i++ ) { %>
