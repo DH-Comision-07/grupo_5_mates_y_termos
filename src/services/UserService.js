@@ -25,8 +25,9 @@ let usersServices = {
 
     updateBy: async function (body, id){
         try {
-            let usuario = new Usuario(body);
-            await db.Usuarios.update(usuario, {where: {id: id}});
+            await db.Usuarios.update(body, { where: { id: id }});
+            const updatedUser = await db.Usuarios.findByPk(id); 
+            return updatedUser;
         } catch (error) {
             console.error('Error en Modificacion Usuario:', error);
             res.status(500).send('Internal Server Error');

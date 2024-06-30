@@ -31,7 +31,7 @@
                                 <img class="main__figure--img" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
                             <% } %>
                             <div class="article__div--flex">
-                                <p class="section__article--precio">$<%=product.price %>.-</p>
+                                <p class="section__article--precio">$<%=product.price %></p>
                                 <p class="section__article--descripcion"> <%=product.name %> </p>
                             </div>
                         </a>
@@ -45,7 +45,7 @@
         </div>
 
         <section class="main--section">
-            <h3 class="main--titulares">Ofertas exclusivas</h3>
+            <h3 class="main--titulares">Ofertas</h3>
            
             <div class="main__secction--container">
                 <!-- Ordenar aleatoriamente los productos -->
@@ -61,8 +61,12 @@
                                 <img class="main__figure--img" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
                             <% } %>
                             <div class="article__div--flex">
-                                <p class="section__article--precio"> <%=product.discount%>% descuento</p>
-                                <p class="section__article--descripcion"> <%=product.name %> </p>
+                                <p class="section__article--discount"> <%=product.discount%>% OFF</p>
+                                
+                                <div style="display: flex;">
+                                    <p class="section__article--discountNo"> $<%=product.price%> </p>
+                                    <p class="section__article--discountYes"> $<%=product.discount_price %> </p>
+                                </div>
                             </div>
                         </a>
                     </section>
@@ -74,16 +78,24 @@
         <section class="main--section">
             <h3 class="main__section--send">¿Por qué elegirnos?</h3>  
             <div class="main__section--bannerSend">
-               <!--  <i class="fa-solid fa-chevron-left main__section--arrow"></i> -->
-                           
+                          
                 <article class="main__section--articleSend">
-                    <a href="#">
-                        <i class="fa-solid fa-truck-fast main__icon--send"></i>
-                    </a>
-                    <h4>Envíos a todo el país</h4>
-                    <p>Envíos gratis a partir de $30000</p>                   
+                    <i class="fa-regular fa-credit-card main__icon--send"></i></a>
+                    <h4 class="section--h4">Elegí cómo pagar</h4>
+                    <p class="section--p">Podés pagar con tarjeta, débito o efectivo.</p>                   
                 </article>
-                <!-- <i class="fa-solid fa-chevron-right main__section--arrow"></i>  -->  
+                
+                <article class="main__section--articleSend">
+                    <i class="fa-solid fa-truck-fast main__icon--send"></i>
+                    <h4 class="section--h4">Envío gratis desde $ 30.000</h4>
+                    <p class="section--p">Solo por estar registrado en El Mateador.</p>                   
+                </article>
+                
+                <article class="main__section--articleSend">
+                    <i class="fa-solid fa-lock main__icon--send"></i>
+                    <h4 class="section--h4">Seguridad</h4>
+                    <p class="section--p">Siempre protegemos tus datos. ¿No te gusta? ¡Devolvelo!</p>                 
+                </article>
                 
             </div>
         </section>

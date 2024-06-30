@@ -56,7 +56,8 @@ const usersController = {
     // Edit users button
     update: async function(req, res) {
         try {
-            await usersServices.updateBy(req.body, req.params.id);
+            const updatedUser =  await usersServices.updateBy(req.body, req.params.id);
+            req.session.logueadoUsuario = updatedUser;
             res.redirect(`/`);
         } catch (error) {
             res.send("No se pudo editar!!");

@@ -20,10 +20,18 @@ let adminService = {
         try {
             let product = new Producto(newProduct);
 
-            let addProduct = await db.Productos.create(product, {include:[{association: "producto"},{association: "colores"},{association: "categorias"},{association: "usuarios"}]})
+            let addProduct = await db.Productos.create(product, {
+                include:[
+                    {association: "producto"},
+                    {association: "colores"},
+                    {association: "categorias"},
+                    {association: "usuarios"}]
+                })
             
             const imagePromises = newImage.map(file => {
-                return db.Images.create({ name: file.filename, product_id: addProduct.id });
+                return db.Images.create({ 
+                    name: file.filename, 
+                    product_id: addProduct.id});
             });
             await Promise.all(imagePromises);
             return addProduct.dataValues
@@ -82,11 +90,12 @@ let adminService = {
     }
 };
 
-function Producto({name, description, price, offer, discount, stock, categorias, colores,}){
+function Producto({name, description, price, discount, discount_price, stock, categorias, colores,}){
     this.name = name;
     this.description = description;
     this.price = price;
     this.discount = discount;
+    this.discount_price = discount_price;
     this.stock = stock;
     this.category_id = categorias;
     this.color_id = colores;

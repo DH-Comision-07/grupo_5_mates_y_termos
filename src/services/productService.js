@@ -4,7 +4,9 @@ const Op = db.Sequelize.Op;
 let productsService = { 
     getAll: function (){
         return new Promise((resolve, reject) => {
-            db.Productos.findAll({include:[{association: "producto"}]})            
+            db.Productos.findAll({include:[
+                {association: "producto"}
+            ]})            
             .then(productos => { //en productos entra la promesa
                 resolve(productos)
             })
@@ -14,9 +16,30 @@ let productsService = {
             });
         })
     },
+    getAllOffer: function (){
+        return new Promise((resolve, reject) => {
+            db.Productos.findAll({include:[
+                {association: "producto"}],
+                where:{discount: {[Op.ne]:0}} //distinto de 0
+            })            
+            .then(productos => { //en productos entra la promesa
+                resolve(productos)
+            })
+            .catch (err => {
+                console.log(err);
+                reject ([])
+            });
+        })
+    },
+
     getOneBy: async function (id) {
         try {
-            return await db.Productos.findByPk(id,{include:[{association: "producto"},{association: "colores"},{association: "categorias"},{association: "usuarios"}]}); //esta es la promesa
+            return await db.Productos.findByPk(id,{include:[
+                {association: "producto"},
+                {association: "colores"},
+                {association: "categorias"},
+                {association: "usuarios"}
+            ]}); //esta es la promesa
         } catch (error) {
             console.log(error)
             return {
@@ -32,7 +55,24 @@ let productsService = {
                 release_date: ""
             }  
         }
-    }
+    },
+
+    getRelated: function () {
+        return db.Productos.findAll({
+            include:[{association: "producto"},{association: "categorias"}]
+        });
+    },
+    /* Muestro productos relacionados por categoria
+        getRelated: function (categoryId, productId) {
+        return db.Productos.findAll({
+            include:[{association: "producto"},{association: "categorias"}],
+                where: {
+                category_id: categoryId,
+                id: { [Op.ne]: productId }
+            },
+            limit: 4 // Limita el número de productos relacionados a mostrar
+        });
+    } */
 }
         
-module.exports = productsService;
+module.exports = productsService; 

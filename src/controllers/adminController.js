@@ -37,7 +37,10 @@ const adminController = {
         } 
     } else {
         const {categorias, colores} = await adminService.getAll();
-        res.render("products/productCreate.ejs", {categorias, colores, errors: error.mapped(), old: req.body});
+        res.render("products/productCreate.ejs", {
+            categorias, colores, 
+            errors: error.mapped(), 
+            old: req.body});
     }
         },
 
@@ -45,11 +48,9 @@ const adminController = {
     edit: async function(req, res) {
         try {
             const productos = await adminService.getOneBy(req.params.id);
-            
             if (productos.id === 0) {
-                return res.render("products/indexProduct.ejs");;
+                return res.render("products/indexProduct.ejs");
             }
-    
             const categorias = db.Categorias.findAll();
             const colores = db.Colores.findAll();
             const imagenes = db.Images.findAll();
@@ -64,11 +65,11 @@ const adminController = {
                     });
                 })
                 .catch(error => {
-                    console.error('Error fetching categories, colors, or images:', error);
+                    console.error('Error en Categorias, Colores o Imagenes: ', error);
                     res.status(500).send("Ha ocurrido un error inesperado");
                 });
         } catch (error) {
-            console.error('Error fetching product:', error);
+            console.error('Error product: ', error);
             res.status(500).send("Ha ocurrido un error inesperado");
         }  
     },

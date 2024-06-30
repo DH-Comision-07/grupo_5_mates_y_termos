@@ -4,20 +4,34 @@
 <head>
     <%- include('../partials/head.ejs') %>
     <title>Detalle Producto</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
     <%- include('../partials/header.ejs') %>
     
     <main class="main--form">
-        <div class="max--width">
+    <div class="max--width">
         <div class="images__products">
             <% for( let i = 0; i < productos.producto.length; i++ ) { %>
                 <img class="image__product" id="images" name="images" src="/images/<%= productos.producto[i].name %>" alt="<%=productos.producto[i].name%>">
             <% } %>
         </div>
+
         <p class="titles"><%=productos.name%></p>
-        <p class="price">$<%=productos.price%></p>
+
+        <div class="article__div--flex">
+            
+            <div style="display: flex;">
+                <% if (productos.discount > 0) { %>
+                    <p class="section__article--discount"> <%=productos.discount%>% OFF</p>
+                    <p class="section__article--discountNo"> $<%=productos.price%> </p>
+                    <p class="section__article--discountYes"> $<%=productos.discount_price%> </p>
+                <% } else { %>
+                    <p class="price"> $<%=productos.discount_price%> </p>
+                <% }%>
+            </div>
+        </div>
         
         <span class="span--detail">
             <label class="label" for="color">Categoria:</label>
@@ -45,16 +59,55 @@
             </select>
         </span>
 
+       
         <div class="main__continuar">
-            <a href="#"><button class="main__continuar--button">Comprar ahora</button></a>
+            <a href="/products/buyProduct"><button class="main__continuar--button">Comprar ahora</button></a>
         </div>
         <div class="main__continuar">
             <a href=""><button class="main__continuar--button">Agregar al carrito</button></a>
         </div>
+        
         <div>
             <h4 class="titles details">Descripción</h4>
             <li class="product__details"><%=productos.description%></li>
         </div>
+    </div>
+
+    <!-- Oferta de productos -->
+    <div class="productRelacionado">
+        <section class="main--section">
+        
+            <div class="main__secction--container">
+                <!-- Ordenar aleatoriamente los productos -->
+                <%productosSugeridos.sort(() => 0.5 - Math.random());
+                // Seleccionar los primeros 4 productos
+                const productosAlert= productosSugeridos.slice(0, 4);
+                %>
+                
+                <% productosAlert.forEach ((product)=>{ %>
+                    <section class="main__secction--article ">
+                        <a class="product--href " style="text-decoration: none;" href="/products/productDetail/<%=product.id%>">
+                            <% for( let i = 0; i < 1; i++ ) { %>
+                                <img class="main__figure--img container--box" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
+                            <% } %>
+                            <div class="article__div--flex container--box">
+                                <% if (product.discount > 0) { %>
+                                    <p class="section__article--discount"> <%=product.discount%>% OFF</p>
+                                    <div style="flex-direction: column;">
+                                        <p class="section__article--discountNo"> $<%=product.price%> </p>
+                                        <p class="section__article--discountYes"> $<%=product.discount_price%> </p>
+                                    </div>
+                                <% } else { %>
+                                    <p class="section__article--descripcion"> <%=product.name %> </p>
+                                    <p class="section__article--precio"> $<%=product.discount_price%> </p>
+                                <% }%>
+                            </div>
+                        </a>
+                    </section>
+                <% }) %>
+            </div>
+        
+        </section>    
     </div>
     </main>
 
