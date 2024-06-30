@@ -4,9 +4,11 @@
         <div class="header__div--burger">
             <a href="#" id="abrir" ><i class="fa-solid fa-bars" ></i></a>
         </div>
+        
         <div class="header__div--logo">
-            <a href="/"><img  class="header--logo" src="/images/logo.svg" alt="Mates"></a>
+                <a href="/"><img  class="header--logo" src="/images/logo.svg" alt="Mates"></a>
         </div>
+
         <% if (locals.usuario) { %>
             <div class="header__div--cart">
                 <a href="/products/productCart"><i class="fa-solid fa-shopping-cart" style="font-size: 130%;"></i></a>
@@ -15,17 +17,24 @@
     </div>
           
     <nav class="header__nav--menu" id="nav"> 
+        
         <nav class="nav--option" >
             <button href="" class="close--burger" id="cerrar"><i class="fa-solid fa-x"></i></button>  
             <ul class="header__nav--option">
                 <li type="none"> <a href="/"> Inicio</a> </li>
                 <li type="none"> <a href="/products/index"> Productos</a> </li>
-                <li type="none"> <a href="#"> Categorías</a> </li>
                 <li type="none"> <a href="/products/offer"> Ofertas</a> </li>
                 <li type="none" class="visibleline">----------------</a> </li>
             </ul> 
         </nav>
-
+        <nav class="search--bar">
+            <form class="search__bar--form" action="/products/search" method="get">
+                <input class="search__bar--input" type="text" name="q" placeholder="Buscar productos...">
+                <button class="search__bar--button" type="submit">
+                    <i class="fa-solid fa-magnifying-glass "></i>
+                </button>
+            </form>
+        </nav>
         <nav class="nav--login">        
             <ul class="header__nav--login">
                 <% if (!locals.usuario) { %>
@@ -35,7 +44,7 @@
                 <% if (locals.usuario) { %>
                     <figure class="figure--avatar">
                         <a href="http://localhost:3043/users/edit/<%=usuario.id%>"><img  class="header--avatar" src="/images/avatars/<%= usuario.image %>" alt="Mates"></a>
-                        <p class="header--users header--avatar"><%= usuario.name %></p>
+                        <!-- <p class="header--users header--avatar"><%= usuario.name %></p> -->
                     </figure>
                         <p class="burger--userName"><a style="font-weight: 600;" href="http://localhost:3043/users/edit/<%=usuario.name%>"><%=usuario.name%>  <%=usuario.lastName%></a></p>
                         
@@ -45,8 +54,7 @@
                         
                         <li type="none"> <a href="/users/logout"> Cerrar sesión&ensp; <i class="fas fa-sign-out-alt"></i> </a> </li>
                         <li type="none"> <a href="/products/productCart"> <i style="margin: 0 auto; font-size: 120%;" class="fa-solid fa-shopping-cart visibleCart"></i> </a> </li> 
-                <% } %>
-                
+                <% } %>  
             </ul>
         </nav> 
     </nav>

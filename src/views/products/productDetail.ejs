@@ -9,69 +9,79 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
-    
+   
     <main class="main--form">
-    <div class="max--width">
-        <div class="images__products">
-            <% for( let i = 0; i < productos.producto.length; i++ ) { %>
-                <img class="image__product" id="images" name="images" src="/images/<%= productos.producto[i].name %>" alt="<%=productos.producto[i].name%>">
-            <% } %>
-        </div>
-
-        <p class="titles"><%=productos.name%></p>
-
-        <div class="article__div--flex">
-            
-            <div style="display: flex;">
-                <% if (productos.discount > 0) { %>
-                    <p class="section__article--discount"> <%=productos.discount%>% OFF</p>
-                    <p class="section__article--discountNo"> $<%=productos.price%> </p>
-                    <p class="section__article--discountYes"> $<%=productos.discount_price%> </p>
-                <% } else { %>
-                    <p class="price"> $<%=productos.discount_price%> </p>
-                <% }%>
+        <div class="product-detail">
+            <div class="product-images">
+                <% for( let i = 0; i < 1; i++ ) { %>
+                    <img class="main-image" id="images" name="images" 
+                    src="/images/<%= productos.producto[i].name %>" 
+                    alt="<%=productos.producto[i].name%>">
+                <% } %>
+                <div class="small-images">
+                    <% for( let i = 1; i < productos.producto.length; i++ ) { %>
+                        <img class="image__product" id="images" name="images" 
+                        src="/images/<%= productos.producto[i].name %>" 
+                        alt="<%=productos.producto[i].name%>">
+                    <% } %>
+                </div>
             </div>
-        </div>
-        
-        <span class="span--detail">
-            <label class="label" for="color">Categoria:</label>
-            <label class="price"> <%=productos.categorias.name%> </label>
-        </span>
 
-        <span class="span--detail">
-            <label class="label" for="color">Colores:</label>
-            <label class="price"> <%=productos.colores.name%> </label>
-        </span>
-        <br>
-        <br>
-        <span class="span--detail" >
-            <label class="label" for="stock">Stock disponible:</label>
-            <label class="price"> <%=productos.stock%> </label>
-        </span>
-        
-        <span class="span--detail">
-            <label class="label" for="cantidad">Cantidad:</label>
-            <select class="select--stock" name="cantidad" id="cantidad">
-                <option value="1">1 Unidad</option>
-                <option value="2">2 Unidades</option>
-                <option value="3">3 Unidades</option>
-                <option value="3">4 Unidades</option>
-            </select>
-        </span>
+            <div class="product-info">
+                <h1 class="product-title"><%=productos.name%></h1>
 
-       
-        <div class="main__continuar">
-            <a href="/products/buyProduct"><button class="main__continuar--button">Comprar ahora</button></a>
-        </div>
-        <div class="main__continuar">
-            <a href=""><button class="main__continuar--button">Agregar al carrito</button></a>
-        </div>
+                <div class="product--flex">
+                    <% if (productos.discount > 0) { %>
+                        <p class="section__article--discount"> <%=productos.discount%>% OFF</p>
+                        <p class="section__article--discountNo"> $<%=productos.price%> </p>
+                        <p class="section__article--discountYes"> $<%=productos.discount_price%> </p>
+                    <% } else { %>
+                        <p class="section__article--discountYes"> $<%=productos.discount_price%> </p>
+                    <% }%>
+                </div>
+
+                <div class="product--flex">
+                    <p class="product-description--tittle"> Categoria: </p>
+                    <p class="product-description--detail"> <%=productos.categorias.name%> </p>
+                </div>
+
+                <div class="product--flex">
+                    <p class="product-description--tittle"> Color: </p>
+                    <p class="product-description--detail"> <%=productos.colores.name%> </p>
+                </div>
+
+                <div class="product--flex">
+                    <p class="product-description--tittle"> Stock disponible: </p>
+                    <p class="product-description--detail"> <%=productos.stock%> </p>
+                </div>
+
+                <div class="product--flex">
+                    <p class="product-description--tittle" > Cantidad:</p>
+                    <select class="product-description--detail" style="border-radius: 9px;" name="cantidad" id="cantidad">
+                        <option value="1">1 Unidad</option>
+                        <option value="2">2 Unidades</option>
+                        <option value="3">3 Unidades</option>
+                        <option value="3">4 Unidades</option>
+                    </select>
+                </div>
+
+                <div>
+                    <h4 class="product__detail--description">Descripción</h4>
+                    <p class="product-description"><%=productos.description%></p>
+                </div>
+
+                <form action="/products/buyProduct">
+                    <button type="submit" class="buy--button">Comprar ahora </button>
+                </form>
+                <br>
+                <form action="">
+                    <button type="submit" class="buy--button--cart">Agregar al carrito</button>
+                </form>
         
-        <div>
-            <h4 class="titles details">Descripción</h4>
-            <li class="product__details"><%=productos.description%></li>
-        </div>
+            </div>
     </div>
+
+    <p class="border"></p>
 
     <!-- Oferta de productos -->
     <div class="productRelacionado">

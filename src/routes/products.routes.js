@@ -19,4 +19,6 @@ routes.get("/productCart", productsController.getCart);
 // /* CARRITO compra (cart) producto */ 
 routes.get("/buyProduct", productsController.getBuy);
 
+routes.get('/search', productsController.search); 
+
 module.exports = routes;

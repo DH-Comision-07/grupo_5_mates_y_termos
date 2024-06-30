@@ -48,7 +48,26 @@ const productsController = {
     getCart: (req,res)=> {res.render("products/productCart.ejs")}, 
     
     // Buy products
-    getBuy: (req,res)=> {res.render("products/buyProduct.ejs")}
+    getBuy: (req,res)=> {res.render("products/buyProduct.ejs")},
+
+    search: async function(req, res) {
+        try {
+            const query = req.query.q || '';
+            const productos = await db.Productos.findAll({include:[
+                {association: "producto"}
+                ],
+                where: {
+                    name: {
+                        [db.Sequelize.Op.like]: `%${query}%`
+                    }
+                }   
+            });
+            res.render("products/productSearch.ejs", { productos: productos, query: query });
+        } catch (error) {
+            console.error('Error al buscar productos: ', error);
+            res.status(500).send("Ocurrido un error inesperado");
+        }
+    },    
 };
 
 module.exports = productsController;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Productos</title>
+    <link rel="stylesheet" href="\css\productAll.css">
+	<link rel="stylesheet" href="/css/index.css">
+    
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    
+     
+		<section class="main--section">
+            <h3 class="main--titulares">Resultado Busqueda</h3>
+			<% if (productos.length > 0) { %>  
+			<div class="main--div">
+				<% productos.forEach ((product)=>{ %>
+					<section class="product-box">
+					<a class="product--href" href="productDetail/<%=product.id%>">
+						<figure class="product-box_image">
+							<% for( let i = 0; i < 1; i++ ) { %>
+								<img class="image__product" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
+								<% } %>
+						</figure>
+	
+						<p class="product-box_data"><%=product.name %></p>
+						
+						<div class="article__div--flex">
+							<div class="main__offer">
+								<% if (product.discount > 0) { %>
+									<p class="section__article--discount"> <%=product.discount%>% OFF</p>
+									<p class="section__article--discountNo"> $<%=product.price%> </p>
+									<p class="section__article--discountYes"> $<%=product.discount_price%> </p>
+								<% } else { %>
+									<p class="section__article--discountYes"> $<%=product.discount_price%> </p>
+								<% }%>
+							</div>
+						</div>
+	
+					</a>
+					</section>
+				<% }) %>
+			</div>
+
+
+
+    <% } else { %>
+        <h4 class="section__article--search">No se encontraron productos.</h4>
+    <% } %>
+</section>
+</main>
+
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>

@@ -169,7 +169,6 @@
     margin: 0 0 15px 0;
 }
 
-
 .section__article--discount{
     font-size: 21px;
     color:#16AE5F;
@@ -184,7 +183,7 @@
     margin: 0 0 15px 0;
 }
 .section__article--discountYes {
-    font-size: 19px;
+    font-size: 27px;
     color:black;
     font-weight: 450;
     padding: 0 0 0 15px;
@@ -196,6 +195,12 @@
     color:#666;
     padding: 0 10px 10px 10px;
     margin: 0;  
+}
+.section__article--search{
+    font-size: 16px;
+    font-weight: bold;
+    color:#666;
+    margin: 18px 0 18px 40px;
 }
 
 .article__div--flex{
