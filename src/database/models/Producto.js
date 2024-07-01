@@ -16,6 +16,14 @@ module.exports = (Sequelize, DataTypes) => {
             allowNull: false
         },      
         price:{
+            type: DataTypes.DECIMAL(10),
+            allowNull: false
+        },
+        discount:{
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+        },
+        discount_price: {
             type: DataTypes.DECIMAL,
             allowNull: false
         },
@@ -53,6 +61,9 @@ module.exports = (Sequelize, DataTypes) => {
             otherKey:"user_id",
             timestamps: false
         })
+        Products.hasMany(models.Carritos,{ 
+            foreignKey: 'product_id' 
+        });
     }
     return Products;
 };

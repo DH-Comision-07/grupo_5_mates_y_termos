@@ -11,14 +11,20 @@ const homeController = {
     // Todos los productos
     index: function (req,res){
         homeService.getAll() //esta es la promesa
-        .then((productos) => { //en productos entra la promesa
-            res.render("index.ejs", {productos: productos});
+        .then((productos) => { //en productos entra la promesa            
+            res.render("index.ejs", {
+                discountNo: productos.discountNo,
+                discountYes: productos.discountYes
+            });
         })
         .catch((error) => {
-            res.render("index.ejs", {productos: error});
-        })
-    },
-    
+            res.render("index.ejs", {
+                discountNo: [],
+                discountYes:[] ,
+                error: error
+            });
+        });
+    }    
 };
 
 module.exports = homeController;
