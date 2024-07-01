@@ -13,6 +13,17 @@ const adminController = {
     // Admin Products
     start: (req,res) =>{res.render("products/productsAdmin.ejs")},
 
+    // Todos los productos administrador
+    indexAdmin: function (req,res){
+        adminService.getAdmin() //esta es la promesa
+        .then((productos) => { //en productos entra la promesa
+            res.render("products/productAllAdmin.ejs", {productos: productos});
+        })
+        .catch((error) => {
+            res.render("products/productAllAdmin.ejs", {productos: error});
+        })
+    },
+
     //Create products form
 
     create: async (req, res) => {
@@ -78,7 +89,7 @@ const adminController = {
     update: async function(req, res) {
         try {
             await adminService.updateBy(req.body, req.params.id);
-            res.redirect(`/admin`);
+            res.redirect(`/admin/index`);
         } catch (error) {
             res.send("No se pudo editar!!");
         }
@@ -124,7 +135,7 @@ const adminController = {
                     id: req.params.id
                 }
             })
-            res.redirect(`/admin`);
+            res.redirect(`/admin/index`);
         } catch (error) {
             res.send("No se pudo borrar!!");
         }

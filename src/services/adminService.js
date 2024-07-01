@@ -15,6 +15,25 @@ let adminService = {
             res.status(500).send('Internal Server Error');
         }
     },
+
+    getAdmin: function (){
+        return new Promise((resolve, reject) => {
+            db.Productos.findAll({
+                include:[
+                    {association: "producto"},
+                    {association: "colores"},
+                    {association: "categorias"},
+                    {association: "usuarios"}]
+                })       
+            .then(productos => { //en productos entra la promesa
+                resolve(productos)
+            })
+            .catch (err => {
+                console.log(err);
+                reject ([])
+            });
+        })
+    },
     
     createProduct: async function(newProduct, newImage){
         try {
@@ -95,7 +114,7 @@ function Producto({name, description, price, discount, discount_price, stock, ca
     this.description = description;
     this.price = price;
     this.discount = discount;
-    this.discount_price = discount_price;
+    this.discount_price = price * discount_price;
     this.stock = stock;
     this.category_id = categorias;
     this.color_id = colores;

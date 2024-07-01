@@ -53,6 +53,9 @@ module.exports = (Sequelize, DataTypes) => {
             otherKey:"product_id",
             timestamps: false
         })
+        Users.hasMany(models.Carritos, { 
+            foreignKey: 'user_id' 
+        })
     },
 
     Users.beforeCreate(async (user) => {

@@ -53,17 +53,6 @@
                 <li class= "input--error" ><%= errors.discount.msg %></li>
             <% } %>
 
-
-           
-
-
-
-
-
-
-
-
-
             <label class="main__input--desc" for="colores">Colores</label>
             <select name="colores"  class="main__form--inputs" value="<%= locals.old && old.colores %>">
                 <% for( let i = 0; i < colores.length; i++ ) { %>
@@ -97,7 +86,7 @@
             
             <div class="main--buttons">
                 <button class="main__buttons--products" type="submit" >Crear</button>
-                <a class="product--butt" href="/admin/">Cancelar</a>
+                <a class="product--butt" href="/admin">Cancelar</a>
             </div>
         </form>
         

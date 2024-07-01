@@ -404,6 +404,7 @@
 
 .product--flex{
     display: flex;
+    height: auto;
 }
 
 .product__detail--description {
