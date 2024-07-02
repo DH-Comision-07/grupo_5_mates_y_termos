@@ -576,8 +576,9 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 15px;
-    background-color:#4d9e2e;
+    background-color:#819F54;
     border-radius: 9px;
+    text-align: center;
 }
 
 /* menu hamburguesa */
@@ -608,6 +609,9 @@
 
 /* Media Query */
 @media screen and (max-width:490px) {
+    .product-detail {
+        display: block;
+    }
     .search__bar--input {
         width: 130px;
     }
