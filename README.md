@@ -30,14 +30,7 @@ Link de acceso a tablero de trabajo, proyecto Grupo 5
 ## Colaboradores
 
 - Denise Agüero
-- Alex Martinez
 - César Bertalot
-- Diego Ferrando
 - Facundo Komorovski
-- Fernando Vargas
-- Lucas Silva
-- María Inés Gnecco
 - Matías Petroff Yañuk
 - María Florencia Pillas García
-- Franco Aguilar
-
