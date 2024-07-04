@@ -27,6 +27,12 @@ Link de acceso a tablero de trabajo, proyecto Grupo 5
 
 [Trello-Grupo Nº5](https://trello.com/b/SdHVttE9/grupo-5)
 
+#Utilizamos:
+![GRUPO5](https://github.com/DH-Comision-07/grupo_5_mates_y_termos/assets/157543606/f614417b-f1aa-407a-bfb1-37c1549a58a2)
+
+
+
+
 ## Colaboradores
 
 - Denise Agüero
