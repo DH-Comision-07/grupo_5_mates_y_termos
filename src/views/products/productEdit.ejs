@@ -45,7 +45,16 @@
                 <input type="number" class="main__input--control prices"  id="price" name="price" value="<%=productos.price%>" placeholder="Precio">
             </div>
             <div class="erroresPrice"><ul></ul></div>
-            
+
+            <div style="display: flex;">
+                <label class="control__form--label"for="discount">Porcentaje Descuento</label>
+                <input type="number" class="main__input--control prices" id="discount" name="discount" value="<%=productos.discount%>">
+                
+
+                <label class="control__form--label"for="discountPrice">Precio Descuento</label>
+                <input type="number" class="main__input--control prices" id="discountPrice" name="discountPrice" value="<%=productos.discount_price %>" disabled>
+            </div>
+
                 <label class="control__form--label" for="colores" >Colores:</label>
                 <select name="colores" id="colores" class="main__input--control">
                     <% for( let i = 0; i <colores.length; i++ ) { %>
@@ -86,7 +95,7 @@
             <br>
             <div class="main--buttons">
                 <button type="submit" class="main__buttons--products">Modificar</button>
-                <a class="product--butt" href="/admin/">Cancelar</a>
+                <a class="product--butt" href="/admin">Cancelar</a>
             </div>
             
         </form>

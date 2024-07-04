@@ -15,15 +15,42 @@ let adminService = {
             res.status(500).send('Internal Server Error');
         }
     },
+
+    getAdmin: function (){
+        return new Promise((resolve, reject) => {
+            db.Productos.findAll({
+                include:[
+                    {association: "producto"},
+                    {association: "colores"},
+                    {association: "categorias"},
+                    {association: "usuarios"}]
+                })       
+            .then(productos => { //en productos entra la promesa
+                resolve(productos)
+            })
+            .catch (err => {
+                console.log(err);
+                reject ([])
+            });
+        })
+    },
     
     createProduct: async function(newProduct, newImage){
         try {
             let product = new Producto(newProduct);
 
-            let addProduct = await db.Productos.create(product, {include:[{association: "producto"},{association: "colores"},{association: "categorias"},{association: "usuarios"}]})
+            let addProduct = await db.Productos.create(product, {
+                include:[
+                    {association: "producto"},
+                    {association: "colores"},
+                    {association: "categorias"},
+                    {association: "usuarios"}]
+                })
             
             const imagePromises = newImage.map(file => {
-                return db.Images.create({ name: file.filename, product_id: addProduct.id });
+                return db.Images.create({ 
+                    name: file.filename, 
+                    product_id: addProduct.id});
             });
             await Promise.all(imagePromises);
             return addProduct.dataValues
@@ -82,10 +109,12 @@ let adminService = {
     }
 };
 
-function Producto({name, description, price, stock, categorias, colores,}){
+function Producto({name, description, price, discount, discount_price, stock, categorias, colores,}){
     this.name = name;
     this.description = description;
     this.price = price;
+    this.discount = discount;
+    this.discount_price = price * discount_price;
     this.stock = stock;
     this.category_id = categorias;
     this.color_id = colores;

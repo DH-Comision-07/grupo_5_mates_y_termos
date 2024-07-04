@@ -18,6 +18,14 @@ module.exports = (Sequelize, DataTypes) => {
         timestamps: false
     };
     const Carrito = Sequelize.define(alias, cols, config);
-    
+
+    Carrito.associate = (models) => {
+        Carrito.belongsTo(models.Usuarios, { 
+            foreignKey: 'user_id' 
+        });
+        Carrito.belongsTo(models.Productos, { 
+            foreignKey: 'product_id' 
+        });
+    }
     return Carrito;
 };

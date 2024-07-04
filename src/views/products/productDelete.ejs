@@ -41,6 +41,11 @@
                 <label class="control__form--label" for="price" >Precio:</label>
                 <input class="main__input--control"  type="number" id="price" name="price" value="<%=productos.price%>" disabled>
             </div>
+
+            <div class="control--form">
+                <label class="control__form--label" for="discount" >Descuento:</label>
+                <input class="main__input--control"  type="number" id="discount" name="discount" value="<%=productos.discount%>" disabled>
+            </div>
             
                 <label class="control__form--label" for="colores" >Colores:</label>
                 <input class="main__input--control" id="colores" name="colores" value="<%=productos.colores.name%>" disabled>
@@ -56,7 +61,7 @@
             <br>
             <div class="main--buttons">
                 <button type="submit" class="main__buttons--products">Eliminar</button>
-                <a class="product--butt" href="/admin/">Cancelar</a>
+                <a class="product--butt" href="/admin">Cancelar</a>
             </div> 
         </form>
     </main>

@@ -19,9 +19,9 @@
            
             <div class="main__secction--container">
                 <!-- Ordenar aleatoriamente los productos -->
-                <%productos.sort(() => 0.5 - Math.random());
+                <%discountNo.sort(() => 0.5 - Math.random());
                 // Seleccionar los primeros 4 productos
-                const productosAleatorios = productos.slice(0, 4);
+                const productosAleatorios = discountNo.slice(0, 4);
                 %>
                 
                 <% productosAleatorios.forEach ((product)=>{ %>
@@ -31,7 +31,7 @@
                                 <img class="main__figure--img" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
                             <% } %>
                             <div class="article__div--flex">
-                                <p class="section__article--precio">$<%=product.price %>.-</p>
+                                <p class="section__article--precio">$<%=product.price %></p>
                                 <p class="section__article--descripcion"> <%=product.name %> </p>
                             </div>
                         </a>
@@ -43,68 +43,59 @@
         <div class="banner--slides">
             <img class="banner--slide" id="slider1" src="/images/slides/slide3.jpg">
         </div>
-        
+
         <section class="main--section">
-            <h3 class="main--titulares">Ofertas exclusivas</h3>
-            <div class="main__section--div4">
-                <div class="main__section--div2">
-                    <article class="main__secction--article">
-                        <div class="section__article--img">
-                            <img class="main__article--img" src="/images/el-mateador-imagenes-09.jpg" alt="Programacion Full Stack">
-                        </div>                        
-                        <div class="article__div--flex">
-                            <p class="section__article--precio"> 40% descuento</p>
-                            <p class="section__article--descripcion"> Descripcion Oferta </p> 
-                        </div>                        
-                    </article>
+            <h3 class="main--titulares">Ofertas</h3>
+           
+            <div class="main__secction--container">
+                <!-- Ordenar aleatoriamente los productos -->
+                <%discountYes.sort(() => 0.5 - Math.random());
+                // Seleccionar los primeros 4 productos
+                const aleatoriosProductos = discountYes.slice(0, 4);
+                %>
+                
+                <% aleatoriosProductos.forEach ((product)=>{ %>
+                    <section class="main__secction--article">
+                        <a class="product--href" style="text-decoration: none;" href="/products/productDetail/<%=product.id%>">
+                            <% for( let i = 0; i < 1; i++ ) { %>
+                                <img class="main__figure--img" id="images" name="images" src="/images/<%= product.producto[i].name%>" alt="<%=product.producto[i].name%>">
+                            <% } %>
+                            <div class="article__div--flex">
+                                <p class="section__article--discount"> <%=product.discount%>% OFF</p>
+                                
+                                <div style="display: flex;">
+                                    <p class="section__article--discountNo"> $<%=product.price%> </p>
+                                    <p class="section__article--discountYes"> $<%=product.discount_price %> </p>
+                                </div>
+                            </div>
+                        </a>
+                    </section>
+                <% }) %>
+            </div>
+        </section>    
 
-                    <article class="main__secction--article">
-                        <div class="section__article--img">
-                            <img class="main__article--img" src="/images/el-mateador-imagenes-08.jpg" alt="Programacion Full Stack">
-                        </div>                        
-                        <div class="article__div--flex">
-                            <p class="section__article--precio"> 40% descuento</p>
-                            <p class="section__article--descripcion"> Descripcion Oferta </p> 
-                        </div>                        
-                    </article>
-                </div>
-
-                <div class="main__section--div2">
-                    <article class="main__secction--article">
-                        <div class="section__article--img">
-                            <img class="main__article--img" src="/images/el-mateador-imagenes-03.jpg" alt="Programacion Full Stack">
-                        </div>                        
-                        <div class="article__div--flex">
-                            <p class="section__article--precio"> 40% descuento</p>
-                            <p class="section__article--descripcion"> Descripcion Oferta </p> 
-                        </div>                        
-                    </article>
-                    
-                    <article class="main__secction--article">
-                        <div class="section__article--img">
-                            <img class="main__article--img" src="/images/el-mateador-imagenes-07.jpg" alt="Programacion Full Stack">
-                        </div>                        
-                        <div class="article__div--flex">
-                            <p class="section__article--precio"> 40% descuento</p>
-                            <p class="section__article--descripcion"> Descripcion Oferta </p> 
-                        </div>                        
-                    </article>
-                </div>
-        </section>
 
         <section class="main--section">
             <h3 class="main__section--send">¿Por qué elegirnos?</h3>  
             <div class="main__section--bannerSend">
-               <!--  <i class="fa-solid fa-chevron-left main__section--arrow"></i> -->
-                           
+                          
                 <article class="main__section--articleSend">
-                    <a href="#">
-                        <i class="fa-solid fa-truck-fast main__icon--send"></i>
-                    </a>
-                    <h4>Envíos a todo el país</h4>
-                    <p>Envíos gratis a partir de $30000</p>                   
+                    <i class="fa-regular fa-credit-card main__icon--send"></i></a>
+                    <h4 class="section--h4">Elegí cómo pagar</h4>
+                    <p class="section--p">Podés pagar con tarjeta, débito o efectivo.</p>                   
                 </article>
-                <!-- <i class="fa-solid fa-chevron-right main__section--arrow"></i>  -->  
+                
+                <article class="main__section--articleSend">
+                    <i class="fa-solid fa-truck-fast main__icon--send"></i>
+                    <h4 class="section--h4">Envío gratis desde $ 30.000</h4>
+                    <p class="section--p">Solo por estar registrado en El Mateador.</p>                   
+                </article>
+                
+                <article class="main__section--articleSend">
+                    <i class="fa-solid fa-lock main__icon--send"></i>
+                    <h4 class="section--h4">Seguridad</h4>
+                    <p class="section--p">Siempre protegemos tus datos. ¿No te gusta? ¡Devolvelo!</p>                 
+                </article>
                 
             </div>
         </section>

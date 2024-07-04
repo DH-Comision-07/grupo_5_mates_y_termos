@@ -11,6 +11,9 @@ const validCreateProduct = require('../middlewares/validCreateProduct');
 /* INICIO (start) productos */
 routes.get('/', credentialMid.adminMid, adminController.start); 
 
+// TODOS (all) los productos Administrador
+routes.get('/index/', adminController.indexAdmin); 
+
 /* CREAR (create) producto */
 routes.get("/create", credentialMid.adminMid, adminController.create);
 routes.post('/', uploadFile, validCreateProduct, adminController.store); 
