@@ -24,7 +24,8 @@ INSERT INTO colors (name) VALUES
 ('Negro'),
 ('Amarillo'),
 ('Gris'),
-('Aluminio');
+('Aluminio'),
+('Marron');
 
 -- Insertar datos en la tabla products
 INSERT INTO products (name, description, price, discount, stock, category_id, color_id) VALUES
@@ -37,7 +38,13 @@ INSERT INTO products (name, description, price, discount, stock, category_id, co
 ('Termo Acero Inoxidable 1 Litro', 'El Termo Acero Inoxidable 1 Litro Pico Cebador Alta Duracion, es el compañero perfecto para mantener tus bebidas frías o calientes durante todo el día.Con su sistema de doble pared de aislamiento, podrás disfrutar de tus bebidas favoritas sin preocuparte por la temperatura.', 49000, 0, 100, 3, 2),
 ('Combo Termo + Mate de color', 'TERMO, con pico sebador a rosca, capacidad 1 litro. MATE, clasico, acero inoxidable, doble capa.', 96999.99, 0, 100, 5, 2),
 ('Termo', 'Termo Acero Inoxidable Media Manija es el compañero perfecto para disfrutar de tus bebidas favoritas en cualquier momento y lugar. Capacidad de 1 litro. Fabricado con materiales de alta calidad, tanto en su exterior como en su interior.Con su diseño de media manija, este termo ofrece una experiencia de uso cómoda y práctica.', 54000, 0, 100, 3, 2),
-('Bombilla con filtro de acero', 'Bombilla con filtro de acero inoxidable. Filtra las impurezas del mate para una experiencia más limpia.', 2199.99, 0, 30, 2, 9);
+('Bombilla con filtro de acero', 'Bombilla con filtro de acero inoxidable. Filtra las impurezas del mate para una experiencia más limpia.', 2199.99, 0, 30, 2, 9),
+('Bombilla Clasica Nueva', 'Ideal para acompañar tu mate favorito. Bombilla de acero inoxidable resistente.', 4500, 10 , 30, 2, 9),
+('Termo 1 litro', 'El compañero perfecto para disfrutar de tus bebidas favoritas en cualquier momento y lugar. Fabricado con materiales de alta calidad, tanto en su exterior como en su interior.', 45000, 6, 40, 3, 4),
+('Mate Acero Inoxidable', 'Con aro y patas metalizado, agarre ergonomico y auténtico disfrute. Diseño único que combina tradición y sofisticación.', 7990.99, 15, 60, 1, 3),
+('Mate de madera', 'Compañero perfecto para tus momentos de mate. Mate fabricado en madera de primera calidad.', 18900.99, 0 , 45, 1,6),
+('Termo Ergonomico', 'Termo Acero Inoxidable Media Manija es el compañero perfecto para disfrutar de tus bebidas favoritas en cualquier momento y lugar. Capacidad de 1 litro.', 55000, 10, 40, 3, 3),
+('Termo con Pico Cebador', 'TERMO, con pico sebador a rosca, capacidad 1 litro.', 43000, 0, 25, 3, 10);
 
 -- Insertar datos en la tabla images
 INSERT INTO images (name, product_id) VALUES
@@ -59,7 +66,15 @@ INSERT INTO images (name, product_id) VALUES
 ('termo-mate-rosa.jpg',8),
 ('termo-mod1-gris.jpg',9),
 ('termo-mod1-marron.jpg',9),
-('bolso-matero-01.jpg',5);
+('bolso-matero-01.jpg',5),
+('bombilla-clasica1.jpg',11),
+('termo-rosa.jpg',12),
+('el-mateador-imagenes-033.jpg',13),
+('el-mateador-imagenes-044.jpg',13),
+('el-mateador-imagenes-10.jpg',14),
+('termo-mod11-gris.jpg',15),
+('termo-mod11-marron.jpg',16);
+
 
 -- Insertar datos en la tabla shopping_cart
 INSERT INTO shopping_cart (user_id, product_id, quantity) VALUES

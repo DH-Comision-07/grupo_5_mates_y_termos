@@ -21,7 +21,7 @@
                 <!-- Ordenar aleatoriamente los productos -->
                 <%discountNo.sort(() => 0.5 - Math.random());
                 // Seleccionar los primeros 4 productos
-                const productosAleatorios = discountNo.slice(0, 4);
+                const productosAleatorios = discountNo.slice(0, 6);
                 %>
                 
                 <% productosAleatorios.forEach ((product)=>{ %>
@@ -51,7 +51,7 @@
                 <!-- Ordenar aleatoriamente los productos -->
                 <%discountYes.sort(() => 0.5 - Math.random());
                 // Seleccionar los primeros 4 productos
-                const aleatoriosProductos = discountYes.slice(0, 4);
+                const aleatoriosProductos = discountYes.slice(0, 6);
                 %>
                 
                 <% aleatoriosProductos.forEach ((product)=>{ %>
