@@ -13,6 +13,7 @@
 }
 .main--div--all{
     max-width: 1110px;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
     margin: 0 auto;
     display: grid;
     justify-items: center;
@@ -88,16 +89,11 @@
 /* Media Query */
 @media(min-width:490px) {
     .main--div--all{
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     }
    
 }
-@media(min-width:769px) {
-    .main--div--all{
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-        }
-   
-}
+
 @media (min-width:1110px) {
     .main--div--all{
         grid-template-columns: repeat(4, minmax(200px, 1fr));

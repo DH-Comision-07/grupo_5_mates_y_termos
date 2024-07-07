@@ -493,7 +493,7 @@
 .image__product {
     display: flex;
     flex-direction: row;
-    width: 24%;
+    width: 54%;
 }
 .image__product--small {
     display: flex;

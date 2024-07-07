@@ -220,6 +220,26 @@
     height: 9rem; 
 }
 
+.icon--whatsapp {
+    position: fixed;
+    bottom: 40px; /* distancia borde inferior */
+    right: 40px;  /* distancia borde derecho */
+    width: 51px;  /* tamaño según tus necesidades */
+    height: 51px;
+    z-index: 1000; /* Asegura que el ícono esté sobre otros elementos */
+    transition: all 150ms;
+}
+
+.icon--whatsapp--img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+}
+.icon--whatsapp:hover {
+    width: 60px;  /* tamaño según tus necesidades */
+    height: 60px;
+}
 /* Media Query */
 @media(min-width:490px) {
     .main__section--articleSend:hover {

@@ -12,6 +12,7 @@
 <body>
 
     <%- include('../partials/header.ejs') %>
+	<%- include('../partials/iconWhatsapp.ejs') %>
     
     <main class="main--form">
         <!-- Productos con oferta -->
@@ -24,7 +25,7 @@
 				<section class="product-box--all">
 				<a class="product--href" href="productDetail/<%=product.id%>">
 					<figure class="product-box_image">
-						<% for( let i = 0; i < product.producto.length; i++ ) { %>
+						<% for( let i = 0; i < 1; i++ ) { %>
 							<img class="image__product" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
 							<% } %>
 					</figure>
