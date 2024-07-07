@@ -3,13 +3,27 @@ const path = require('path');
 
 const productService = require ('../services/productService')
 
+
+
 const db = require ("../database/models");
 const op = db.Sequelize.Op;
 
 const productsController = { 
-
     // Todos los productos
-    index: function (req,res){
+    index: async function (req, res) {
+        const categoriaSeleccionada = req.query.categoria;
+        const precioMin = req.query.precioMin;
+        const precioMax = req.query.precioMax;
+        try {
+            const categorias = await db.Categorias.findAll();
+            const productos = await productService.getProducts(categoriaSeleccionada, precioMin, precioMax);
+            res.render("products/productCategory.ejs", { productos, categorias, categoriaSeleccionada, precioMin, precioMax });
+        } catch (error) {
+            res.render("products/productCategory.ejs", { error });
+        }
+    },
+    // Todos los productos
+    index1: function (req,res){
         productService.getAll() //esta es la promesa
         .then((productos) => { //en productos entra la promesa
             res.render("products/productAll.ejs", {productos: productos});
