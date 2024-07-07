@@ -24,6 +24,8 @@ routes.put('/edit/:id/', validateRegister, usersController.update);
 
 routes.get("/logout", usersController.logout);
 
+routes.get('/chat', usersController.chat); 
+
 routes.post('/favorite', favoriteController.addFavorite);
 routes.delete('/favorite/:id', favoriteController.removeFavorite);
 routes.get('/favorite/:userId', favoriteController.getFavorites);

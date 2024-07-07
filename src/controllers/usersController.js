@@ -10,6 +10,8 @@ const { validationResult } = require('express-validator');
 const usersController = { 
     start: (req,res) =>{res.render("users/indexUsers.ejs")},
 
+    chat: (req,res) =>{res.render("users/whatsapp.ejs")},
+
     getLogin: (req,res)=> {res.render("users/login.ejs")},
     
     processLogin: async function (req,res) {
