@@ -113,6 +113,9 @@
     text-align: center;
     list-style: none;
 }
+.product--butt:hover {
+    background-color: #819F54;
+}
 
 .main__buttons--products {
     width: 100%;
@@ -124,6 +127,9 @@
     color: white;
     margin-bottom: 20px;
     margin-top: 20px;
+}
+.main__buttons--products:hover {
+    background-color: #819F54;
 }
 /*validaciones front */
 .erroresName, .erroresDescription, .erroresImage,.erroresPrice, .erroresStock{
