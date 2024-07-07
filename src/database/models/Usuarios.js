@@ -56,6 +56,10 @@ module.exports = (Sequelize, DataTypes) => {
         Users.hasMany(models.Carritos, { 
             foreignKey: 'user_id' 
         })
+        Users.hasMany(models.Favoritos, { 
+            as:"FavoritUsuario",
+            foreignKey: 'user_id' 
+        });
     },
 
     Users.beforeCreate(async (user) => {

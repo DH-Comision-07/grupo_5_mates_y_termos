@@ -12,7 +12,7 @@ const validCreateProduct = require('../middlewares/validCreateProduct');
 routes.get('/', credentialMid.adminMid, adminController.start); 
 
 // TODOS (all) los productos Administrador
-routes.get('/index/', adminController.indexAdmin); 
+routes.get('/index/', credentialMid.adminMid, adminController.indexAdmin); 
 
 /* CREAR (create) producto */
 routes.get("/create", credentialMid.adminMid, adminController.create);

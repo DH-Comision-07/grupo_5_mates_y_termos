@@ -85,3 +85,13 @@ INSERT INTO shopping_cart (user_id, product_id, quantity) VALUES
 (2, 2, 1),
 (2, 9, 3),
 (3, 6, 6);
+
+-- Insertar datos en la tabla favoritos
+INSERT INTO favorite_product(user_id, product_id) VALUES
+(1, 1),
+(1, 3),
+(1, 4),
+(1, 7),
+(2, 1),
+(2, 3),
+(3, 6);

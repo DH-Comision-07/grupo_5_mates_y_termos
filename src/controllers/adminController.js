@@ -14,7 +14,20 @@ const adminController = {
     start: (req,res) =>{res.render("products/productsAdmin.ejs")},
 
     // Todos los productos administrador
-    indexAdmin: function (req,res){
+    indexAdmin: function (req, res) {
+        const orderBy = req.query.orderBy || 'id'; // Por defecto ordena por nombre
+        const orderDirection = req.query.orderDirection || 'ASC'
+        
+        adminService.getAdmin(orderBy, orderDirection)
+        .then((productos) => {
+            res.render("products/productAllAdmin.ejs", { productos: productos,orderBy, orderDirection });
+        })
+        .catch((error) => {
+            res.render("products/productAllAdmin.ejs", { productos: error });
+        });
+    },
+    
+    indexAdmin1: function (req,res){
         adminService.getAdmin() //esta es la promesa
         .then((productos) => { //en productos entra la promesa
             res.render("products/productAllAdmin.ejs", {productos: productos});

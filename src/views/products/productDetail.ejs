@@ -91,7 +91,7 @@
                 <!-- Ordenar aleatoriamente los productos -->
                 <%productosSugeridos.sort(() => 0.5 - Math.random());
                 // Seleccionar los primeros 4 productos
-                const productosAlert= productosSugeridos.slice(0, 4);
+                const productosAlert= productosSugeridos.slice(0, 6);
                 %>
                 
                 <% productosAlert.forEach ((product)=>{ %>
@@ -104,8 +104,9 @@
                                 <% if (product.discount > 0) { %>
                                     <p class="section__article--discount"> <%=product.discount%>% OFF</p>
                                     <div style="flex-direction: column;">
-                                        <p class="section__article--discountNo"> $<%=product.price%> </p>
                                         <p class="section__article--discountYes"> $<%=product.discount_price%> </p>
+                                        <p class="section__article--descripcion"> <%=product.name %> </p>
+                                        
                                     </div>
                                 <% } else { %>
                                     <p class="section__article--descripcion"> <%=product.name %> </p>

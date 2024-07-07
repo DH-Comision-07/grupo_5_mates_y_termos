@@ -176,14 +176,14 @@
     margin: 0 0 15px 0;
 }
 .section__article--discountNo {
-    font-size: 18px;
+    font-size: 15px;
     color:#B9B9B9;
     text-decoration: line-through;
     padding: 0 0 0 15px;
     margin: 0 0 15px 0;
 }
 .section__article--discountYes {
-    font-size: 22px;
+    font-size: 19px;
     color:black;
     font-weight: 450;
     padding: 0 0 0 15px;
