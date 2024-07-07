@@ -2,6 +2,39 @@ const db = require ("../database/models");
 const Op = db.Sequelize.Op;
 
 let productsService = { 
+    getProducts: function (categoriaSeleccionada, precioMin, precioMax) {
+        return new Promise((resolve, reject) => {
+            let whereCondition = {};
+
+            if (categoriaSeleccionada) {
+                whereCondition['$categorias.name$'] = categoriaSeleccionada;
+            }
+            if (precioMin) {
+                whereCondition.discount_price = { ...whereCondition.discount_price, [db.Sequelize.Op.gte]: precioMin };
+            }
+            if (precioMax) {
+                whereCondition.discount_price = { ...whereCondition.discount_price, [db.Sequelize.Op.lte]: precioMax };
+            }
+            db.Productos.findAll({
+                include: [
+                    {association: "producto"},
+                    {association: "colores"},
+                    {association: "categorias"},
+                    {association: "usuarios"}
+                ],
+                where: whereCondition,
+                order: [['name', 'ASC']] // Ordenar por nombre ascendente por defecto
+            })
+            .then(productos => {
+                resolve(productos);
+            })
+            .catch(err => {
+                console.log(err);
+                reject([]);
+            });
+        });
+    },
+
     getAll: function (){
         return new Promise((resolve, reject) => {
             db.Productos.findAll({include:[
