@@ -58,6 +58,9 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
+.main__buttons--products:hover {
+    background-color: #819F54;
+}
 
 .main__products--titulares {
     font-family: "Poppins", sans-serif;
