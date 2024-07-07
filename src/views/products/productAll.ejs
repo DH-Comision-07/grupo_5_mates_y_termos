@@ -15,38 +15,58 @@
     
     <main class="main--form">
         <!-- Todos los productos -->
-		<h3 class="main__products--titulares">Todos los productos</h3>
+		<h3 class="main__products--titulares">Productos</h3>
+		<div class="main--filter--products">
+		
+			<form class="filter--form" action="/products/index" method="get">
+				<label class="form--label" for="categoria">Categoría:</label>
+				<select class="form--select" name="categoria" id="categoria">
+					<option value="">Todas</option>
+					<% categorias.forEach(categoria => { %>
+						<option value="<%= categoria.name %>" <%= categoria.name === categoriaSeleccionada ? 'selected' : '' %>><%= categoria.name %></option>
+					<% }); %>
+				</select>
+		
+				<label class="form--label" for="precioMin">Precio Mínimo:</label>
+				<input class="form--input" type="number" name="precioMin" id="precioMin" value="<%= precioMin %>">
+		
+				<label class="form--label" for="precioMax">Precio Máximo:</label>
+				<input class="form--input" type="number" name="precioMax" id="precioMax" value="<%= precioMax %>">
+		
+				<button class="form--button" type="submit">Filtrar</button>
+			</form>
+		
+			<div class="main--div--all">
+				<!-- Ordenar aleatoriamente los productos -->
+				<% const aleatorioProduct = productos.sort(() => 0.5 - Math.random()) %>
 
-		<div class="main--div--all">
-			<!-- Ordenar aleatoriamente los productos -->
-			<% const aleatorioProduct = productos.sort(() => 0.5 - Math.random()) %>
+				<% aleatorioProduct.forEach ((product)=>{ %>
+					<section class="product-box--all">
+					<a class="product--href" href="productDetail/<%=product.id%>">
+						<figure class="product-box_image">
+							<% for( let i = 0; i < 1; i++ ) { %>
+								<img class="image__product" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
+								<% } %>
+						</figure>
 
-			<% aleatorioProduct.forEach ((product)=>{ %>
-				<section class="product-box--all">
-				<a class="product--href" href="productDetail/<%=product.id%>">
-					<figure class="product-box_image">
-						<% for( let i = 0; i < 1; i++ ) { %>
-							<img class="image__product" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
-							<% } %>
-					</figure>
-
-					<p class="product-box_data"><%=product.name %></p>
-					
-					<div class="article__div--flex">
-						<div class="main__offer">
-							<% if (product.discount > 0) { %>
-								<p class="section__article--discount"> <%=product.discount%>% OFF</p>
-								<p class="section__article--discountNo"> $<%=product.price%> </p>
-								<p class="section__article--discountYes"> $<%=product.discount_price%> </p>
-							<% } else { %>
-								<p class="section__article--discountYes"> $<%=product.discount_price%> </p>
-							<% }%>
+						<p class="product-box_data"><%=product.name %></p>
+						
+						<div class="article__div--flex">
+							<div class="main__offer">
+								<% if (product.discount > 0) { %>
+									<p class="section__article--discount"> <%=product.discount%>% OFF</p>
+									<p class="section__article--discountNo"> $<%=product.price%> </p>
+									<p class="section__article--discountYes"> $<%=product.discount_price%> </p>
+								<% } else { %>
+									<p class="section__article--discountYes"> $<%=product.discount_price%> </p>
+								<% }%>
+							</div>
 						</div>
-					</div>
 
-				</a>
-				</section>
-			<% }) %>
+					</a>
+					</section>
+				<% }) %>
+			</div>
 		</div>
 </main>
 

@@ -17,20 +17,10 @@ const productsController = {
         try {
             const categorias = await db.Categorias.findAll();
             const productos = await productService.getProducts(categoriaSeleccionada, precioMin, precioMax);
-            res.render("products/productCategory.ejs", { productos, categorias, categoriaSeleccionada, precioMin, precioMax });
+            res.render("products/productAll.ejs", { productos, categorias, categoriaSeleccionada, precioMin, precioMax });
         } catch (error) {
-            res.render("products/productCategory.ejs", { error });
+            res.render("products/productAll.ejs", { error });
         }
-    },
-    // Todos los productos
-    index1: function (req,res){
-        productService.getAll() //esta es la promesa
-        .then((productos) => { //en productos entra la promesa
-            res.render("products/productAll.ejs", {productos: productos});
-        })
-        .catch((error) => {
-            res.render("products/productAll.ejs", {productos: error});
-        })
     },
     indexOffer: function (req,res){
         productService.getAllOffer() //esta es la promesa

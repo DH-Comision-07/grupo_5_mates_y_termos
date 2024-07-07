@@ -48,7 +48,8 @@
 .figure--avatar:hover > .header--users {
     display:block;
     margin-top:-9px;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 400;
     height: 9px;
 }
 /* Fin Header */
