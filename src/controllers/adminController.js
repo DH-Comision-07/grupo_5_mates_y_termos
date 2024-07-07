@@ -26,16 +26,6 @@ const adminController = {
             res.render("products/productAllAdmin.ejs", { productos: error });
         });
     },
-    
-    indexAdmin1: function (req,res){
-        adminService.getAdmin() //esta es la promesa
-        .then((productos) => { //en productos entra la promesa
-            res.render("products/productAllAdmin.ejs", {productos: productos});
-        })
-        .catch((error) => {
-            res.render("products/productAllAdmin.ejs", {productos: error});
-        })
-    },
 
     //Create products form
 
