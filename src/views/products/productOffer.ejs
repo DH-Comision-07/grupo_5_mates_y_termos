@@ -16,10 +16,12 @@
     <main class="main--form">
         <!-- Productos con oferta -->
 		<h3 class="main__products--titulares">Ofertas imperdibles</h3>
-
-		<div class="main--div">
+		<!-- Ordenar aleatoriamente los productos -->
+		<% const aleatorioProduct = productos.sort(() => 0.5 - Math.random()) %>
+		
+		<div class="main--div--all">
 			<% productos.forEach ((product)=>{ %>
-				<section class="product-box">
+				<section class="product-box--all">
 				<a class="product--href" href="productDetail/<%=product.id%>">
 					<figure class="product-box_image">
 						<% for( let i = 0; i < product.producto.length; i++ ) { %>
