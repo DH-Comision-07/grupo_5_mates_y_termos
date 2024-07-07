@@ -1,5 +1,5 @@
 module.exports = (Sequelize, DataTypes) => {
-    let alias = "Carritos";
+    let alias = "Favoritos";
     let cols = {
         id: {
             type: DataTypes.INTEGER,
@@ -14,26 +14,26 @@ module.exports = (Sequelize, DataTypes) => {
         product_id: {
             type: DataTypes.INTEGER,
             allowNull: false
-        },
-        quantity:{
-            type: DataTypes.INTEGER,
-            allowNull: false   
         }
     };
 
-    let config ={
-        tableName: "shopping_cart",
+    let config = {
+        tableName: "favorite_product",
         timestamps: false
     };
-    const Carrito = Sequelize.define(alias, cols, config);
 
-    Carrito.associate = (models) => {
-        Carrito.belongsTo(models.Usuarios, { 
-            foreignKey: 'user_id' 
+    const Favorites = Sequelize.define(alias, cols, config);
+
+    Favorites.associate = (models) => {
+        Favorites.belongsTo(models.Usuarios, {
+            as: "usuarioFavorit",
+            foreignKey: 'user_id'
         });
-        Carrito.belongsTo(models.Productos, { 
-            foreignKey: 'product_id' 
+        Favorites.belongsTo(models.Productos, {
+            as: "productoFavorit",
+            foreignKey: 'product_id'
         });
-    }
-    return Carrito;
+    };
+
+    return Favorites;
 };

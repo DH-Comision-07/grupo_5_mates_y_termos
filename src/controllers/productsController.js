@@ -35,7 +35,7 @@ const productsController = {
                 res.status(404).render("error404.ejs"); 
             } else {
                 /* muestra productos por categoria
-                let productosSujeridos = await productService.getRelated(productos.category_id, productos.id); */
+                let productosSugeridos = await productService.getRelated(productos.category_id, productos.id); */
                 let productosSugeridos = await productService.getRelated();
                 res.render("products/productDetail.ejs", {productos, productosSugeridos });
             } 
