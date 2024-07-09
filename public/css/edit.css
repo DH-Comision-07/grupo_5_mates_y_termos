@@ -9,7 +9,6 @@
 .main--image{
     width: 24%;
 }
-
 .form--register {
     width: 100%;
     max-width: 550px;
@@ -21,7 +20,6 @@
     border-radius: 4px;
     padding: 20px 30px;
 }
-
 .main__buttons--register {
     width: 100%;
     background: #344C2A;
@@ -49,7 +47,6 @@
     color:#1B1B1D;
     margin-left: 9px;
 }
-
 .main__form--bottom-options{
     display: flex;
     flex-direction: column;
