@@ -7,10 +7,10 @@ let currentIndex = 0;
 setInterval(() => {
   currentIndex = (currentIndex + 1) % images.length;
   document.getElementById('slider0').src = images[currentIndex];
-}, 1500); // Cambia de imagen cada 1,5 segundos
+}, 3000); // Cambia de imagen cada 1,5 segundos
 
 // Banner promociones
 setInterval(() => {
   currentIndex = (currentIndex + 1) % imagesslides.length;
   document.getElementById('slider1').src = imagesslides[currentIndex];
-}, 1500); // Cambia de imagen cada 1,5 segundos
+}, 3000); // Cambia de imagen cada 1,5 segundos

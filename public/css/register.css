@@ -72,7 +72,7 @@
     flex-direction: column;
     margin-bottom: 15px;
 }
-.errores, .erroresName, .erroresLastName, .erroresEmail , .erroresPassword{
+.errores, .erroresName, .erroresLastName, .erroresEmail , .erroresPassword {
     margin-top: -10px;
     margin-left: 10px;
     margin-bottom: 10px;
