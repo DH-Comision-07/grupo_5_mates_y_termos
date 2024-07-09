@@ -3,7 +3,6 @@ const routes = express.Router();
 const path = require ("path");
 
 const usersController = require('../controllers/usersController');
-const favoriteController = require('../controllers/favoriteController');
 
 const validateRegister = require('../middlewares/validateRegister');
 const validateLogin = require('../middlewares/validateLogin');
@@ -25,13 +24,5 @@ routes.put('/edit/:id/', validateRegister, usersController.update);
 routes.get("/logout", usersController.logout);
 
 routes.get('/chat', usersController.chat); 
-
-/* routes.post('/favorite', favoriteController.addFavorite);
-routes.delete('/favorite/:id', favoriteController.removeFavorite);
-routes.get('/favorite/:userId', favoriteController.getFavorites); */
-
-routes.get('/favorite/:id', credentialMid.guestMid,favoriteController.showFavorites);
-routes.post('/favorite/:userId', favoriteController.addFavorite);
-routes.delete('/favorite/:id', favoriteController.deleteFavorite);
 
 module.exports = routes;
