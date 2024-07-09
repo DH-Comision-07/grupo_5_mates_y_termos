@@ -15,20 +15,45 @@
     
     <main class="main--form">
         <!-- Todos los productos -->
-		<h3 class="main__products--titulares">Lista de Productos</h3>
+		<div class="main--title">
 
+			<h3 class="main__products--titular">Lista de Productos</h3>
+			<!-- NEW PRODUCTS -->
+			<a class="main__create--product--button" href="/admin/create"> 
+				<i class="fa-solid fa-plus"></i> Crear Producto
+			</a> 
+		</div>
 		<div class="main--div">
 			<table class="table">
-			  <tr >
-				  <th class="admin--th">Id</th>
-				  <th class="admin--th">Categoría</th>
-				  <th class="admin--th">Nombre</th>
-				  <th class="admin--th">Imagen</th>
-				  <th class="admin--th">Precio</th>
-				  <th class="admin--th">Stock</th>
-				  <th class="admin--th">Descripción</th>
-				  <th class="admin--th">Editar / Borrar</th>
-			  </tr>
+				<tr >
+					<th class="admin--th"><a class="admin--th--href" href="/admin/index?orderBy=id&orderDirection=<%= orderDirection === 'ASC' ? 'DESC' : 'ASC' %>">
+						<%= orderDirection === 'ASC' ? 'Id↑' : 'Id↓' %>
+						</a>
+					</th>
+					<th class="admin--th"><a class="admin--th--href" href="/admin/index?orderBy=categoria&orderDirection=<%= orderDirection === 'ASC' ? 'DESC' : 'ASC' %>">
+						<%= orderDirection === 'ASC' ? 'Categoría↑' : 'Categoría↓' %>
+						</a>
+					</th>
+					<th class="admin--th">
+						<a class="admin--th--href" href="/admin/index?orderBy=nombre&orderDirection=<%= orderDirection === 'ASC' ? 'DESC' : 'ASC' %>">
+						<%= orderDirection === 'ASC' ? 'Nombre↑' : 'Nombre↓' %>
+						</a>
+					</th>
+					<th class="admin--th">Imagen</th>
+					<!-- <th class="admin--th"><a class="admin--th--href" href="/admin/index?orderBy=precio">Precio</a></th> -->
+					<th class="admin--th">
+						<a class="admin--th--href" href="/admin/index?orderBy=precio&orderDirection=<%= orderDirection === 'ASC' ? 'DESC' : 'ASC' %>">
+						<%= orderDirection === 'ASC' ? 'Precio↑' : 'Precio↓' %>
+						</a>
+					</th>
+					<th class="admin--th">
+						<a class="admin--th--href" href="/admin/index?orderBy=stock&orderDirection=<%= orderDirection === 'ASC' ? 'DESC' : 'ASC' %>">
+						<%= orderDirection === 'ASC' ? 'Stock↑' : 'Stock↓' %>
+						</a>
+					</th>
+					<th class="admin--th">Descripción</th>
+					<th class="admin--th">Editar / Borrar</th>
+			  	</tr>
 			  <% productos.forEach(product => { %>
 				<tr>
 					<td class="admin--td" ><%= product.id %></td>
@@ -39,13 +64,15 @@
 							<img class="figure__image--product" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
 						<% } %>
 					</td>
-					<td class="admin--td">$ <%= product.discount_price %></td>
+					<td class="admin--td" style="font-weight: 450;">$ <%= product.discount_price %></td>
 				  	<td class="admin--td"><%= product.stock %></td>
 					<td class="admin__td--description" ><%= product.description %></td>
 					<td class="admin--td">
-						<a class="button--edit" href="update/<%=product.id%>"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+						<a class="button--edit" href="update/<%=product.id%>">
+							<i class="fa-solid fa-screwdriver-wrench"></i></a>
 						<form action="/admin/delete/<%=product.id%>?_method=delete" method="POST" class="button--delete">
-							<button class="button__delete" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+							<button class="button__delete" type="submit">
+								<i class="fa-solid fa-trash-can"></i></button>
 						</form>
 					</td>
 				</tr>

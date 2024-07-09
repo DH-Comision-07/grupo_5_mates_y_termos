@@ -3,6 +3,7 @@ const routes = express.Router();
 const path = require ("path");
 
 const usersController = require('../controllers/usersController');
+
 const validateRegister = require('../middlewares/validateRegister');
 const validateLogin = require('../middlewares/validateLogin');
 const uploadFileUsers = require ("../middlewares/usersMulterMiddlewares");
@@ -21,5 +22,7 @@ routes.get("/edit/:id/", usersController.getUpdate);
 routes.put('/edit/:id/', validateRegister, usersController.update); 
 
 routes.get("/logout", usersController.logout);
+
+routes.get('/chat', usersController.chat); 
 
 module.exports = routes;

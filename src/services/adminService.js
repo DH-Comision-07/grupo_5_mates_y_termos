@@ -7,24 +7,42 @@ const Op = db.Sequelize.Op;
 let adminService = {
     getAll: async () => {
         try {
-            const categorias = await db.Categorias.findAll()
-            const colores = await db.Colores.findAll()
-            return {categorias, colores}
+            const categorias = await db.Categorias.findAll();
+            const colores = await db.Colores.findAll();
+            return {categorias, colores};
         } catch (error) {
             console.error('Erro en Categorias y/o Colores:', error);
             res.status(500).send('Internal Server Error');
         }
     },
-
-    getAdmin: function (){
+    getAdmin: function (orderBy, orderDirection){
         return new Promise((resolve, reject) => {
-            db.Productos.findAll({
-                include:[
-                    {association: "producto"},
-                    {association: "colores"},
-                    {association: "categorias"},
-                    {association: "usuarios"}]
-                })       
+            let orderOption = [];
+
+            if (orderBy === 'categoria') {
+                orderOption = [[{ model: db.Categorias, as: 'categorias' }, 'name',  orderDirection]];
+            } else if (orderBy === 'id') {
+                orderOption = [['id',  orderDirection]];
+
+            } else if (orderBy === 'nombre') {
+                orderOption = [['name',  orderDirection]];
+
+            } else if (orderBy === 'precio') {
+                orderOption = [['price', orderDirection]];
+            
+             } else if (orderBy === 'stock') {
+                orderOption = [['stock',  orderDirection]];
+            };
+
+            return db.Productos.findAll({
+                include: [
+                    { association: "producto" },
+                    { association: "colores" },
+                    { association: "categorias" },
+                    { association: "usuarios" }
+                ],
+                order: orderOption // ordena segun el resultado de la variable ordenOption
+            })      
             .then(productos => { //en productos entra la promesa
                 resolve(productos)
             })
@@ -34,7 +52,7 @@ let adminService = {
             });
         })
     },
-    
+
     createProduct: async function(newProduct, newImage){
         try {
             let product = new Producto(newProduct);

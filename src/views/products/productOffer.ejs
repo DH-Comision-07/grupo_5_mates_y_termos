@@ -12,17 +12,20 @@
 <body>
 
     <%- include('../partials/header.ejs') %>
+	<%- include('../partials/iconWhatsapp.ejs') %>
     
     <main class="main--form">
         <!-- Productos con oferta -->
 		<h3 class="main__products--titulares">Ofertas imperdibles</h3>
-
-		<div class="main--div">
+		<!-- Ordenar aleatoriamente los productos -->
+		<% const aleatorioProduct = productos.sort(() => 0.5 - Math.random()) %>
+		
+		<div class="main--div--all">
 			<% productos.forEach ((product)=>{ %>
-				<section class="product-box">
+				<section class="product-box--all">
 				<a class="product--href" href="productDetail/<%=product.id%>">
 					<figure class="product-box_image">
-						<% for( let i = 0; i < product.producto.length; i++ ) { %>
+						<% for( let i = 0; i < 1; i++ ) { %>
 							<img class="image__product" id="images" name="images" src="/images/<%= product.producto[i].name %>" alt="<%=product.producto[i].name%>">
 							<% } %>
 					</figure>

@@ -29,6 +29,9 @@
     color: white;
     margin-bottom: 20px;
 }
+.main__buttons--register:hover {
+    background-color: #819F54;
+}
 .main__register--titulares {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
@@ -61,12 +64,15 @@
     text-align: center;
     list-style: none;
 }
+.register__cancel--butt:hover {
+    background-color: #819F54;
+}
 .main--buttons{
     display:flex;
     flex-direction: column;
     margin-bottom: 15px;
 }
-.errores, .erroresName, .erroresLastName, .erroresEmail , .erroresPassword{
+.errores, .erroresName, .erroresLastName, .erroresEmail , .erroresPassword {
     margin-top: -10px;
     margin-left: 10px;
     margin-bottom: 10px;

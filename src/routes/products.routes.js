@@ -7,8 +7,8 @@ const productsController = require('../controllers/productsController');
 // TODOS (all) los productos
 routes.get('/index/', productsController.index); 
 
-// TODOS (all) los productos
-routes.get('/offer/', productsController.indexOffer); 
+// TODOS (all) los productos de Oferta
+routes.get('/offer/', productsController.indexOffer);
 
 // DETALLE (detail) productos
 routes.get("/productDetail/:id", productsController.detail);

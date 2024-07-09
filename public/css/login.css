@@ -43,7 +43,10 @@
     color: white;
     margin-top: 10px;
     margin-bottom: 20px;
-  }
+}
+.main__buttons--logins:hover {
+    background-color: #819F54;
+}
 
 .main__login--titulares {
     font-family: "Poppins", sans-serif;
@@ -58,3 +61,11 @@
     align-items: center;
     justify-content: center;
   }
+
+.erroresEmail, .erroresPassword{
+    margin-top: -10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: red; 
+    font-size: 12px;
+}

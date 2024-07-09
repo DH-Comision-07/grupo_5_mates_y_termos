@@ -18,15 +18,25 @@
           
     <nav class="header__nav--menu" id="nav"> 
         
-        <nav class="nav--option" >
+        <nav class="nav--option">
             <button href="" class="close--burger" id="cerrar"><i class="fa-solid fa-x"></i></button>  
             <ul class="header__nav--option">
                 <li type="none"> <a href="/"> Inicio</a> </li>
                 <li type="none"> <a href="/products/index"> Productos</a> </li>
+                <li type="none" class="nav--category">
+                    <a class="nav__option--category">Categorías <i class="fa-solid fa-angle-down" style="color:rgb(0, 0, 0,0.4);" ></i></a>
+                    <ul class="nav__option--category--content">
+                        <li><a href="/products/index?categoria=Bolsos+Materos">Bolsos Materos</a></li>
+                        <li><a href="/products/index?categoria=Bombillas">Bombillas</a></li>
+                        <li><a href="/products/index?categoria=Combos+Materos">Combos Materos</a></li>
+                        <li><a href="/products/index?categoria=Mates">Mates</a></li>
+                        <li><a href="/products/index?categoria=Termos">Termos</a></li>
+                    </ul>
+                </li>
                 <li type="none"> <a href="/products/offer"> Ofertas</a> </li>
-                <li type="none" class="visibleline">----------------</a> </li>
+                <li type="none" class="visibleline">----------------</li>
             </ul> 
-        </nav>
+          </nav>
         <nav class="search--bar">
             <form class="search__bar--form" action="/products/search" method="get">
                 <input class="search__bar--input" type="text" name="q" placeholder="Buscar productos...">
@@ -44,7 +54,7 @@
                 <% if (locals.usuario) { %>
                     <figure class="figure--avatar">
                         <a href="http://localhost:3043/users/edit/<%=usuario.id%>"><img  class="header--avatar" src="/images/avatars/<%= usuario.image %>" alt="Mates"></a>
-                        <!-- <p class="header--users header--avatar"><%= usuario.name %></p> -->
+                        <p class="header--users header--avatar"><%= usuario.name %></p>
                     </figure>
                         <p class="burger--userName"><a style="font-weight: 600;" href="http://localhost:3043/users/edit/<%=usuario.name%>"><%=usuario.name%>  <%=usuario.lastName%></a></p>
                         

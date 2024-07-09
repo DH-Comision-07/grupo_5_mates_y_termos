@@ -3,20 +3,24 @@ const path = require('path');
 
 const productService = require ('../services/productService')
 
+
+
 const db = require ("../database/models");
 const op = db.Sequelize.Op;
 
 const productsController = { 
-
     // Todos los productos
-    index: function (req,res){
-        productService.getAll() //esta es la promesa
-        .then((productos) => { //en productos entra la promesa
-            res.render("products/productAll.ejs", {productos: productos});
-        })
-        .catch((error) => {
-            res.render("products/productAll.ejs", {productos: error});
-        })
+    index: async function (req, res) {
+        const categoriaSeleccionada = req.query.categoria;
+        const precioMin = req.query.precioMin;
+        const precioMax = req.query.precioMax;
+        try {
+            const categorias = await db.Categorias.findAll();
+            const productos = await productService.getProducts(categoriaSeleccionada, precioMin, precioMax);
+            res.render("products/productAll.ejs", { productos, categorias, categoriaSeleccionada, precioMin, precioMax });
+        } catch (error) {
+            res.render("products/productAll.ejs", { error });
+        }
     },
     indexOffer: function (req,res){
         productService.getAllOffer() //esta es la promesa
@@ -35,7 +39,7 @@ const productsController = {
                 res.status(404).render("error404.ejs"); 
             } else {
                 /* muestra productos por categoria
-                let productosSujeridos = await productService.getRelated(productos.category_id, productos.id); */
+                let productosSugeridos = await productService.getRelated(productos.category_id, productos.id); */
                 let productosSugeridos = await productService.getRelated();
                 res.render("products/productDetail.ejs", {productos, productosSugeridos });
             } 
