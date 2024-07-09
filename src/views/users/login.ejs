@@ -13,14 +13,16 @@
             <p class="main__login--titulares">Iniciar sesión</p>
             
             <p class="main__input--desc">Correo electrónico</p>
-            <input class="main__form--inputs email" type="email" name="userEmail" value="<%= locals.old && old.userEmail %>" placeholder="Email de Usuari@">
+            <input class="main__form--inputs userEmail" type="email" name="userEmail" value="<%= locals.old && old.userEmail %>" placeholder="Email de Usuari@">
+
             <% if (locals.errors && errors.userEmail) { %>
                 <li class= "input--error"><%= errors.userEmail.msg %></li>
             <% } %>
             <div class="erroresEmail"><ul></ul></div>
            
             <p class="main__input--desc">Contraseña</p>
-            <input class="main__form--inputs password" type="password" name="passwordUser" value="" placeholder="Contraseña">
+
+            <input class="main__form--inputs passwordUser" type="password" name="passwordUser" value="" placeholder="Contraseña">
             <% if (locals.errors && errors.passwordUser) { %>
                 <li class= "input--error"><%= errors.passwordUser.msg %></li>
             <% } %>
