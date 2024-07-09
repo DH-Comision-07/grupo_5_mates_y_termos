@@ -44,7 +44,15 @@
 }
 .banner--slide {
     display: block;
-    width: 80%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #64646499;
+    border-radius: 10px;
+}
+.banner--slide2 {
+    display: block;
+    width: 60%;
     height: auto;
     margin: 0 auto;
     box-shadow: 0 0 10px #64646499;
