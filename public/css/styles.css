@@ -641,6 +641,7 @@
 
 .nav--option .header__nav--option .nav__option--category--content li:hover {
     background-color: #ECECEC;
+    font-weight: 600;
 }
 
 .nav--option .header__nav--option .nav--category:hover .nav__option--category--content {
