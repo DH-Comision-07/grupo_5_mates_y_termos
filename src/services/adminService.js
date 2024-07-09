@@ -7,9 +7,9 @@ const Op = db.Sequelize.Op;
 let adminService = {
     getAll: async () => {
         try {
-            const categorias = await db.Categorias.findAll()
-            const colores = await db.Colores.findAll()
-            return {categorias, colores}
+            const categorias = await db.Categorias.findAll();
+            const colores = await db.Colores.findAll();
+            return {categorias, colores};
         } catch (error) {
             console.error('Erro en Categorias y/o Colores:', error);
             res.status(500).send('Internal Server Error');

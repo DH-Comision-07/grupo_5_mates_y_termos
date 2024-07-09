@@ -7,7 +7,7 @@ window.addEventListener("load", function(){
         document.querySelector("div.erroresPassword ul").innerHTML = '';
 
         let errores = [];
-        let campoEmail = document.querySelector("input.email");
+        let campoEmail = document.querySelector("input.userEmail");
 
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         errores = [];
@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
             ulErrores.innerHTML += "<li>"+ errores[i] + "</li>" } 
         }
     
-        let campoPassword = document.querySelector("input.password");
+        let campoPassword = document.querySelector("input.passwordUser");
         
         errores = [];
         if(campoPassword.value == ""){

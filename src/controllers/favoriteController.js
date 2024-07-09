@@ -5,44 +5,24 @@ const db = require ("../database/models");
 const Op = db.Sequelize.Op;
 
 const favoriteService = require ('../services/favoriteService');
-const { Console } = require('console');
 
 const favoriteController = { 
         
-    addFavorite: async function (req, res) {
-        
-        const userId= 1;
-        const productId =3
-        console.log(userId)
-        console.log(productId);
-        try {
-            const message = await favoriteService.addProductToFavorites(userId, productId);
-            //res.render("users/favorites.ejs", {favoritos: favoritos});
-            res.status(200).send(message);
-        } catch (error) {
-            res.status(400).send(error.message);
-        }
+    showFavorites: async (req, res) => {
+        const userId = req.params.id; // El parámetro id viene de la ruta /favorite/:id
+        const favorites = await favoriteService.getFavoritesByUserId(userId);
+        res.render('favorites', { favorites });
     },
-
-    removeFavorite: async function (req, res) {
-        const { userId, productId } = req.body;
-        try {
-            const message = await favoriteService.removeProductFromFavorites(userId, productId);
-            res.status(200).send(message);
-        } catch (error) {
-            res.status(400).send(error.message);
-        }
+    addFavorite: async (req, res) => {
+        const userId = req.params.userId;  // El parámetro userId viene de la ruta /favorite/:userId
+        const productId = req.body.productId;  // El parámetro productId viene del cuerpo de la solicitud (req.body)
+        await favoriteService.addFavorite(userId, productId);
+        res.redirect(`/users/favorite/${userId}`);
     },
-    getFavorites: async function (req, res) {
-        const { userId } = req.params;
-        
-        try {
-            const favorites = await favoriteService.getUserFavorites(userId);
-            res.render("users/favorites.ejs", {favoritos: favorites});
-            //res.status(200).json(favorites);
-        } catch (error) {
-            res.status(400).send(error.message);
-        }
+    deleteFavorite: async (req, res) => {
+        const id = req.params.id;  // El parámetro id viene de la ruta /favorite/:id
+        await favoriteService.deleteFavorite(id);
+        res.redirect('back');
     }
 }
     
