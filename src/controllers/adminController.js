@@ -133,6 +133,9 @@ const adminController = {
             await db.Carritos.destroy ({
                 where: { product_id: req.params.id }
             });
+            await db.Favoritos.destroy ({
+                where: { product_id: req.params.id }
+            });
             await db.Productos.destroy({
                 where: {
                     id: req.params.id
